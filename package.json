@@ -6,7 +6,10 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "node --test lib/engine.test.ts",
+    "eval": "node --env-file-if-exists=.env.local scripts/eval.ts",
+    "fetch-treaties": "python scripts/fetch_treaties.py"
   },
   "dependencies": {
     "react": "19.1.0",
@@ -23,5 +26,6 @@
     "eslint": "^9",
     "eslint-config-next": "15.5.4",
     "@eslint/eslintrc": "^3"
-  }
+  },
+  "type": "module"
 }

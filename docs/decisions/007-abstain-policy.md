@@ -1,0 +1,4 @@
+# 007 When the tool refuses to answer
+**Decision.** The engine returns needs_ca with no single rate when: the models abstain; the CA marks the payment unclear; there is possible PE exposure; "make available" is contested (both branches are computed and shown); or treaty protection is missing for something that may be business profits. It returns refused when a rule is stale or no Act rule covers the payment date.
+**Why.** These are exactly the points where Indian practice is litigated. A tool that answers them confidently moves liability onto a CA who did not think. A tool that lays out both readings with the arithmetic done saves the CA's time without taking the decision.
+**Metric.** The evaluation's headline safety number is "wrong and confident": a wrong rate shown as Computed. An escalation that a CA has to resolve is counted as safe, not as a pass.

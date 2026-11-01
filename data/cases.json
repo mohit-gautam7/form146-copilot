@@ -1,0 +1,520 @@
+[
+ {
+  "id": "us-saas",
+  "title": "US CRM subscription",
+  "country": "US",
+  "synthetic": true,
+  "authoredBy": "claude",
+  "trap": "Software subscription looks like a royalty. Engineering Analysis (SC 2021) says it is not.",
+  "contract": "Master Subscription Agreement between Brightlane CRM Inc. (Delaware) and Kaveri Retail Pvt Ltd. Brightlane grants Customer a non-exclusive, non-transferable right to access the Brightlane CRM service over the internet for its internal business purposes during the subscription term. Customer receives no right to copy, modify, sublicense or distribute the software. Brightlane hosts the service on servers outside India and has no office or employees in India.",
+  "invoice": "Invoice BL-55102. Annual subscription, 250 seats, Enterprise plan. Amount: USD 36,000 (INR 30,24,000).",
+  "meta": {
+   "amountInr": 3024000,
+   "paymentDate": "2026-07-01",
+   "payeeType": "company",
+   "trc": true,
+   "form10f": true,
+   "noPeDeclaration": true,
+   "pan": true,
+   "nrDetailsFurnished": true,
+   "taxBorneByPayer": false,
+   "mfnClaimRate": null
+  },
+  "gold": {
+   "category": "business_profits",
+   "makeAvailable": "na",
+   "ancillaryTo": "none",
+   "peRisk": false
+  },
+  "expected": {
+   "status": "ok",
+   "basis": "not_taxable",
+   "ratePct": 0,
+   "form146Required": false
+  },
+  "remitter": "Kaveri Retail Pvt Ltd",
+  "beneficiary": "Brightlane CRM Inc.",
+  "foreignAmount": "USD 36,000"
+ },
+ {
+  "id": "uk-pipeline-ma",
+  "title": "UK data pipeline build with handover",
+  "country": "UK",
+  "synthetic": true,
+  "authoredBy": "claude",
+  "trap": "Services that leave the client able to run the system alone make know-how available.",
+  "contract": "Statement of Work between Northgate Data Ltd (London) and Sahyadri Finance Ltd. Northgate will design and build a data pipeline and transfer the source code, architecture documents and runbooks to Sahyadri. Northgate will run six hands-on training workshops so that Sahyadri's engineers can operate, modify and extend the pipeline independently after handover. All work is performed remotely from the United Kingdom.",
+  "invoice": "Invoice NG-2026-118. Pipeline build and knowledge transfer, milestone 2 of 2. Amount: GBP 40,000 (INR 44,80,000).",
+  "meta": {
+   "amountInr": 4480000,
+   "paymentDate": "2026-08-12",
+   "payeeType": "company",
+   "trc": true,
+   "form10f": true,
+   "noPeDeclaration": true,
+   "pan": true,
+   "nrDetailsFurnished": true,
+   "taxBorneByPayer": false,
+   "mfnClaimRate": null
+  },
+  "gold": {
+   "category": "fts",
+   "makeAvailable": "yes",
+   "ancillaryTo": "none",
+   "peRisk": false
+  },
+  "expected": {
+   "status": "ok",
+   "basis": "treaty",
+   "ratePct": 15,
+   "form146Required": true
+  },
+  "remitter": "Sahyadri Finance Ltd",
+  "beneficiary": "Northgate Data Ltd",
+  "foreignAmount": "GBP 40,000"
+ },
+ {
+  "id": "uk-research-no-ma",
+  "title": "UK market research report",
+  "country": "UK",
+  "synthetic": true,
+  "authoredBy": "claude",
+  "trap": "Consultancy that hands over a conclusion, not a capability, is not FTS under the UK treaty.",
+  "contract": "Engagement Letter between Thames Insight Ltd (London) and Godavari Foods Ltd. Thames Insight will research consumer demand for packaged millet snacks in Germany and France and deliver a written report with its findings and recommendations. Thames Insight's methods, survey tools and models remain its property and are not shared with the client. All research is performed outside India.",
+  "invoice": "Invoice TI-3391. European demand study, final report. Amount: GBP 18,000 (INR 20,16,000).",
+  "meta": {
+   "amountInr": 2016000,
+   "paymentDate": "2026-09-03",
+   "payeeType": "company",
+   "trc": true,
+   "form10f": true,
+   "noPeDeclaration": true,
+   "pan": true,
+   "nrDetailsFurnished": true,
+   "taxBorneByPayer": false,
+   "mfnClaimRate": null
+  },
+  "gold": {
+   "category": "fts",
+   "makeAvailable": "no",
+   "ancillaryTo": "none",
+   "peRisk": false
+  },
+  "expected": {
+   "status": "ok",
+   "basis": "not_taxable",
+   "ratePct": 0,
+   "form146Required": false
+  },
+  "remitter": "Godavari Foods Ltd",
+  "beneficiary": "Thames Insight Ltd",
+  "foreignAmount": "GBP 18,000"
+ },
+ {
+  "id": "de-mgmt-fee",
+  "title": "German parent management fee",
+  "country": "DE",
+  "synthetic": true,
+  "authoredBy": "claude",
+  "trap": "Germany has no 'make available' test, and its FTS definition covers managerial services.",
+  "contract": "Intra-group Services Agreement between Rhein Antriebe GmbH (Stuttgart) and its subsidiary Rhein Drives India Pvt Ltd. The parent provides strategic planning, HR policy advice, treasury guidance and quarterly management reviews. Services are provided from Germany by the parent's management team. The fee is cost plus 5 percent.",
+  "invoice": "Invoice RA-IC-2026-Q2. Management support services, April to June 2026. Amount: EUR 60,000 (INR 57,60,000).",
+  "meta": {
+   "amountInr": 5760000,
+   "paymentDate": "2026-07-20",
+   "payeeType": "company",
+   "trc": true,
+   "form10f": true,
+   "noPeDeclaration": true,
+   "pan": true,
+   "nrDetailsFurnished": true,
+   "taxBorneByPayer": false,
+   "mfnClaimRate": null
+  },
+  "gold": {
+   "category": "fts",
+   "makeAvailable": "no",
+   "ancillaryTo": "none",
+   "peRisk": false
+  },
+  "expected": {
+   "status": "ok",
+   "basis": "treaty",
+   "ratePct": 10,
+   "form146Required": true
+  },
+  "remitter": "Rhein Drives India Pvt Ltd",
+  "beneficiary": "Rhein Antriebe GmbH",
+  "foreignAmount": "EUR 60,000"
+ },
+ {
+  "id": "sg-monitoring-contested",
+  "title": "Singapore server monitoring with knowledge sessions",
+  "country": "SG",
+  "synthetic": true,
+  "authoredBy": "claude",
+  "trap": "Mixed facts: routine monitoring (no transfer) plus training sessions (some transfer). Should not be decided by the model.",
+  "contract": "Managed Services Agreement between Lionbridge Ops Pte Ltd (Singapore) and Narmada Logistics Ltd. Lionbridge will monitor Narmada's servers 24x7 from Singapore and resolve incidents. Each quarter Lionbridge will hold a two-hour knowledge session for Narmada's IT staff covering lessons from incidents and recommended configurations. Narmada's staff will not be trained to run the monitoring platform, which remains Lionbridge's proprietary tool.",
+  "invoice": "Invoice LO-7781. Managed monitoring, Q3 2026, including quarterly knowledge session. Amount: SGD 30,000 (INR 19,50,000).",
+  "meta": {
+   "amountInr": 1950000,
+   "paymentDate": "2026-10-05",
+   "payeeType": "company",
+   "trc": true,
+   "form10f": true,
+   "noPeDeclaration": true,
+   "pan": true,
+   "nrDetailsFurnished": true,
+   "taxBorneByPayer": false,
+   "mfnClaimRate": null
+  },
+  "gold": {
+   "category": "fts",
+   "makeAvailable": "contested",
+   "ancillaryTo": "none",
+   "peRisk": false
+  },
+  "expected": {
+   "status": "needs_ca",
+   "basis": "treaty",
+   "ratePct": 10,
+   "form146Required": true
+  },
+  "remitter": "Narmada Logistics Ltd",
+  "beneficiary": "Lionbridge Ops Pte Ltd",
+  "foreignAmount": "SGD 30,000"
+ },
+ {
+  "id": "nl-tbm-hire",
+  "title": "Netherlands tunnel boring machine hire",
+  "country": "NL",
+  "synthetic": true,
+  "authoredBy": "claude",
+  "trap": "Equipment hire is a royalty under most Indian treaties, but not under the Netherlands one.",
+  "contract": "Equipment Hire Agreement between Polder Machinery B.V. (Rotterdam) and Konkan Metro Constructions Ltd. Polder hires one tunnel boring machine to the hirer for 14 months for use at the hirer's metro site. The hirer operates and maintains the machine with its own crew. Polder has no staff in India and no office in India.",
+  "invoice": "Invoice PM-2026-044. Monthly hire charge, tunnel boring machine TBM-6.6, September 2026. Amount: EUR 90,000 (INR 86,40,000).",
+  "meta": {
+   "amountInr": 8640000,
+   "paymentDate": "2026-10-01",
+   "payeeType": "company",
+   "trc": true,
+   "form10f": true,
+   "noPeDeclaration": true,
+   "pan": true,
+   "nrDetailsFurnished": true,
+   "taxBorneByPayer": false,
+   "mfnClaimRate": null
+  },
+  "gold": {
+   "category": "royalty_equipment",
+   "makeAvailable": "na",
+   "ancillaryTo": "none",
+   "peRisk": false
+  },
+  "expected": {
+   "status": "ok",
+   "basis": "not_taxable",
+   "ratePct": 0,
+   "form146Required": false
+  },
+  "remitter": "Konkan Metro Constructions Ltd",
+  "beneficiary": "Polder Machinery B.V.",
+  "foreignAmount": "EUR 90,000"
+ },
+ {
+  "id": "us-spectrometer-grossup",
+  "title": "US lab equipment lease, tax borne by payer",
+  "country": "US",
+  "synthetic": true,
+  "authoredBy": "claude",
+  "trap": "Net-of-tax contract: the tax is computed on the grossed-up amount.",
+  "contract": "Lease Agreement between Halcyon Instruments Inc. (Boston) and Deccan Biologics Ltd. Halcyon leases one mass spectrometer to Deccan for 24 months. All payments to Halcyon shall be made net of any Indian taxes, which shall be borne by Deccan. Halcyon has no permanent establishment in India.",
+  "invoice": "Invoice HI-90021. Quarterly lease rental, mass spectrometer, Q3 2026. Amount payable: USD 10,800 (INR 9,00,000).",
+  "meta": {
+   "amountInr": 900000,
+   "paymentDate": "2026-09-30",
+   "payeeType": "company",
+   "trc": true,
+   "form10f": true,
+   "noPeDeclaration": true,
+   "pan": true,
+   "nrDetailsFurnished": true,
+   "taxBorneByPayer": true,
+   "mfnClaimRate": null
+  },
+  "gold": {
+   "category": "royalty_equipment",
+   "makeAvailable": "na",
+   "ancillaryTo": "none",
+   "peRisk": false
+  },
+  "expected": {
+   "status": "ok",
+   "basis": "treaty",
+   "ratePct": 10,
+   "form146Required": true
+  },
+  "remitter": "Deccan Biologics Ltd",
+  "beneficiary": "Halcyon Instruments Inc.",
+  "foreignAmount": "USD 10,800"
+ },
+ {
+  "id": "nl-mfn-claim",
+  "title": "Netherlands dev firm claims MFN rate",
+  "country": "NL",
+  "synthetic": true,
+  "authoredBy": "claude",
+  "trap": "Payee asks for a lower rate via the MFN clause. Not self-executing (Nestle, SC 2023).",
+  "contract": "Software Development and Training Agreement between Grachten Code B.V. (Amsterdam) and Malabar Payments Ltd. Grachten will build a fraud-scoring module and train Malabar's developers to maintain and retrain the model themselves. Source code and model documentation are transferred to Malabar. Note from vendor: 'Under the MFN clause in the protocol, please withhold at 5 percent.'",
+  "invoice": "Invoice GC-1207. Fraud module development and developer training. Amount: EUR 25,000 (INR 24,00,000). Vendor note: apply 5% MFN rate.",
+  "meta": {
+   "amountInr": 2400000,
+   "paymentDate": "2026-08-28",
+   "payeeType": "company",
+   "trc": true,
+   "form10f": true,
+   "noPeDeclaration": true,
+   "pan": true,
+   "nrDetailsFurnished": true,
+   "taxBorneByPayer": false,
+   "mfnClaimRate": 5
+  },
+  "gold": {
+   "category": "fts",
+   "makeAvailable": "yes",
+   "ancillaryTo": "none",
+   "peRisk": false
+  },
+  "expected": {
+   "status": "ok",
+   "basis": "treaty",
+   "ratePct": 10,
+   "form146Required": true
+  },
+  "remitter": "Malabar Payments Ltd",
+  "beneficiary": "Grachten Code B.V.",
+  "foreignAmount": "EUR 25,000"
+ },
+ {
+  "id": "us-no-trc",
+  "title": "US consultant without TRC",
+  "country": "US",
+  "synthetic": true,
+  "authoredBy": "claude",
+  "trap": "Correct characterisation, but no TRC: treaty benefit is lost and the Act rate applies.",
+  "contract": "Consulting Agreement between Mesa Process Inc. (Texas) and Tapti Chemicals Ltd. Mesa will redesign the plant's batch control process and train Tapti's process engineers to run and tune the new process without Mesa's help. Work is done remotely.",
+  "invoice": "Invoice MP-4410. Process redesign and engineer training. Amount: USD 24,000 (INR 20,00,000).",
+  "meta": {
+   "amountInr": 2000000,
+   "paymentDate": "2026-06-18",
+   "payeeType": "company",
+   "trc": false,
+   "form10f": false,
+   "noPeDeclaration": true,
+   "pan": true,
+   "nrDetailsFurnished": false,
+   "taxBorneByPayer": false,
+   "mfnClaimRate": null
+  },
+  "gold": {
+   "category": "fts",
+   "makeAvailable": "yes",
+   "ancillaryTo": "none",
+   "peRisk": false
+  },
+  "expected": {
+   "status": "ok",
+   "basis": "act",
+   "ratePct": 20.8,
+   "form146Required": true
+  },
+  "remitter": "Tapti Chemicals Ltd",
+  "beneficiary": "Mesa Process Inc.",
+  "foreignAmount": "USD 24,000"
+ },
+ {
+  "id": "de-patent-old-act",
+  "title": "German patent licence paid in March 2026",
+  "country": "DE",
+  "synthetic": true,
+  "authoredBy": "claude",
+  "trap": "Paid before 1 April 2026: the 1961 Act and Form 15CB govern, not the 2025 Act.",
+  "contract": "Patent Licence Agreement between Kessler Optik GmbH (Jena) and Nilgiri Lenses Pvt Ltd. Kessler grants a non-exclusive licence to use Indian patent rights in its coating process to manufacture lenses in India, against a royalty of 4 percent of net sales.",
+  "invoice": "Invoice KO-2026-03. Royalty for October to December 2025 sales. Amount: EUR 15,000 (INR 13,50,000). Date of payment: 10 March 2026.",
+  "meta": {
+   "amountInr": 1350000,
+   "paymentDate": "2026-03-10",
+   "payeeType": "company",
+   "trc": true,
+   "form10f": true,
+   "noPeDeclaration": true,
+   "pan": true,
+   "nrDetailsFurnished": true,
+   "taxBorneByPayer": false,
+   "mfnClaimRate": null
+  },
+  "gold": {
+   "category": "royalty_ip",
+   "makeAvailable": "na",
+   "ancillaryTo": "none",
+   "peRisk": false
+  },
+  "expected": {
+   "status": "ok",
+   "basis": "treaty",
+   "ratePct": 10,
+   "form146Required": true
+  },
+  "remitter": "Nilgiri Lenses Pvt Ltd",
+  "beneficiary": "Kessler Optik GmbH",
+  "foreignAmount": "EUR 15,000"
+ },
+ {
+  "id": "sg-reimbursement",
+  "title": "Singapore affiliate travel recharge",
+  "country": "SG",
+  "synthetic": true,
+  "authoredBy": "claude",
+  "trap": "Pure reimbursement at cost is not income at all.",
+  "contract": "Cost Recharge Note from Merlion Holdings Pte Ltd (Singapore) to Cauvery Software Pvt Ltd. Merlion paid airfare and hotel for Cauvery's employees attending a regional conference and recharges the exact cost, with no mark-up. Copies of the airline and hotel invoices are attached.",
+  "invoice": "Debit note MH-DN-88. Recovery of travel costs at actuals (no mark-up), with third-party invoices attached. Amount: SGD 9,500 (INR 6,17,500).",
+  "meta": {
+   "amountInr": 617500,
+   "paymentDate": "2026-09-14",
+   "payeeType": "company",
+   "trc": true,
+   "form10f": true,
+   "noPeDeclaration": true,
+   "pan": true,
+   "nrDetailsFurnished": true,
+   "taxBorneByPayer": false,
+   "mfnClaimRate": null
+  },
+  "gold": {
+   "category": "reimbursement",
+   "makeAvailable": "na",
+   "ancillaryTo": "none",
+   "peRisk": false
+  },
+  "expected": {
+   "status": "ok",
+   "basis": "not_taxable",
+   "ratePct": 0,
+   "form146Required": false
+  },
+  "remitter": "Cauvery Software Pvt Ltd",
+  "beneficiary": "Merlion Holdings Pte Ltd",
+  "foreignAmount": "SGD 9,500"
+ },
+ {
+  "id": "uk-site-supervision",
+  "title": "UK engineers on site for eight months",
+  "country": "UK",
+  "synthetic": true,
+  "authoredBy": "claude",
+  "trap": "Long on-site presence points to a PE. The tool must refuse to compute and escalate.",
+  "contract": "Supervision Contract between Pennine Turbines Ltd (Manchester) and Mahanadi Power Ltd. Pennine will station four engineers at the client's plant in Odisha for about eight months to supervise installation and commissioning of two gas turbines. Pennine will keep a site office at the plant during this period.",
+  "invoice": "Invoice PT-2026-77. Installation supervision, months 3 and 4. Amount: GBP 70,000 (INR 78,40,000).",
+  "meta": {
+   "amountInr": 7840000,
+   "paymentDate": "2026-10-10",
+   "payeeType": "company",
+   "trc": true,
+   "form10f": true,
+   "noPeDeclaration": false,
+   "pan": true,
+   "nrDetailsFurnished": true,
+   "taxBorneByPayer": false,
+   "mfnClaimRate": null
+  },
+  "gold": {
+   "category": "fts",
+   "makeAvailable": "no",
+   "ancillaryTo": "none",
+   "peRisk": true
+  },
+  "expected": {
+   "status": "needs_ca",
+   "basis": "none",
+   "ratePct": null,
+   "form146Required": false
+  },
+  "remitter": "Mahanadi Power Ltd",
+  "beneficiary": "Pennine Turbines Ltd",
+  "foreignAmount": "GBP 70,000"
+ },
+ {
+  "id": "us-stock-photo-small",
+  "title": "Small US stock photo licence",
+  "country": "US",
+  "synthetic": true,
+  "authoredBy": "claude",
+  "trap": "Taxable, but below Rs 5 lakh: no CA certificate needed.",
+  "contract": "Licence from Prairie Images Inc. (Chicago) to Yamuna Media Pvt Ltd granting the right to reproduce and publish 40 photographs in Yamuna's print magazine and website for two years.",
+  "invoice": "Invoice PI-22813. Reproduction licence, 40 images. Amount: USD 3,600 (INR 3,00,000).",
+  "meta": {
+   "amountInr": 300000,
+   "paymentDate": "2026-08-01",
+   "payeeType": "company",
+   "trc": true,
+   "form10f": true,
+   "noPeDeclaration": true,
+   "pan": true,
+   "nrDetailsFurnished": true,
+   "taxBorneByPayer": false,
+   "mfnClaimRate": null
+  },
+  "gold": {
+   "category": "royalty_ip",
+   "makeAvailable": "na",
+   "ancillaryTo": "none",
+   "peRisk": false
+  },
+  "expected": {
+   "status": "ok",
+   "basis": "treaty",
+   "ratePct": 15,
+   "form146Required": false
+  },
+  "remitter": "Yamuna Media Pvt Ltd",
+  "beneficiary": "Prairie Images Inc.",
+  "foreignAmount": "USD 3,600"
+ },
+ {
+  "id": "sg-design-no-pan",
+  "title": "Singapore design studio without PAN",
+  "country": "SG",
+  "synthetic": true,
+  "authoredBy": "claude",
+  "trap": "Treaty rate is 10%, but no PAN and no carve-out details: 20%.",
+  "contract": "Design Services Agreement between Orchard Form Pte Ltd (Singapore) and Banas Furniture Ltd. Orchard will develop and transfer technical designs and manufacturing drawings for a new furniture line, which Banas's factory will use to produce the line itself.",
+  "invoice": "Invoice OF-519. Technical design and drawings, furniture line A. Amount: SGD 20,000 (INR 13,00,000). PAN: not provided.",
+  "meta": {
+   "amountInr": 1300000,
+   "paymentDate": "2026-07-07",
+   "payeeType": "company",
+   "trc": true,
+   "form10f": true,
+   "noPeDeclaration": true,
+   "pan": false,
+   "nrDetailsFurnished": false,
+   "taxBorneByPayer": false,
+   "mfnClaimRate": null
+  },
+  "gold": {
+   "category": "fts",
+   "makeAvailable": "yes",
+   "ancillaryTo": "none",
+   "peRisk": false
+  },
+  "expected": {
+   "status": "ok",
+   "basis": "treaty",
+   "ratePct": 20,
+   "form146Required": true
+  },
+  "remitter": "Banas Furniture Ltd",
+  "beneficiary": "Orchard Form Pte Ltd",
+  "foreignAmount": "SGD 20,000"
+ }
+]

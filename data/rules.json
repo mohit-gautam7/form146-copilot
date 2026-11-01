@@ -1,0 +1,71 @@
+{
+  "_note": "Every number the engine uses lives here. verified=true means checked against the cited source on last_verified. verified=false rules still run, but every output that touches them is flagged for the CA.",
+  "max_age_days": 365,
+  "treaties": {
+    "US": {
+      "name": "India-USA DTAA", "article": "12",
+      "fts_requires_make_available": true, "fts_includes_managerial": false, "equipment_is_royalty": true,
+      "mfn_notified": false
+    },
+    "UK": {
+      "name": "India-UK DTAA", "article": "13",
+      "fts_requires_make_available": true, "fts_includes_managerial": false, "equipment_is_royalty": true,
+      "mfn_notified": false
+    },
+    "SG": {
+      "name": "India-Singapore DTAA", "article": "12",
+      "fts_requires_make_available": true, "fts_includes_managerial": true, "equipment_is_royalty": true,
+      "mfn_notified": false
+    },
+    "DE": {
+      "name": "India-Germany DTAA", "article": "12",
+      "fts_requires_make_available": false, "fts_includes_managerial": true, "equipment_is_royalty": true,
+      "mfn_notified": false
+    },
+    "NL": {
+      "name": "India-Netherlands DTAA", "article": "12",
+      "fts_requires_make_available": true, "fts_includes_managerial": false, "equipment_is_royalty": false,
+      "mfn_notified": false,
+      "_note": "Protocol IV(2) has an MFN clause. The 'make available' scope is already in Art 12(5) via Notification SO 693(E), 30-8-1999, so that import IS notified. Any further MFN claim is not self-executing (AO v. Nestle SA, SC 2023)."
+    }
+  },
+  "treaty_rates": [
+    { "id": "US-roy-ip", "country": "US", "category": "royalty_ip", "rate": 15, "para": "12(2)(a)(ii)", "source_quote": "during the subsequent years, 15 percent of the gross amount of royalties or fees for included services", "source_url": "https://www.irs.gov/pub/irs-trty/india.pdf", "effective_to": null, "last_verified": "2026-11-02", "verified": true },
+    { "id": "US-roy-eq", "country": "US", "category": "royalty_equipment", "rate": 10, "para": "12(2)(b)", "source_quote": "10 percent of the gross amount of the royalties or fees for included services", "source_url": "https://www.irs.gov/pub/irs-trty/india.pdf", "effective_to": null, "last_verified": "2026-11-02", "verified": true },
+    { "id": "US-fts", "country": "US", "category": "fts", "rate": 15, "para": "12(2)(a)(ii) with 12(4)(b)", "source_quote": "make available technical knowledge, experience, skill, know-how, or processes", "source_url": "https://www.irs.gov/pub/irs-trty/india.pdf", "effective_to": null, "last_verified": "2026-11-02", "verified": true },
+    { "id": "US-fts-eq", "country": "US", "category": "fts_ancillary_equipment", "rate": 10, "para": "12(2)(b)", "source_quote": "that are ancillary and subsidiary to the enjoyment of the property for which payment is received under paragraph 3 (b)", "source_url": "https://www.irs.gov/pub/irs-trty/india.pdf", "effective_to": null, "last_verified": "2026-11-02", "verified": true },
+
+    { "id": "UK-roy-ip", "country": "UK", "category": "royalty_ip", "rate": 15, "para": "13(2)(a)(ii)", "source_quote": "during subsequent years, 15 per cent of the gross amount of such royalties or fees for technical services", "source_url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/736294/1993_India_-_UK_Double_Taxation_Agreement__as_amended_in_2013_-_in_force.pdf", "effective_to": null, "last_verified": "2026-11-02", "verified": true },
+    { "id": "UK-roy-eq", "country": "UK", "category": "royalty_equipment", "rate": 10, "para": "13(2)(b)", "source_quote": "10 per cent of the gross amount of such royalties and fees for technical services", "source_url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/736294/1993_India_-_UK_Double_Taxation_Agreement__as_amended_in_2013_-_in_force.pdf", "effective_to": null, "last_verified": "2026-11-02", "verified": true },
+    { "id": "UK-fts", "country": "UK", "category": "fts", "rate": 15, "para": "13(2)(a)(ii) with 13(4)(c)", "source_quote": "make available technical knowledge, experience, skill, know-how or processes", "source_url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/736294/1993_India_-_UK_Double_Taxation_Agreement__as_amended_in_2013_-_in_force.pdf", "effective_to": null, "last_verified": "2026-11-02", "verified": true },
+    { "id": "UK-fts-eq", "country": "UK", "category": "fts_ancillary_equipment", "rate": 10, "para": "13(2)(b) with 13(4)(b)", "source_quote": "are ancillary and subsidiary to the enjoyment of the property for which a payment described in paragraph (3)(b)", "source_url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/736294/1993_India_-_UK_Double_Taxation_Agreement__as_amended_in_2013_-_in_force.pdf", "effective_to": null, "last_verified": "2026-11-02", "verified": true },
+
+    { "id": "SG-all", "country": "SG", "category": "*", "rate": 10, "para": "12(2)", "source_quote": "the tax so charged shall not exceed 10 per cent", "source_url": "https://wm.incometaxindia.gov.in/w/singapore-comprehensive-agreements-1", "effective_to": null, "last_verified": "2026-11-02", "verified": true },
+    { "id": "DE-all", "country": "DE", "category": "*", "rate": 10, "para": "12(2)", "source_quote": "the tax so charged shall not exceed 10 per cent of the gross amount of the royalties or the fees for technical services", "source_url": "https://wm.incometaxindia.gov.in/w/germany-comprehensive-agreements-1", "effective_to": null, "last_verified": "2026-11-02", "verified": true },
+    { "id": "NL-all", "country": "NL", "category": "*", "rate": 10, "para": "12(2)", "source_quote": "the tax so charged shall not exceed 10 per cent of the gross amount of the royalties or the fees for technical services", "source_url": "https://wm.incometaxindia.gov.in/w/netherlands-comprehensive-agreements-1", "effective_to": null, "last_verified": "2026-11-02", "verified": true }
+  ],
+  "act": [
+    { "id": "act-1961", "act": "Income-tax Act, 1961", "section": "195 (rate via 115A)", "form_declaration": "15CA", "form_certificate": "15CB", "effective_from": null, "effective_to": "2026-03-31", "rate": 20, "source_quote": "Royalty ... I-T Act 20% / Fee for Technical Services ... I-T Act 20%", "source_url": "https://wm.incometaxindia.gov.in/w/%E2%80%8Btax-rates-dtaa-v.-income-tax-act", "last_verified": "2026-11-02", "verified": true },
+    { "id": "act-2025", "act": "Income-tax Act, 2025", "section": "393(2), Table Sl. No. 17", "form_declaration": "145", "form_certificate": "146", "effective_from": "2026-04-01", "effective_to": null, "rate": 20, "source_quote": "Section 195 of the 1961 Act continues to govern payments and credits up to 31 March 2026 ... the governing provision is Section 393 (2), Table Sl. No. 17", "source_url": "https://eximpe.com/blog/payments/section-195-tds-non-residents-section-393", "last_verified": "2026-11-02", "verified": false, "_note": "Section mapping and form numbers confirmed by several secondary sources; the 20% rate carried over from the CBDT table, which still cites the 1961 Act. Not yet checked against the 2025 Act's rate schedule." }
+  ],
+  "surcharge": {
+    "company": [ { "above": 10000000, "pct": 2 }, { "above": 100000000, "pct": 5 } ],
+    "non_company": [ { "above": 5000000, "pct": 10 }, { "above": 10000000, "pct": 15 }, { "above": 20000000, "pct": 25 }, { "above": 50000000, "pct": 37 } ],
+    "cess_pct": 4,
+    "source_url": "https://www.incometax.gov.in/iec/foportal/help/company/return-applicable-0",
+    "last_verified": "2026-11-02", "verified": false,
+    "_note": "Slabs from memory of the Finance Act First Schedule, not checked this session. Applied only when the Act rate is used."
+  },
+  "treaty_rate_is_final": {
+    "last_verified": "2026-11-02", "verified": false,
+    "_note": "Practitioner position (ITAT line of cases): a treaty rate is not loaded with surcharge and cess. Treated as a rule but flagged."
+  },
+  "no_pan": {
+    "rate": 20, "section_1961": "206AA", "section_2025": "397(2)",
+    "nr_carve_out": "Higher rate not applied to a non-resident who furnishes name, email, address, TRC and foreign TIN (Rule 37BC under the 1961 Act; successor rule under the 2025 Act not verified).",
+    "source_url": "https://blog.tdsman.com/2026/10/higher-rate-of-tds-for-non-furnishing-of-pan-section-3972-206aa-206cc/",
+    "last_verified": "2026-11-02", "verified": false
+  },
+  "form146_threshold_inr": 500000,
+  "form146_threshold_source": "https://www.incometax.gov.in/iec/foportal/help/statutory-forms/popular-form/form15cb-um"
+}

@@ -1,0 +1,257 @@
+{
+ "generatedAt": "2026-11-01T23:08:27.064Z",
+ "mode": "replay",
+ "summary": {
+  "cases": 14,
+  "rulesPass": 14,
+  "aiCases": 0,
+  "fullPass": 0,
+  "categoryOk": 0,
+  "unsafe": 0,
+  "agreement": {
+   "agree": 0,
+   "flag": 0,
+   "abstain": 0
+  }
+ },
+ "cases": [
+  {
+   "id": "us-saas",
+   "title": "US CRM subscription",
+   "country": "US",
+   "trap": "Software subscription looks like a royalty. Engineering Analysis (SC 2021) says it is not.",
+   "expected": {
+    "status": "ok",
+    "basis": "not_taxable",
+    "ratePct": 0,
+    "form146Required": false
+   },
+   "rules": {
+    "pass": true,
+    "diffs": []
+   },
+   "ai": null
+  },
+  {
+   "id": "uk-pipeline-ma",
+   "title": "UK data pipeline build with handover",
+   "country": "UK",
+   "trap": "Services that leave the client able to run the system alone make know-how available.",
+   "expected": {
+    "status": "ok",
+    "basis": "treaty",
+    "ratePct": 15,
+    "form146Required": true
+   },
+   "rules": {
+    "pass": true,
+    "diffs": []
+   },
+   "ai": null
+  },
+  {
+   "id": "uk-research-no-ma",
+   "title": "UK market research report",
+   "country": "UK",
+   "trap": "Consultancy that hands over a conclusion, not a capability, is not FTS under the UK treaty.",
+   "expected": {
+    "status": "ok",
+    "basis": "not_taxable",
+    "ratePct": 0,
+    "form146Required": false
+   },
+   "rules": {
+    "pass": true,
+    "diffs": []
+   },
+   "ai": null
+  },
+  {
+   "id": "de-mgmt-fee",
+   "title": "German parent management fee",
+   "country": "DE",
+   "trap": "Germany has no 'make available' test, and its FTS definition covers managerial services.",
+   "expected": {
+    "status": "ok",
+    "basis": "treaty",
+    "ratePct": 10,
+    "form146Required": true
+   },
+   "rules": {
+    "pass": true,
+    "diffs": []
+   },
+   "ai": null
+  },
+  {
+   "id": "sg-monitoring-contested",
+   "title": "Singapore server monitoring with knowledge sessions",
+   "country": "SG",
+   "trap": "Mixed facts: routine monitoring (no transfer) plus training sessions (some transfer). Should not be decided by the model.",
+   "expected": {
+    "status": "needs_ca",
+    "basis": "treaty",
+    "ratePct": 10,
+    "form146Required": true
+   },
+   "rules": {
+    "pass": true,
+    "diffs": []
+   },
+   "ai": null
+  },
+  {
+   "id": "nl-tbm-hire",
+   "title": "Netherlands tunnel boring machine hire",
+   "country": "NL",
+   "trap": "Equipment hire is a royalty under most Indian treaties, but not under the Netherlands one.",
+   "expected": {
+    "status": "ok",
+    "basis": "not_taxable",
+    "ratePct": 0,
+    "form146Required": false
+   },
+   "rules": {
+    "pass": true,
+    "diffs": []
+   },
+   "ai": null
+  },
+  {
+   "id": "us-spectrometer-grossup",
+   "title": "US lab equipment lease, tax borne by payer",
+   "country": "US",
+   "trap": "Net-of-tax contract: the tax is computed on the grossed-up amount.",
+   "expected": {
+    "status": "ok",
+    "basis": "treaty",
+    "ratePct": 10,
+    "form146Required": true
+   },
+   "rules": {
+    "pass": true,
+    "diffs": []
+   },
+   "ai": null
+  },
+  {
+   "id": "nl-mfn-claim",
+   "title": "Netherlands dev firm claims MFN rate",
+   "country": "NL",
+   "trap": "Payee asks for a lower rate via the MFN clause. Not self-executing (Nestle, SC 2023).",
+   "expected": {
+    "status": "ok",
+    "basis": "treaty",
+    "ratePct": 10,
+    "form146Required": true
+   },
+   "rules": {
+    "pass": true,
+    "diffs": []
+   },
+   "ai": null
+  },
+  {
+   "id": "us-no-trc",
+   "title": "US consultant without TRC",
+   "country": "US",
+   "trap": "Correct characterisation, but no TRC: treaty benefit is lost and the Act rate applies.",
+   "expected": {
+    "status": "ok",
+    "basis": "act",
+    "ratePct": 20.8,
+    "form146Required": true
+   },
+   "rules": {
+    "pass": true,
+    "diffs": []
+   },
+   "ai": null
+  },
+  {
+   "id": "de-patent-old-act",
+   "title": "German patent licence paid in March 2026",
+   "country": "DE",
+   "trap": "Paid before 1 April 2026: the 1961 Act and Form 15CB govern, not the 2025 Act.",
+   "expected": {
+    "status": "ok",
+    "basis": "treaty",
+    "ratePct": 10,
+    "form146Required": true
+   },
+   "rules": {
+    "pass": true,
+    "diffs": []
+   },
+   "ai": null
+  },
+  {
+   "id": "sg-reimbursement",
+   "title": "Singapore affiliate travel recharge",
+   "country": "SG",
+   "trap": "Pure reimbursement at cost is not income at all.",
+   "expected": {
+    "status": "ok",
+    "basis": "not_taxable",
+    "ratePct": 0,
+    "form146Required": false
+   },
+   "rules": {
+    "pass": true,
+    "diffs": []
+   },
+   "ai": null
+  },
+  {
+   "id": "uk-site-supervision",
+   "title": "UK engineers on site for eight months",
+   "country": "UK",
+   "trap": "Long on-site presence points to a PE. The tool must refuse to compute and escalate.",
+   "expected": {
+    "status": "needs_ca",
+    "basis": "none",
+    "ratePct": null,
+    "form146Required": false
+   },
+   "rules": {
+    "pass": true,
+    "diffs": []
+   },
+   "ai": null
+  },
+  {
+   "id": "us-stock-photo-small",
+   "title": "Small US stock photo licence",
+   "country": "US",
+   "trap": "Taxable, but below Rs 5 lakh: no CA certificate needed.",
+   "expected": {
+    "status": "ok",
+    "basis": "treaty",
+    "ratePct": 15,
+    "form146Required": false
+   },
+   "rules": {
+    "pass": true,
+    "diffs": []
+   },
+   "ai": null
+  },
+  {
+   "id": "sg-design-no-pan",
+   "title": "Singapore design studio without PAN",
+   "country": "SG",
+   "trap": "Treaty rate is 10%, but no PAN and no carve-out details: 20%.",
+   "expected": {
+    "status": "ok",
+    "basis": "treaty",
+    "ratePct": 20,
+    "form146Required": true
+   },
+   "rules": {
+    "pass": true,
+    "diffs": []
+   },
+   "ai": null
+  }
+ ]
+}
