@@ -2,7 +2,7 @@
 import type { Input, Result, Country, Category, MakeAvailable } from "./engine.ts";
 
 export type Meta = Omit<Input, "country" | "category" | "makeAvailable" | "ancillaryTo" | "peRisk">;
-export type Characterisation = { category: Category; makeAvailable: MakeAvailable; ancillaryTo: Input["ancillaryTo"]; peRisk: boolean };
+export type Characterisation = { category: Category; makeAvailable: MakeAvailable; ancillaryTo: Input["ancillaryTo"]; peRisk: boolean; altCategory?: Category };
 export type Case = {
   id: string; title: string; country: Country; synthetic: boolean; authoredBy: string; trap: string;
   remitter: string; beneficiary: string; foreignAmount: string;

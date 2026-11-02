@@ -49,6 +49,7 @@ export type Consensus = {
   category: Classification["category"];
   makeAvailable: Classification["make_available"];
   ancillaryTo: Classification["ancillary_to"];
+  altCategory?: "business_profits"; // a counted dissent the engine must also compute
   peRisk: boolean;
   agreement: "agree" | "flag" | "abstain";
   validVotes: number;
@@ -185,11 +186,11 @@ export async function classify(d: CaseDocs, env: Record<string, string | undefin
 // Short reason for a model that could not answer, for the UI. The raw error stays in the record for audit.
 export function unavailable(error = ""): string {
   if (/per-day|per day/i.test(error)) return "daily free quota used up";
-  if (/429|rate limit/i.test(error)) return "rate limited";
-  if (/(404|410)/.test(error)) return "model retired or not found";
-  if (/(401|403)/.test(error)) return "key rejected";
+  if (/\b429\b|rate limit/i.test(error)) return "rate limited";
+  if (/\b(404|410)\b/.test(error)) return "model retired or not found";
+  if (/\b(401|403)\b/.test(error)) return "key rejected";
   if (/timeout|timed out|aborted/i.test(error)) return "timed out";
-  if (/5\d\d/.test(error)) return "provider error";
+  if (/\b5\d\d\b/.test(error)) return "provider error";
   return "no usable answer";
 }
 
@@ -205,15 +206,20 @@ export function vote(votes: Vote[]): Consensus {
   const none: Consensus = { category: "unclear", makeAvailable: "na", ancillaryTo: "none", peRisk: false, agreement: "abstain", validVotes: v.length, note: "" };
   if (v.length < 2) return { ...none, note: `Only ${v.length} model gave an answer backed by a verified contract quote and a verified treaty quote. A CA must characterise this payment.` };
 
-  // A split between "technical services" and "business profits" is not a labelling quibble: under a
-  // make-available treaty it IS the make-available question. Found by the first live eval, where a
-  // 2-1 majority for business profits produced a confident nil rate on a genuinely contested case.
+  // A split between "technical services" and "business profits" must not be settled by majority: the first
+  // live eval had a 2-1 majority for business profits produce a confident nil rate on a contested case.
+  // Treat it as a make-available dispute even if the FTS voters said "no": narrowing that was tried and,
+  // rescored on recorded answers, made sg-monitoring-contested wrong and confident (all three models missed
+  // the knowledge sessions). Business profits is also kept as its own reading, because under a treaty with
+  // no make-available test (Germany) both make-available branches give 10% while business profits gives nil.
   const cats = new Set(v.map((x) => x.category));
   if (cats.has("fts") && cats.has("business_profits")) {
+    const fts = v.filter((x) => x.category === "fts");
     return {
-      category: "fts", makeAvailable: "contested", ancillaryTo: "none", peRisk: v.some((x) => x.pe_risk),
+      category: "fts", makeAvailable: "contested", ancillaryTo: majority(fts.map((x) => x.ancillary_to))[0],
+      altCategory: "business_profits", peRisk: v.some((x) => x.pe_risk),
       agreement: "flag", validVotes: v.length,
-      note: "The models split between technical services and business profits, which is a dispute about whether know-how is made available. Both outcomes are computed; a CA must choose.",
+      note: "The models split between technical services and business profits. Both readings are computed; if they lead to different tax, a CA must choose.",
     };
   }
 

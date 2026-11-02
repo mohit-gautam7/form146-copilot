@@ -92,6 +92,19 @@ test("A make-available dispute that cannot change the result is not escalated", 
   assert.equal(run({ trc: false, makeAvailable: "contested" }).ratePct, 20.8); // no TRC: Act rate either way
 });
 
+test("A category dissent is computed too, and escalated only if the tax differs", () => {
+  // Germany: technical services is 10%, business profits is nil. A real dispute: must go to the CA.
+  const de = run({ country: "DE", makeAvailable: "na", altCategory: "business_profits" });
+  assert.equal(de.status, "needs_ca");
+  assert.deepEqual(de.branches!.map((b) => b.result.ratePct), [10, 0]);
+  // UK: services that do not make know-how available are business profits anyway. Same tax: no escalation.
+  const uk = run({ country: "UK", makeAvailable: "no", altCategory: "business_profits" });
+  assert.equal(uk.status, "ok");
+  assert.equal(uk.ratePct, 0);
+  // Contested make-available plus a business-profits dissent: three readings, they differ.
+  assert.equal(run({ country: "SG", makeAvailable: "contested", altCategory: "business_profits" }).branches!.length, 3);
+});
+
 test("Stale rules make the engine refuse", () => {
   const r = run({}, "2028-01-01");
   assert.equal(r.status, "refused");

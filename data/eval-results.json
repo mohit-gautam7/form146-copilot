@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-11-02T11:30:57.674Z",
+ "generatedAt": "2026-11-02T12:23:46.657Z",
  "mode": "replay",
  "summary": {
   "cases": 17,
@@ -177,7 +177,7 @@
    "ai": {
     "agreement": "flag",
     "validVotes": 2,
-    "note": "The models split between technical services and business profits, which is a dispute about whether know-how is made available. Both outcomes are computed; a CA must choose.",
+    "note": "The models split between technical services and business profits. Both readings are computed; if they lead to different tax, a CA must choose.",
     "consensus": {
      "category": "fts",
      "makeAvailable": "contested",
@@ -326,7 +326,7 @@
    "ai": {
     "agreement": "flag",
     "validVotes": 3,
-    "note": "The models split between technical services and business profits, which is a dispute about whether know-how is made available. Both outcomes are computed; a CA must choose.",
+    "note": "The models split between technical services and business profits. Both readings are computed; if they lead to different tax, a CA must choose.",
     "consensus": {
      "category": "fts",
      "makeAvailable": "contested",

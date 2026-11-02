@@ -6,7 +6,7 @@
 //   full lane   = model consensus -> engine              (tests the AI + code)
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { evaluate } from "../lib/engine.ts";
-import { classify, PROVIDERS } from "../lib/llm.ts";
+import { classify, vote, PROVIDERS } from "../lib/llm.ts";
 import { toInput, treatyText, matches, type Case } from "../lib/pipeline.ts";
 
 const read = (p: string) => JSON.parse(readFileSync(new URL(`../${p}`, import.meta.url), "utf8"));
@@ -38,8 +38,8 @@ for (const c of cases) {
 
   let ai = null;
   if (rec) {
-    const k = rec.consensus;
-    const fullResult = evaluate(toInput(c.country, { category: k.category, makeAvailable: k.makeAvailable, ancillaryTo: k.ancillaryTo, peRisk: k.peRisk }, c.meta), rules, today);
+    const k = vote(rec.votes); // recorded model answers, current consensus code: a code fix is rescored on the same answers
+    const fullResult = evaluate(toInput(c.country, { category: k.category, makeAvailable: k.makeAvailable, ancillaryTo: k.ancillaryTo, peRisk: k.peRisk, altCategory: k.altCategory }, c.meta), rules, today);
     const fullDiffs = matches(fullResult, c.expected);
     ai = {
       agreement: k.agreement, validVotes: k.validVotes, note: k.note,

@@ -1,4 +1,4 @@
-import { classify, PROVIDERS } from "@/lib/llm.ts";
+import { classify, vote, PROVIDERS } from "@/lib/llm.ts";
 import { treatyText, type Article } from "@/lib/pipeline.ts";
 import treaties from "@/data/treaties.json";
 import rules from "@/data/rules.json";
@@ -29,7 +29,7 @@ export async function POST(req: Request) {
     const res = await classify({ country, contract, invoice, treatyText: treatyText(treaties.articles as Article[], country), treatyName: treaty.name });
     if (res.votes.some((v) => v.ok) || !isRecordedSample) return Response.json({ mode: "live", ...res });
   }
-  if (isRecordedSample) return Response.json({ mode: "replay", ...rec });
+  if (isRecordedSample) return Response.json({ mode: "replay", ...rec, consensus: vote(rec.votes) }); // same answers, current rules
   return Response.json({
     error: canGoLive
       ? "All three models failed. Check the provider keys and rate limits."

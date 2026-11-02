@@ -10,6 +10,7 @@ export type Input = {
   category: Category;
   makeAvailable: MakeAvailable;
   ancillaryTo: "none" | "ip" | "equipment";
+  altCategory?: Category; // a counted model's dissenting reading; escalated only if it changes the tax
   amountInr: number;
   paymentDate: string; // YYYY-MM-DD, date of remittance
   creditDate?: string; // date credited to the payee's account in the books, if earlier
@@ -50,12 +51,35 @@ const DAY = 86_400_000;
 const round2 = (n: number) => Math.round(n * 100) / 100;
 const round4 = (n: number) => Math.round(n * 10_000) / 10_000;
 
+const sameTax = (a: Result, b: Result) => a.status === b.status && a.basis === b.basis && a.ratePct === b.ratePct;
+const NAMES: Record<Category, string> = {
+  royalty_ip: "a royalty for IP", royalty_equipment: "a royalty for equipment", fts: "fees for technical services",
+  business_profits: "business profits", reimbursement: "a reimbursement", unclear: "unclear",
+};
+
 export function evaluate(input: Input, rules: Rules, today: string): Result {
+  // Models disagree on the category itself: compute every reading and escalate only if the tax differs.
+  if (input.altCategory && input.altCategory !== input.category) {
+    const main = evaluate({ ...input, altCategory: undefined }, rules, today);
+    const alt = evaluate({ ...input, category: input.altCategory, makeAvailable: "na", altCategory: undefined }, rules, today);
+    const readings = main.branches ?? [{ label: `If it is ${NAMES[input.category]}`, result: main }];
+    if (readings.every((b) => sameTax(b.result, alt))) {
+      main.trace.unshift({ label: "Dissent", detail: `A model read this as ${NAMES[input.altCategory]}. Both readings give the same result, so the dissent does not change the tax.` });
+      return main;
+    }
+    return {
+      ...main,
+      status: "needs_ca",
+      reasons: [`The models disagree between ${NAMES[input.category]} and ${NAMES[input.altCategory]}, and the readings give different tax. Each is computed; the CA must choose and record why.`],
+      branches: [...readings, { label: `If it is ${NAMES[input.altCategory]}`, result: alt }],
+    };
+  }
+
   if (input.makeAvailable === "contested" && input.category === "fts") {
     const yes = evaluate({ ...input, makeAvailable: "yes" }, rules, today);
     const no = evaluate({ ...input, makeAvailable: "no" }, rules, today);
     // A dispute that changes nothing needs no CA decision (e.g. Germany has no make-available test).
-    if (yes.status === no.status && yes.basis === no.basis && yes.ratePct === no.ratePct) {
+    if (sameTax(yes, no)) {
       yes.trace.unshift({ label: "Make available", detail: "The models dispute whether know-how is made available, but both readings give the same result here, so the dispute does not matter." });
       return yes;
     }

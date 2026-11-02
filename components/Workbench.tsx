@@ -68,7 +68,7 @@ export default function Workbench() {
       if (!res.ok) throw new Error(body.error ?? `HTTP ${res.status}`);
       setAi(body);
       const k = body.consensus as Consensus;
-      setChar({ category: k.category, makeAvailable: k.makeAvailable, ancillaryTo: k.ancillaryTo, peRisk: k.peRisk });
+      setChar({ category: k.category, makeAvailable: k.makeAvailable, ancillaryTo: k.ancillaryTo, peRisk: k.peRisk, altCategory: k.altCategory });
     } catch (e) {
       setAiError((e as Error).message);
     } finally {
@@ -94,7 +94,9 @@ export default function Workbench() {
   }
 
   const setM = <K extends keyof Meta>(key: K, v: Meta[K]) => setMeta((m) => ({ ...m, [key]: v }));
-  const setC = <K extends keyof Characterisation>(key: K, v: Characterisation[K]) => setChar((c) => ({ ...c, [key]: v }));
+  // Choosing the category is the CA settling the models' dissent, so it is dropped.
+  const setC = <K extends keyof Characterisation>(key: K, v: Characterisation[K]) =>
+    setChar((c) => ({ ...c, [key]: v, ...(key === "category" ? { altCategory: undefined } : {}) }));
 
   const steps = [
     { label: "Documents", done: contract.trim().length > 0 },

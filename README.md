@@ -80,7 +80,7 @@ All cases are synthetic: the companies, contracts and invoices are made up. The 
   | All 17, rescored from recordings after the fix run 3 found (what the site replays) | 12 / 17 | **0** | 7 / 6 / 4 |
 
   Every failure in run 2 went to the CA rather than producing a wrong rate:
-  - **uk-research-no-ma.** The models split between "technical services, no make-available" and "business profits". Both give a nil rate, but the dispute rule escalates the split anyway. This is the cost named in decision 007. A narrower rule (escalate only if some vote says know-how *is* or *may be* made available) would fix it, but it was found on these same 14 cases, so it needs fresh cases before it counts.
+  - **uk-research-no-ma.** The models split between "technical services, no make-available" and "business profits". Both give a nil rate, but the dispute rule escalates the split anyway. This is the cost named in decision 007. A narrower rule (escalate only if the readings give different tax) was tried and rescored on the recorded answers: it fixed this case but made sg-monitoring-contested wrong and confident, because all three models missed the knowledge sessions that make that case contested. The blunt rule stays.
   - **de-patent-old-act, sg-reimbursement, sg-design-no-pan.** These are quota failures, not judgement. The last cases ran after OpenRouter's free daily cap was hit and NVIDIA's models timed out, so only one vote per case had verified quotes. The fallback abstained instead of guessing.
   - The dispute rule was added after seeing run 1, on the same cases. Run 2 shows it fixes that case without making anything unsafe; it does not show the rule generalises.
 
