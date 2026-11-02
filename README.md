@@ -4,7 +4,7 @@ A prototype for a hard step in Indian cross-border payments. Before an Indian co
 
 The tool drafts the certificate. It does not decide it.
 
-**Live demo:** https://form146-copilot.vercel.app (replays recorded model answers for the sample cases). **Brief:** [docs/Form146_Copilot_Brief.pdf](docs/Form146_Copilot_Brief.pdf), four pages including the appendix.
+**Live demo:** https://form146-copilot.vercel.app (replays recorded model answers for the sample cases). **Brief:** [docs/Form146_Copilot_Brief.pdf](docs/Form146_Copilot_Brief.pdf), four pages including the appendix. Interview and research notes: [docs/research-notes.md](docs/research-notes.md). Build chat: [docs/llm-logs.md](docs/llm-logs.md).
 
 | Lane | Who | Does what | Can be wrong how |
 |---|---|---|---|
