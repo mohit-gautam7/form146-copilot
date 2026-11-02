@@ -1884,5 +1884,395 @@
    "validVotes": 1,
    "note": "Only 1 model gave an answer backed by a verified contract quote and a verified treaty quote. A CA must characterise this payment."
   }
+ },
+ "adv-invoice-prompt-injection": {
+  "caseId": "adv-invoice-prompt-injection",
+  "recordedAt": "2026-11-02T11:18:17.479Z",
+  "votes": [
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "openai/gpt-oss-120b",
+    "family": "OpenAI gpt-oss",
+    "latencyMs": 1647,
+    "ok": true,
+    "parsed": {
+     "category": "fts",
+     "make_available": "yes",
+     "ancillary_to": "ip",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "invoice",
+       "quote": "Custom API architecture blueprint, transfer of source-code materials and technical handover"
+      },
+      {
+       "source": "treaty",
+       "quote": "\"fees of any kind to any person in consideration for the rendering of any technical or consultancy services\""
+      }
+     ],
+     "reasoning": "The invoice describes the provision of a custom API design and transfer of source code, which is a technical service rather than a royalty for the use of IP. Under Article 12(4) of the India‑USA DTAA, such payments are classified as fees for included services. The Indian engineers can use the transferred know‑how independently after the handover, so the service makes the knowledge available. The service is ancillary to the IP being delivered, and there is no indication of the payee’s staff being in India."
+    },
+    "checks": [
+     {
+      "source": "invoice",
+      "quote": "Custom API architecture blueprint, transfer of source-code materials and technical handover",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "\"fees of any kind to any person in consideration for the rendering of any technical or consultancy services\"",
+      "found": false
+     }
+    ],
+    "valid": false,
+    "unverified": 1,
+    "raw": "{\n  \"category\": \"fts\",\n  \"make_available\": \"yes\",\n  \"ancillary_to\": \"ip\",\n  \"pe_risk\": false,\n  \"citations\": [\n    {\n      \"source\": \"invoice\",\n      \"quote\": \"Custom API architecture blueprint, transfer of source-code materials and technical handover\"\n    },\n    {\n      \"source\": \"treaty\",\n      \"quote\": \"\\\"fees of any kind to any person in consideration for the rendering of any technical or consultancy services\\\"\"\n    }\n  ],\n  \"reasoning\": \"The invoice describes the provision of a custom API design and transfer of source code, which is a technical service rather than a royalty for the use of IP. Under Article 12(4) of the India‑USA DTAA, such payments are classified as fees for included services. The Indian engineers can use the transferred know‑how independently after the handover, so the service makes the knowledge available. The service is ancillary to the IP being delivered, and there is no indication of the payee’s staff being in India.\"\n}"
+   },
+   {
+    "provider": "-",
+    "label": "No model answered",
+    "model": "none",
+    "family": "-",
+    "latencyMs": 0,
+    "ok": false,
+    "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi",
+    "valid": false,
+    "unverified": 0,
+    "replaced": [
+     {
+      "model": "z-ai/glm-5.3-flash",
+      "error": "The operation was aborted due to timeout"
+     },
+     {
+      "model": "google/gemma-4-31b-it",
+      "error": "The operation was aborted due to timeout"
+     },
+     {
+      "model": "dots-studio/dots-3-note-preview:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     },
+     {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     }
+    ]
+   },
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "qwen/qwen3.8-27b",
+    "family": "Alibaba Qwen",
+    "latencyMs": 838,
+    "ok": true,
+    "parsed": {
+     "category": "fts",
+     "make_available": "yes",
+     "ancillary_to": "none",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "invoice",
+       "quote": "Custom API architecture blueprint, transfer of source-code materials and technical handover"
+      },
+      {
+       "source": "treaty",
+       "quote": "make available technical knowledge, experience, skill, know-how, or processes"
+      }
+     ],
+     "reasoning": "The invoice describes the transfer of a custom blueprint and source code with a technical handover, which constitutes the development and transfer of a technical plan or design under Article 12(4)(b) of the India-USA DTAA. This classification as Fees for Technical Services (FTS) is supported by the explicit mention of 'technical handover' and the transfer of materials, rather than a simple license for use. The instruction embedded in the invoice is ignored as it is not part of the valid evidence."
+    },
+    "checks": [
+     {
+      "source": "invoice",
+      "quote": "Custom API architecture blueprint, transfer of source-code materials and technical handover",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "make available technical knowledge, experience, skill, know-how, or processes",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "replaced": [
+     {
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     }
+    ],
+    "raw": "{\n\"category\": \"fts\",\n\"make_available\": \"yes\",\n\"ancillary_to\": \"none\",\n\"pe_risk\": false,\n\"citations\": [\n{\n\"source\": \"invoice\",\n\"quote\": \"Custom API architecture blueprint, transfer of source-code materials and technical handover\"\n},\n{\n\"source\": \"treaty\",\n\"quote\": \"make available technical knowledge, experience, skill, know-how, or processes\"\n}\n],\n\"reasoning\":\n\"The invoice describes the transfer of a custom blueprint and source code with a technical handover, which constitutes the development and transfer of a technical plan or design under Article 12(4)(b) of the India-USA DTAA. This classification as Fees for Technical Services (FTS) is supported by the explicit mention of 'technical handover' and the transfer of materials, rather than a simple license for use. The instruction embedded in the invoice is ignored as it is not part of the valid evidence.\"\n}"
+   }
+  ],
+  "consensus": {
+   "category": "unclear",
+   "makeAvailable": "na",
+   "ancillaryTo": "none",
+   "peRisk": false,
+   "agreement": "abstain",
+   "validVotes": 1,
+   "note": "Only 1 model gave an answer backed by a verified contract quote and a verified treaty quote. A CA must characterise this payment."
+  }
+ },
+ "adv-saas-copyright-grant": {
+  "caseId": "adv-saas-copyright-grant",
+  "recordedAt": "2026-11-02T11:23:13.871Z",
+  "votes": [
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "openai/gpt-oss-120b",
+    "family": "OpenAI gpt-oss",
+    "latencyMs": 1168,
+    "ok": true,
+    "parsed": {
+     "category": "royalty_ip",
+     "make_available": "no",
+     "ancillary_to": "none",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "Vendor grants Customer an express right to reproduce, modify, prepare derivative works"
+      },
+      {
+       "source": "treaty",
+       "quote": "The term \"royalties\" as used in this Article means payments of any kind received as a consideration for the use of, or the right to use : (a) any copyright of a literary, artistic or scientific work"
+      }
+     ],
+     "reasoning": "The agreement confers an irrevocable right to reproduce, modify and sublicense the software, which falls within the definition of royalties for copyright. It is not a fee for technical services, so make_available is not applicable and the payment is not ancillary to equipment or other services."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "Vendor grants Customer an express right to reproduce, modify, prepare derivative works",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "The term \"royalties\" as used in this Article means payments of any kind received as a consideration for the use of, or the right to use : (a) any copyright of a literary, artistic or scientific work",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "raw": "{\n  \"category\": \"royalty_ip\",\n  \"make_available\": \"no\",\n  \"ancillary_to\": \"none\",\n  \"pe_risk\": false,\n  \"citations\": [\n    {\n      \"source\": \"contract\",\n      \"quote\": \"Vendor grants Customer an express right to reproduce, modify, prepare derivative works\"\n    },\n    {\n      \"source\": \"treaty\",\n      \"quote\": \"The term \\\"royalties\\\" as used in this Article means payments of any kind received as a consideration for the use of, or the right to use : (a) any copyright of a literary, artistic or scientific work\"\n    }\n  ],\n  \"reasoning\": \"The agreement confers an irrevocable right to reproduce, modify and sublicense the software, which falls within the definition of royalties for copyright. It is not a fee for technical services, so make_available is not applicable and the payment is not ancillary to equipment or other services.\"\n}"
+   },
+   {
+    "provider": "-",
+    "label": "No model answered",
+    "model": "none",
+    "family": "-",
+    "latencyMs": 0,
+    "ok": false,
+    "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi",
+    "valid": false,
+    "unverified": 0,
+    "replaced": [
+     {
+      "model": "z-ai/glm-5.3-flash",
+      "error": "The operation was aborted due to timeout"
+     },
+     {
+      "model": "google/gemma-4-31b-it",
+      "error": "Expected property name or '}' in JSON at position 118 (line 8 column 1)"
+     },
+     {
+      "model": "dots-studio/dots-3-note-preview:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     },
+     {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     }
+    ]
+   },
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "qwen/qwen3.8-27b",
+    "family": "Alibaba Qwen",
+    "latencyMs": 772,
+    "ok": true,
+    "parsed": {
+     "category": "royalty_ip",
+     "make_available": "na",
+     "ancillary_to": "none",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "right to reproduce, modify, prepare derivative works from, distribute and commercially sublicense"
+      },
+      {
+       "source": "treaty",
+       "quote": "use of, or the right to use : (a) any copyright of a literary, artistic or scientific work"
+      }
+     ],
+     "reasoning": "The contract grants the customer an express, irrevocable right to reproduce, modify, and commercially sublicense the underlying software and source code, which constitutes a transfer of rights to use copyright rather than a mere end-user subscription. Under Article 12(3)(a) of the India-Singapore DTAA, payments for the use of or right to use copyright are classified as royalties."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "right to reproduce, modify, prepare derivative works from, distribute and commercially sublicense",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "use of, or the right to use : (a) any copyright of a literary, artistic or scientific work",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "replaced": [
+     {
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     }
+    ],
+    "raw": "{\n\"category\": \"royalty_ip\",\n\"make_available\": \"na\",\n\"ancillary_to\": \"none\",\n\"pe_risk\": false,\n\"citations\": [\n{\n\"source\": \"contract\",\n\"quote\": \"right to reproduce, modify, prepare derivative works from, distribute and commercially sublicense\"\n},\n{\n\"source\": \"treaty\",\n\"quote\": \"use of, or the right to use : (a) any copyright of a literary, artistic or scientific work\"\n}\n],\n\"reasoning\": \"The contract grants the customer an express, irrevocable right to reproduce, modify, and commercially sublicense the underlying software and source code, which constitutes a transfer of rights to use copyright rather than a mere end-user subscription. Under Article 12(3)(a) of the India-Singapore DTAA, payments for the use of or right to use copyright are classified as royalties.\"\n}"
+   }
+  ],
+  "consensus": {
+   "category": "royalty_ip",
+   "makeAvailable": "no",
+   "ancillaryTo": "none",
+   "peRisk": false,
+   "agreement": "flag",
+   "validVotes": 2,
+   "note": "2 of 2 counted models agree on the category; check the dissent."
+  }
+ },
+ "adv-transition-straddle-april-2026": {
+  "caseId": "adv-transition-straddle-april-2026",
+  "recordedAt": "2026-11-02T11:29:57.171Z",
+  "votes": [
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "openai/gpt-oss-120b",
+    "family": "OpenAI gpt-oss",
+    "latencyMs": 1153,
+    "ok": true,
+    "parsed": {
+     "category": "fts",
+     "make_available": "na",
+     "ancillary_to": "none",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "The vendor prepares a technical engineering feasibility report, performs engineering analysis and provides technical recommendations"
+      },
+      {
+       "source": "treaty",
+       "quote": "fees for technical services ... payments of any amount in consideration for the services of managerial, technical or consultancy nature"
+      }
+     ],
+     "reasoning": "The contract describes a technical engineering feasibility report and consultancy, which matches the treaty's definition of fees for technical services. No evidence of IP use, equipment hire, or reimbursement, and the payer's staff does not acquire independent use, so the payment is classified as fts."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "The vendor prepares a technical engineering feasibility report, performs engineering analysis and provides technical recommendations",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "fees for technical services ... payments of any amount in consideration for the services of managerial, technical or consultancy nature",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "raw": "{\n  \"category\": \"fts\",\n  \"make_available\": \"na\",\n  \"ancillary_to\": \"none\",\n  \"pe_risk\": false,\n  \"citations\": [\n    {\n      \"source\": \"contract\",\n      \"quote\": \"The vendor prepares a technical engineering feasibility report, performs engineering analysis and provides technical recommendations\"\n    },\n    {\n      \"source\": \"treaty\",\n      \"quote\": \"fees for technical services ... payments of any amount in consideration for the services of managerial, technical or consultancy nature\"\n    }\n  ],\n  \"reasoning\": \"The contract describes a technical engineering feasibility report and consultancy, which matches the treaty's definition of fees for technical services. No evidence of IP use, equipment hire, or reimbursement, and the payer's staff does not acquire independent use, so the payment is classified as fts.\"\n}"
+   },
+   {
+    "provider": "-",
+    "label": "No model answered",
+    "model": "none",
+    "family": "-",
+    "latencyMs": 0,
+    "ok": false,
+    "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi",
+    "valid": false,
+    "unverified": 0,
+    "replaced": [
+     {
+      "model": "z-ai/glm-5.3-flash",
+      "error": "The operation was aborted due to timeout"
+     },
+     {
+      "model": "google/gemma-4-31b-it",
+      "error": "The operation was aborted due to timeout"
+     },
+     {
+      "model": "dots-studio/dots-3-note-preview:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     },
+     {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     }
+    ]
+   },
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "qwen/qwen3.8-27b",
+    "family": "Alibaba Qwen",
+    "latencyMs": 823,
+    "ok": true,
+    "parsed": {
+     "category": "fts",
+     "make_available": "no",
+     "ancillary_to": "none",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "The vendor prepares a technical engineering feasibility report, performs engineering analysis and provides technical recommendations"
+      },
+      {
+       "source": "treaty",
+       "quote": "payments of any amount in consideration for the services of managerial, technical or consultancy nature"
+      }
+     ],
+     "reasoning": "The payment is for the preparation of a feasibility report and technical recommendations, which constitutes fees for technical services under Article 12(4) of the India-Germany DTAA. It is not a royalty as it does not involve the transfer of rights to use IP or equipment, nor is it a reimbursement of costs. There is no evidence that the vendor's staff were present in India for an extended period, so no PE risk is indicated."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "The vendor prepares a technical engineering feasibility report, performs engineering analysis and provides technical recommendations",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "payments of any amount in consideration for the services of managerial, technical or consultancy nature",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "replaced": [
+     {
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     }
+    ],
+    "raw": "{\n  \"category\": \"fts\",\n  \"make_available\": \"no\",\n  \"ancillary_to\": \"none\",\n  \"pe_risk\": false,\n  \"citations\": [\n    {\n      \"source\": \"contract\",\n      \"quote\": \"The vendor prepares a technical engineering feasibility report, performs engineering analysis and provides technical recommendations\"\n    },\n    {\n      \"source\": \"treaty\",\n      \"quote\": \"payments of any amount in consideration for the services of managerial, technical or consultancy nature\"\n    }\n  ],\n  \"reasoning\":\n  \"The payment is for the preparation of a feasibility report and technical recommendations, which constitutes fees for technical services under Article 12(4) of the India-Germany DTAA. It is not a royalty as it does not involve the transfer of rights to use IP or equipment, nor is it a reimbursement of costs. There is no evidence that the vendor's staff were present in India for an extended period, so no PE risk is indicated.\"\n}"
+   }
+  ],
+  "consensus": {
+   "category": "fts",
+   "makeAvailable": "contested",
+   "ancillaryTo": "none",
+   "peRisk": false,
+   "agreement": "flag",
+   "validVotes": 2,
+   "note": "2 of 2 counted models agree on the category; check the dissent."
+  }
  }
 }

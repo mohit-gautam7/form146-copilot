@@ -1,5 +1,6 @@
-# 008 The governing Act is chosen by payment date
-**Context.** A payment on 20 March 2026 is still under section 195 and Form 15CB. The same invoice paid on 2 April 2026 falls under section 393(2) and Form 146.
-**Decision.** The engine selects the Act rule by payment date, not by today's date or the invoice date.
-**Why.** Transition-period remittances are where templates break: in 2026 many firms will still copy last year's 15CB wording. The test case de-patent-old-act pins this down.
-**Open question for a practitioner.** Is the trigger the date of payment or the date of credit, whichever is earlier? Secondary sources say "earlier of credit or payment". The prototype only takes one date. See YOUR-INPUT.md.
+# 008 The governing Act follows the earlier of credit and payment; the forms follow the payment date
+**Context.** A payment on 20 March 2026 is still under section 195 and Form 15CB. The same invoice paid on 2 April 2026 falls under section 393(2) and Form 146. The harder case is an amount credited in the books in March and wired in April.
+**Decision.** Two dates, two questions. The Act that governs TDS is chosen by the earlier of credit and payment. The remittance forms (145/146, or 15CA/15CB) are chosen by the payment date. Treaty-claim information follows the TDS Act: Form 10F under the 1961 Act, Form 41 under the 2025 Act.
+**Why.** The Income Tax Department's TDS FAQ (question 1) says the governing Act "depends on when the 'earlier of the event of credit or payment' occurs". Its forms FAQ (question 24) says the procedural forms follow the law in force on the date of remittance. The first version of this decision used the payment date for both and left credit-versus-payment as an open question; the official FAQs answered it.
+**Tests.** de-patent-old-act (paid in March: 1961 Act, Form 15CB) and adv-transition-straddle-april-2026 (credited 25 March, paid 9 April: 1961 Act for TDS, Form 146 for the remittance).
+**Still open.** Which treaty-claim form to ask for in a straddle case. The engine asks for Form 10F because TDS is under the 1961 Act; a practitioner should confirm.

@@ -1,5 +1,5 @@
 // Run: npm run eval            (live if any API key is set in .env.local, else replays recordings)
-//      npm run eval -- --only <case-id>   (one case; rewrites eval-results.json with just that case)
+//      npm run eval -- --only <id,id>   (just those cases; rewrites eval-results.json with only them)
 //      npm run eval -- --replay (never call the models)
 // Scores two lanes separately so a failure can be blamed on the right part:
 //   rules lane  = gold characterisation -> engine        (tests the code)
@@ -11,8 +11,8 @@ import { toInput, treatyText, matches, type Case } from "../lib/pipeline.ts";
 
 const read = (p: string) => JSON.parse(readFileSync(new URL(`../${p}`, import.meta.url), "utf8"));
 const rules = read("data/rules.json");
-const only = process.argv.includes("--only") ? process.argv[process.argv.indexOf("--only") + 1] : null; // npm run eval -- --only us-saas
-const cases: Case[] = read("data/cases.json").filter((c: Case) => !only || c.id === only);
+const only = process.argv.includes("--only") ? process.argv[process.argv.indexOf("--only") + 1].split(",") : null; // --only us-saas,de-mgmt-fee
+const cases: Case[] = read("data/cases.json").filter((c: Case) => !only || only.includes(c.id));
 const { articles } = read("data/treaties.json");
 const today = new Date().toISOString().slice(0, 10);
 const recPath = new URL("../data/recordings.json", import.meta.url);

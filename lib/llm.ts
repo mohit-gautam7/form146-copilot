@@ -175,11 +175,22 @@ export async function classify(d: CaseDocs, env: Record<string, string | undefin
     }
     if (!replaced.length) return null;
     const last = replaced[replaced.length - 1];
-    return { provider: "-", label: "No model available", model: last.model, family: "-", latencyMs: 0, ok: false, error: last.error, valid: false, unverified: 0, replaced };
+    return { provider: "-", label: "No model answered", model: "none", family: "-", latencyMs: 0, ok: false, error: last.error, valid: false, unverified: 0, replaced };
   }
 
   const votes = (await Promise.all(Array.from({ length: VOTERS }, slot))).filter((v): v is Vote => v !== null);
   return { votes, consensus: vote(votes) };
+}
+
+// Short reason for a model that could not answer, for the UI. The raw error stays in the record for audit.
+export function unavailable(error = ""): string {
+  if (/per-day|per day/i.test(error)) return "daily free quota used up";
+  if (/429|rate limit/i.test(error)) return "rate limited";
+  if (/(404|410)/.test(error)) return "model retired or not found";
+  if (/(401|403)/.test(error)) return "key rejected";
+  if (/timeout|timed out|aborted/i.test(error)) return "timed out";
+  if (/5\d\d/.test(error)) return "provider error";
+  return "no usable answer";
 }
 
 const majority = <T,>(xs: T[]) => {

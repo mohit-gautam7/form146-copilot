@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowRight, Check, FileText, Loader2, RefreshCw, Sparkles, X } from "lucide-react";
 import { evaluate, type Country } from "@/lib/engine.ts";
 import { toInput, COUNTRIES, type Case, type Characterisation, type Meta } from "@/lib/pipeline.ts";
-import { MODELS, type Consensus, type Vote } from "@/lib/llm.ts";
+import { MODELS, unavailable, type Consensus, type Vote } from "@/lib/llm.ts";
 import { append, type Entry } from "@/lib/audit.ts";
 import { LaneColumn, Pill, ResultBlock, Trace, Stamp, CATEGORY, MAKE_AVAILABLE, ANCILLARY } from "./ui";
 import { motion, AnimatePresence } from "./motion";
@@ -185,16 +185,19 @@ export default function Workbench() {
                 <option value="non_company">Not a company</option>
               </select>
             </label>
-            <label className="flex flex-col gap-1">Amount (INR)
+            <label className="col-span-2 flex flex-col gap-1">Amount (INR)
               <input type="number" min={0} value={meta.amountInr} onChange={(e) => setM("amountInr", Number(e.target.value))} />
             </label>
             <label className="flex flex-col gap-1">Payment date
               <input type="date" value={meta.paymentDate} onChange={(e) => setM("paymentDate", e.target.value)} />
             </label>
+            <label className="flex flex-col gap-1">Credited in books (if earlier)
+              <input type="date" value={meta.creditDate ?? ""} onChange={(e) => setM("creditDate", e.target.value || undefined)} />
+            </label>
           </div>
           {([
             ["trc", "Tax residency certificate on file"],
-            ["form10f", "Form 10F on file"],
+            ["form10f", "Form 41 on file (Form 10F under the 1961 Act)"],
             ["noPeDeclaration", "No-PE declaration from payee"],
             ["pan", "Payee has a PAN"],
             ["nrDetailsFurnished", "Payee gave TIN, address and email (no-PAN carve-out)"],
@@ -332,13 +335,28 @@ function AiPanel({ ai }: { ai: NonNullable<AiState> }) {
       <ul className="space-y-2">
         {ai.votes.map((v, i) => (
           <motion.li key={i} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.12 }} className="rounded-xl border border-line p-3">
-            <div className="flex flex-wrap items-center justify-between gap-1">
-              <span className="font-semibold">{v.family ?? v.label}</span>
-              <span className="text-xs text-muted">{v.label} / {(v.latencyMs / 1000).toFixed(1)}s</span>
-            </div>
-            <p className="text-xs text-muted">{v.model}</p>
-            {v.replaced && <p className="mt-1 text-xs text-warn">Stood in for {v.replaced.map((r) => r.model).join(", ")} (unavailable)</p>}
-            {!v.ok && <p className="text-ca">Failed: {v.error}</p>}
+            {v.ok ? (
+              <>
+                <div className="flex flex-wrap items-center justify-between gap-1">
+                  <span className="font-semibold">{v.family ?? v.label}</span>
+                  <span className="text-xs text-muted">{v.label} / {(v.latencyMs / 1000).toFixed(1)}s</span>
+                </div>
+                <p className="text-xs text-muted">{v.model}</p>
+                {v.replaced && <p className="mt-1 text-xs text-warn">Fallback: stood in for {v.replaced.map((r) => `${r.model} (${unavailable(r.error)})`).join(", ")}</p>}
+              </>
+            ) : (
+              <>
+                <div className="flex flex-wrap items-center justify-between gap-1">
+                  <span className="font-semibold">No model answered</span>
+                  <Pill tone="warn">not counted</Pill>
+                </div>
+                <p className="mt-1 text-muted">Every fallback for this seat was unavailable, so it casts no vote. This is an outage, not a judgement.</p>
+                <ul className="mt-1 text-xs text-muted">
+                  {(v.replaced ?? []).map((r, j) => <li key={j}>{r.model}: <span className="text-warn">{unavailable(r.error)}</span></li>)}
+                </ul>
+                <details className="mt-1 text-xs text-muted"><summary className="cursor-pointer">Raw error</summary><p className="break-all">{v.error}</p></details>
+              </>
+            )}
             {v.parsed && (
               <>
                 <p className="mt-1">

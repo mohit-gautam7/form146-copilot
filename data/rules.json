@@ -45,16 +45,19 @@
     { "id": "NL-all", "country": "NL", "category": "*", "rate": 10, "para": "12(2)", "source_quote": "the tax so charged shall not exceed 10 per cent of the gross amount of the royalties or the fees for technical services", "source_url": "https://wm.incometaxindia.gov.in/w/netherlands-comprehensive-agreements-1", "effective_to": null, "last_verified": "2026-11-02", "verified": true }
   ],
   "act": [
-    { "id": "act-1961", "act": "Income-tax Act, 1961", "section": "195 (rate via 115A)", "form_declaration": "15CA", "form_certificate": "15CB", "effective_from": null, "effective_to": "2026-03-31", "rate": 20, "source_quote": "Royalty ... I-T Act 20% / Fee for Technical Services ... I-T Act 20%", "source_url": "https://wm.incometaxindia.gov.in/w/%E2%80%8Btax-rates-dtaa-v.-income-tax-act", "last_verified": "2026-11-02", "verified": true },
-    { "id": "act-2025", "act": "Income-tax Act, 2025", "section": "393(2), Table Sl. No. 17", "form_declaration": "145", "form_certificate": "146", "effective_from": "2026-04-01", "effective_to": null, "rate": 20, "source_quote": "Section 195 of the 1961 Act continues to govern payments and credits up to 31 March 2026 ... the governing provision is Section 393 (2), Table Sl. No. 17", "source_url": "https://eximpe.com/blog/payments/section-195-tds-non-residents-section-393", "last_verified": "2026-11-02", "verified": false, "_note": "Section mapping and form numbers confirmed by several secondary sources; the 20% rate carried over from the CBDT table, which still cites the 1961 Act. Not yet checked against the 2025 Act's rate schedule." }
+    { "id": "act-1961", "act": "Income-tax Act, 1961", "section": "195 (rate via 115A)", "form_declaration": "15CA", "form_certificate": "15CB", "form_treaty_info": "10F", "effective_from": null, "effective_to": "2026-03-31", "rate": 20, "source_quote": "Royalty ... I-T Act 20% / Fee for Technical Services ... I-T Act 20%", "source_url": "https://wm.incometaxindia.gov.in/w/%E2%80%8Btax-rates-dtaa-v.-income-tax-act", "last_verified": "2026-11-02", "verified": true },
+    { "id": "act-2025", "act": "Income-tax Act, 2025", "section": "393(2), Table Sl. No. 17", "form_declaration": "145", "form_certificate": "146", "form_treaty_info": "41", "effective_from": "2026-04-01", "effective_to": null, "rate": 20, "source_quote": "393(2)[Table: Sl. Nos. 7, 8, 9 and 17] ... on income by way of fees for technical services ... 20%", "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2026-03/Finance_Bill.pdf", "forms_source": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/income-tax-forms", "certificate_note": "Not needed if the remitter has an AO certificate under section 395 (Form 145 Part B).", "last_verified": "2026-11-02", "verified": true, "_note": "Rate checked in the Finance Bill 2026 (as introduced), First Schedule Part II, company other than a domestic company: royalty and FTS both 20%. Forms 145/146 (FAQ 20-27) and Form 41 (user manual, section 159) checked on the Income Tax Department site. Compare with the enacted Finance Act 2026." }
   ],
+  "tds_trigger_source": "https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/%20tds%20compliance-faq",
+  "tds_trigger_quote": "The Act governing TDS depends on when the \"earlier of the event of credit or payment\" occurs.",
   "surcharge": {
     "company": [ { "above": 10000000, "pct": 2 }, { "above": 100000000, "pct": 5 } ],
     "non_company": [ { "above": 5000000, "pct": 10 }, { "above": 10000000, "pct": 15 }, { "above": 20000000, "pct": 25 }, { "above": 50000000, "pct": 37 } ],
     "cess_pct": 4,
-    "source_url": "https://www.incometax.gov.in/iec/foportal/help/company/return-applicable-0",
-    "last_verified": "2026-11-02", "verified": false,
-    "_note": "Slabs from memory of the Finance Act First Schedule, not checked this session. Applied only when the Act rate is used."
+    "source_url": "https://www.incometax.gov.in/iec/foportal/sites/default/files/2026-03/Finance_Bill.pdf",
+    "source_quote": "Every company, other than a domestic company. (i) Where the income or the aggregate of such incomes paid or likely to be paid and subject to the deduction exceeds ₹ 10000000 but does not exceed ₹ 100000000, at the rate of 2%",
+    "last_verified": "2026-11-02", "verified": true,
+    "_note": "Checked in the Finance Bill 2026 (as introduced), First Schedule Part II: foreign company 2%/5%; individuals and other non-company non-residents 10/15/25/37% on income other than dividends and capital gains; cess 4% on tax plus surcharge. Not modelled: non-resident firms (12% above Rs 1 crore), co-operatives, AOPs of companies. The slab test is on the year's aggregate paid or likely to be paid, not one payment. Applied only when the Act rate is used."
   },
   "treaty_rate_is_final": {
     "last_verified": "2026-11-02", "verified": false,

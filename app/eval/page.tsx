@@ -1,5 +1,6 @@
 import results from "@/data/eval-results.json";
 import { Pill, CATEGORY } from "@/components/ui";
+import { unavailable } from "@/lib/llm.ts";
 
 type CaseRow = {
   id: string; title: string; country: string; trap: string;
@@ -104,9 +105,15 @@ export default function Eval() {
                 <td className="p-2 text-xs">
                   {c.ai?.votes.map((v, i) => (
                     <div key={i} title={v.error ?? v.model}>
-                      <span className="font-semibold">{v.family ?? v.provider}</span>: {v.ok ? `${v.category ?? "?"}${v.valid ? "" : " (not counted)"}${v.badQuotes ? `, ${v.badQuotes} quote${v.badQuotes === 1 ? "" : "s"} not found` : ""}` : "failed"}{" "}
-                      <span className="text-muted">{(v.latencyMs / 1000).toFixed(1)}s</span>
-                      {v.replaced?.length ? <span className="block text-warn">stood in for {v.replaced.join(", ")}</span> : null}
+                      {v.ok ? (
+                        <>
+                          <span className="font-semibold">{v.family ?? v.provider}</span>: {`${v.category ?? "?"}${v.valid ? "" : " (not counted)"}${v.badQuotes ? `, ${v.badQuotes} quote${v.badQuotes === 1 ? "" : "s"} not found` : ""}`}{" "}
+                          <span className="text-muted">{(v.latencyMs / 1000).toFixed(1)}s</span>
+                          {v.replaced?.length ? <span className="block text-warn">stood in for {v.replaced.join(", ")}</span> : null}
+                        </>
+                      ) : (
+                        <span className="text-warn">No model answered ({unavailable(v.error)}); tried {v.replaced?.join(", ")}</span>
+                      )}
                     </div>
                   )) ?? "-"}
                 </td>

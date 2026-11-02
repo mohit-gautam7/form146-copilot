@@ -52,6 +52,15 @@ test("Payment before 1 Apr 2026 uses the 1961 Act and Form 15CB", () => {
   assert.equal(r.certificateForm, "Form 15CB");
 });
 
+test("Credited in March, paid in April: 1961 Act for TDS, but Form 146 for the remittance", () => {
+  const r = run({ creditDate: "2026-03-25", paymentDate: "2026-04-09" });
+  assert.equal(r.status, "ok");
+  assert.equal(r.act, "Income-tax Act, 1961");
+  assert.equal(r.certificateForm, "Form 146");
+  assert.match(r.trace.map((s) => s.detail).join(" "), /Form 10F/); // treaty-claim form of the 1961 Act
+  assert.match(run({}).trace.map((s) => s.detail).join(" "), /Form 41/);
+});
+
 test("Gross-up when the payer bears the tax", () => {
   const r = run({ country: "SG", taxBorneByPayer: true, amountInr: 900_000 });
   assert.equal(r.grossInr, 1_000_000);
@@ -73,6 +82,14 @@ test("Contested make-available returns both branches and asks the CA", () => {
   const r = run({ makeAvailable: "contested" });
   assert.equal(r.status, "needs_ca");
   assert.deepEqual(r.branches!.map((b) => b.result.ratePct), [15, 0]);
+});
+
+test("A make-available dispute that cannot change the result is not escalated", () => {
+  const de = run({ country: "DE", makeAvailable: "contested" }); // Germany has no make-available test
+  assert.equal(de.status, "ok");
+  assert.equal(de.ratePct, 10);
+  assert.equal(de.branches, undefined);
+  assert.equal(run({ trc: false, makeAvailable: "contested" }).ratePct, 20.8); // no TRC: Act rate either way
 });
 
 test("Stale rules make the engine refuse", () => {

@@ -7,7 +7,7 @@ Find one chartered accountant who certifies foreign remittances. Ask, and write 
 - Which part takes longest: reading the contract, the treaty, chasing TRC/10F, or the portal?
 - Tell me about the last one you got wrong, or nearly got wrong. What caught it?
 - What changed for you on 1 April 2026? Have you seen 15CB wording copied into a 146?
-- Is the trigger date the date of payment or credit, whichever is earlier? (See decision 008.)
+- Credit in March, payment in April 2026: how do you handle it in practice? (The official FAQ answers the law, see decision 008; ask what firms actually do, and which treaty form they ask for.)
 - Would you sign a certificate a tool drafted? What would you need to see first?
 - Do you add surcharge and cess on a treaty rate? (Rule treaty_rate_is_final is unverified.)
 
@@ -17,11 +17,11 @@ Answers:
 ## 2. Verify three rules yourself
 Open data/rules.json. Pick three treaty rates, open the source URL, find the quoted words, and confirm the rate. Then close one unverified rule (for example the surcharge slabs) from a primary source and set verified to true.
 Which rules, and what you found:
-- ...
+- Status: the submission pack's rule check was merged on 2 November 2026. The surcharge slabs and the 2025 Act rate are now verified against the Finance Bill 2026 (quotes in rules.json). The three treaty rates matched what was already there. To make this yours, open the sources and find the quoted words yourself.
 
 ## 3. Write three cases designed to break it
 Add three cases to data/cases.json with authoredBy set to "you". Aim them at the weak points in threat-model.md: an injection line in an invoice, a SaaS contract that does grant copy rights, a payment-versus-credit date across 1 April 2026. Run npm run eval and record what happened.
-- ...
+- Done from your submission pack: adv-invoice-prompt-injection, adv-saas-copyright-grant, adv-transition-straddle-april-2026. Results are in the README and data/eval-history/. Be ready to explain each one: the logs show they arrived as a pack.
 
 ## 4. Appendix, in your words
 - Where AI helped (with two or three of your actual prompts):
@@ -39,5 +39,7 @@ These happened in the build chat and are in your logs. Check each one yourself b
 5. **Reasoning models returned nothing.** GLM, Nemotron and dots spent the whole 1,200-token budget thinking and wrote no JSON. Fixed with per-model token budgets.
 6. **The eval found a real "wrong and confident" case**, and it was a design gap, not a model error. On sg-monitoring-contested the models split 2-1 between "business profits" and "technical services, contested". The majority produced a nil rate shown as Computed. A new rule now treats that split as a make-available dispute (decision 007). The first run is kept in data/eval-history/ so the before and after are both visible.
 7. **A process bug in the build tooling.** Stopping an eval on Windows killed the shell but not the Node process under it. It kept running old code and overwrote the recorded answers, so the run had to be repeated. Lesson: check what is actually running before trusting a results file.
+8. **Free-tier quota ran out mid-run.** In run 2 OpenRouter's free cap of 50 requests a day was used up and NVIDIA's models timed out, so the last three cases abstained. Safe, but the score dropped for reasons that have nothing to do with judgement.
+9. **An outage looked like a vote.** The workbench showed a raw HTTP 429 JSON blob and listed the failed model as standing in for itself. Now it says "No model answered" with a short reason, and keeps the raw error behind a toggle.
 
 Question worth answering yourself: the vote reduces random error, but what would catch all three models sharing the same wrong idea?

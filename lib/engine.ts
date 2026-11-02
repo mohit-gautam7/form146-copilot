@@ -11,10 +11,11 @@ export type Input = {
   makeAvailable: MakeAvailable;
   ancillaryTo: "none" | "ip" | "equipment";
   amountInr: number;
-  paymentDate: string; // YYYY-MM-DD
+  paymentDate: string; // YYYY-MM-DD, date of remittance
+  creditDate?: string; // date credited to the payee's account in the books, if earlier
   payeeType: "company" | "non_company";
   trc: boolean;
-  form10f: boolean;
+  form10f: boolean; // Form 10F (1961 Act) or Form 41 (2025 Act): the treaty-claim information form
   noPeDeclaration: boolean;
   pan: boolean;
   nrDetailsFurnished: boolean; // name, email, address, TRC, foreign TIN (no-PAN carve-out)
@@ -53,6 +54,11 @@ export function evaluate(input: Input, rules: Rules, today: string): Result {
   if (input.makeAvailable === "contested" && input.category === "fts") {
     const yes = evaluate({ ...input, makeAvailable: "yes" }, rules, today);
     const no = evaluate({ ...input, makeAvailable: "no" }, rules, today);
+    // A dispute that changes nothing needs no CA decision (e.g. Germany has no make-available test).
+    if (yes.status === no.status && yes.basis === no.basis && yes.ratePct === no.ratePct) {
+      yes.trace.unshift({ label: "Make available", detail: "The models dispute whether know-how is made available, but both readings give the same result here, so the dispute does not matter." });
+      return yes;
+    }
     return {
       ...yes,
       status: "needs_ca",
@@ -76,10 +82,14 @@ export function evaluate(input: Input, rules: Rules, today: string): Result {
     r.reasons.push(reason);
     return r;
   };
+  // TDS law follows the earlier of credit and payment; the remittance forms follow the payment date.
+  const trigger = input.creditDate && input.creditDate < input.paymentDate ? input.creditDate : input.paymentDate;
+  const inForce = (a: any, d: string) => (!a.effective_from || d >= a.effective_from) && (!a.effective_to || d <= a.effective_to);
+
   // Every rule passes through here: out of window or too old => the engine refuses rather than guess.
   const checkRule = (rule: { id: string; last_verified: string; verified: boolean; effective_to?: string | null; effective_from?: string | null }) => {
-    if (rule.effective_from && input.paymentDate < rule.effective_from) return `${rule.id} not yet in force on ${input.paymentDate}`;
-    if (rule.effective_to && input.paymentDate > rule.effective_to) return `${rule.id} expired on ${rule.effective_to}`;
+    if (rule.effective_from && trigger < rule.effective_from) return `${rule.id} not yet in force on ${trigger}`;
+    if (rule.effective_to && trigger > rule.effective_to) return `${rule.id} expired on ${rule.effective_to}`;
     const age = (Date.parse(today) - Date.parse(rule.last_verified)) / DAY;
     if (age > rules.max_age_days) return `${rule.id} last verified ${rule.last_verified}, older than ${rules.max_age_days} days`;
     r.ruleIds.push(rule.id);
@@ -87,16 +97,18 @@ export function evaluate(input: Input, rules: Rules, today: string): Result {
     return null;
   };
 
-  // 1. Which Act governs: decided by payment date, not by today's date.
-  const act = rules.act.find((a: any) =>
-    (!a.effective_from || input.paymentDate >= a.effective_from) && (!a.effective_to || input.paymentDate <= a.effective_to));
-  if (!act) return stop("refused", `No Act rule covers payment date ${input.paymentDate}.`);
+  // 1. Which Act governs TDS: the earlier of credit and payment, not today's date (CBDT TDS FAQ 1).
+  const act = rules.act.find((a: any) => inForce(a, trigger));
+  if (!act) return stop("refused", `No Act rule covers ${trigger}.`);
   const actErr = checkRule(act);
   if (actErr) return stop("refused", `Stale rule: ${actErr}.`);
+  // Forms follow the law in force on the remittance date (CBDT forms FAQ 24), even if TDS stays under the old Act.
+  const forms = rules.act.find((a: any) => inForce(a, input.paymentDate)) ?? act;
   r.act = act.act;
   r.section = act.section;
-  r.certificateForm = `Form ${act.form_certificate}`;
-  step("Governing law", `${act.act}, section ${act.section}; certificate in Form ${act.form_certificate}.`, act.source_url, act.verified);
+  r.certificateForm = `Form ${forms.form_certificate}`;
+  step("Governing law", `${act.act}, section ${act.section}: TDS was triggered on ${trigger}, the earlier of credit and payment.`, rules.tds_trigger_source, true);
+  step("Remittance forms", `Paid on ${input.paymentDate}: Form ${forms.form_declaration} declaration, Form ${forms.form_certificate} CA certificate.${forms !== act ? ` The forms follow the remittance date even though TDS stays under the ${act.act}.` : ""}`, forms.forms_source ?? act.source_url, forms.verified);
 
   // 2. Questions the engine will not answer.
   if (input.category === "unclear") return stop("needs_ca", "The nature of the payment is unclear. A CA must characterise it first.");
@@ -115,9 +127,10 @@ export function evaluate(input: Input, rules: Rules, today: string): Result {
 
   const t = rules.treaties[input.country];
   const treatyEligible = input.trc && input.form10f;
+  const infoForm = `Form ${act.form_treaty_info}`;
   step("Treaty documents", treatyEligible
-    ? "TRC and Form 10F are on file, so treaty benefit is available."
-    : `Missing ${[!input.trc && "TRC", !input.form10f && "Form 10F"].filter(Boolean).join(" and ")}. Treaty benefit is denied and the Act rate applies.`);
+    ? `TRC and ${infoForm} are on file, so treaty benefit is available.`
+    : `Missing ${[!input.trc && "TRC", !input.form10f && infoForm].filter(Boolean).join(" and ")}. Treaty benefit is denied and the Act rate applies.`);
 
   // 3. Treaty characterisation: the same service can be FTS under one treaty and business profits under another.
   let treatyCat: string = input.category;
@@ -153,7 +166,8 @@ export function evaluate(input: Input, rules: Rules, today: string): Result {
     rate = actRate;
     r.basis = "act";
     r.article = null;
-    step("Act rate", `${act.rate}% + surcharge ${surchargePct}% + cess ${sc.cess_pct}% = ${actRate}%.`, sc.source_url, sc.verified);
+    // ponytail: slab tested on this payment alone; the law uses the year's aggregate paid or likely to be paid.
+    step("Act rate", `${act.rate}% + surcharge ${surchargePct}% + cess ${sc.cess_pct}% = ${actRate}%. Surcharge slab tested on this payment; check the year's aggregate to this payee.`, sc.source_url, sc.verified);
   } else if (treatyCat === "business_profits") {
     if (!input.noPeDeclaration) return stop("needs_ca", "Not taxable as business profits only if there is no PE. Get the payee's no-PE declaration first.");
     r.basis = "not_taxable";
@@ -217,7 +231,7 @@ export function evaluate(input: Input, rules: Rules, today: string): Result {
   // ponytail: per-remittance check; the real test is the payee's aggregate for the year. Needs a payment ledger.
   r.form146Required = input.amountInr > rules.form146_threshold_inr;
   step("Certificate", r.form146Required
-    ? `${r.certificateForm} (CA certificate) required: taxable and above Rs ${rules.form146_threshold_inr}.`
+    ? `${r.certificateForm} (CA certificate) required: taxable and above Rs ${rules.form146_threshold_inr}.${forms.certificate_note ? " " + forms.certificate_note : ""}`
     : `At or below Rs ${rules.form146_threshold_inr}: no CA certificate, file the declaration only.`, rules.form146_threshold_source, true);
   return r;
 }
