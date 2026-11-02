@@ -1,7 +1,8 @@
-# 003 Three different model families vote
+# 003 Three different model families vote, with backups
 **Context.** A single model's confidence score is not calibrated, and asking it to check itself mostly confirms its first answer.
 **Options.** One model plus self-critique; one model sampled three times; three model families.
-**Decision.** Groq (gpt-oss-120b), NVIDIA NIM (Llama 3.3 70B) and OpenRouter (Gemma), run in parallel. Unanimous means "agree", two of three means "majority only" (the CA is shown the dissent), anything less means abstain.
-**Why.** Disagreement between independently trained models is a cheap, honest uncertainty signal. It costs three free-tier calls, and the latency is the slowest model's, not the sum.
+**Decision.** Three voters from different families: OpenAI gpt-oss-120b on Groq, Zhipu GLM-5.3 Flash on NVIDIA NIM, NVIDIA Nemotron 3 Ultra on OpenRouter (free tier). Unanimous with every quote found means "agree", two of three means "majority only" (the CA is shown the dissent), anything less means abstain.
+**Fallback.** Free tiers churn. When a voter is unavailable (no key, retired model, rate limit after retries, broken JSON), the next backup from a family not already voting takes the seat: Qwen on Groq, Gemma on NIM, dots on OpenRouter, and so on (lib/llm.ts, MODELS). Rate limits are retried first, honouring the provider's Retry-After. A model that answers with bad quotes is not replaced: that would be shopping for a model that agrees.
+**What happened on the first live run (2 Nov 2026).** All 14 cases abstained. NIM had retired Llama 3.3 on 26 Aug 2026 (HTTP 410), free Gemma on OpenRouter was rate-limited upstream (429), and Groq's free tier allows 8,000 tokens a minute, about two of these calls. Nothing was wrong with the models' answers; the plumbing had no plan B. That is why the fallback chain exists.
 **Known limit.** Correlated error: all three may share the same misconception (see threat model). The vote reduces random error, not shared bias.
 **Would change if** a labelled set of a few hundred real CA decisions existed. Then a single model calibrated on that set may beat the vote.

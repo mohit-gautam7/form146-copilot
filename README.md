@@ -21,22 +21,23 @@ npm run dev                  # http://localhost:3000
 ```
 
 ```bash
-npm test          # rules engine: 13 tests, no network
+npm test          # engine, citation check and model fallback: no network
 npm run eval      # scores all 14 cases; calls the models if keys are set and records their answers
 npm run eval -- --replay   # rescore from recorded answers without calling anyone
 ```
 
 `npm run fetch-treaties` (needs Python and `pymupdf`) re-downloads the treaty texts from the IRS, GOV.UK and CBDT and rebuilds `data/treaties.json`.
 
-## Models used
+## Models used, and fallback
 
-| Provider | Default model | Env var |
-|---|---|---|
-| Groq | `openai/gpt-oss-120b` | `GROQ_API_KEY`, `GROQ_MODEL` |
-| NVIDIA NIM | `meta/llama-3.3-70b-instruct` | `NVIDIA_API_KEY`, `NVIDIA_MODEL` |
-| OpenRouter (free tier) | `google/gemma-4-31b-it:free` | `OPENROUTER_API_KEY`, `OPENROUTER_MODEL` |
+| Seat | Provider | Model | Family |
+|---|---|---|---|
+| Voter 1 | Groq | `openai/gpt-oss-120b` | OpenAI gpt-oss |
+| Voter 2 | NVIDIA NIM | `z-ai/glm-5.3-flash` | Zhipu GLM |
+| Voter 3 | OpenRouter (free) | `nvidia/nemotron-3-ultra-550b-a55b:free` | NVIDIA Nemotron |
+| Backups, in order | Groq / NIM / OpenRouter | `qwen/qwen3.8-27b`, `google/gemma-4-31b-it`, `dots-studio/dots-3-note-preview:free`, ... | |
 
-Free-tier model IDs change. The model that actually answered is recorded with every vote in `data/recordings.json` and shown on the Evaluation page.
+If a voter is unavailable (missing key, retired model, rate limit after retries, unparseable reply), the next backup from a family that is not already voting takes the seat. The vote records which model stood in for which, and the workbench and evaluation pages show it. The list lives in `lib/llm.ts` (`MODELS`); `lib/llm.test.ts` tests the fallback with a mocked network. Free-tier catalogues change often: on 2 November 2026 NIM had retired Llama 3.3 and OpenRouter's free Gemma was rate-limited upstream.
 
 **Public deployment:** leave `ALLOW_LIVE` unset. Visitors then see recorded model answers for the sample cases and cannot spend your quota. Edited text is never answered from the cache.
 

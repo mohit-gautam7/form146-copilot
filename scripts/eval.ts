@@ -1,4 +1,5 @@
 // Run: npm run eval            (live if any API key is set in .env.local, else replays recordings)
+//      npm run eval -- --only <case-id>   (one case; rewrites eval-results.json with just that case)
 //      npm run eval -- --replay (never call the models)
 // Scores two lanes separately so a failure can be blamed on the right part:
 //   rules lane  = gold characterisation -> engine        (tests the code)
@@ -10,13 +11,14 @@ import { toInput, treatyText, matches, type Case } from "../lib/pipeline.ts";
 
 const read = (p: string) => JSON.parse(readFileSync(new URL(`../${p}`, import.meta.url), "utf8"));
 const rules = read("data/rules.json");
-const cases: Case[] = read("data/cases.json");
+const only = process.argv.includes("--only") ? process.argv[process.argv.indexOf("--only") + 1] : null; // npm run eval -- --only us-saas
+const cases: Case[] = read("data/cases.json").filter((c: Case) => !only || c.id === only);
 const { articles } = read("data/treaties.json");
 const today = new Date().toISOString().slice(0, 10);
 const recPath = new URL("../data/recordings.json", import.meta.url);
 const recordings: Record<string, any> = existsSync(recPath) ? JSON.parse(readFileSync(recPath, "utf8")) : {};
 
-const live = !process.argv.includes("--replay") && PROVIDERS.some((p) => process.env[p.keyEnv]);
+const live = !process.argv.includes("--replay") && Object.values(PROVIDERS).some((p) => process.env[p.keyEnv]);
 console.log(live ? "Live run: calling the models." : "Replay run: using recorded model answers.");
 
 const out = [];
@@ -27,11 +29,11 @@ for (const c of cases) {
   let rec = recordings[c.id] ?? null;
   if (live) {
     const treaty = rules.treaties[c.country];
-    const res = await classify({ country: c.country, contract: c.contract, invoice: c.invoice, treatyText: treatyText(articles, c.country), treatyName: treaty.name });
+    const res = await classify({ country: c.country, contract: c.contract, invoice: c.invoice, treatyText: treatyText(articles, c.country), treatyName: treaty.name }, process.env, { retries: 4, timeoutMs: 150_000 });
     rec = { caseId: c.id, recordedAt: new Date().toISOString(), ...res };
     recordings[c.id] = rec;
     writeFileSync(recPath, JSON.stringify(recordings, null, 1)); // save as we go: free tiers die mid-run
-    await new Promise((r) => setTimeout(r, 2500)); // be polite to free tiers
+    await new Promise((r) => setTimeout(r, 20_000)); // Groq free tier: 8k tokens/min, about 2 calls a minute
   }
 
   let ai = null;
@@ -49,9 +51,10 @@ for (const c of cases) {
       pass: fullDiffs.length === 0,
       diffs: fullDiffs,
       votes: rec.votes.map((v: any) => ({
-        provider: v.provider, model: v.model, ok: v.ok, valid: v.valid, latencyMs: v.latencyMs, error: v.error?.slice(0, 160),
+        provider: v.provider, model: v.model, family: v.family, ok: v.ok, valid: v.valid, latencyMs: v.latencyMs, error: v.error?.slice(0, 160),
         category: v.parsed?.category, makeAvailable: v.parsed?.make_available,
         badQuotes: (v.checks ?? []).filter((x: any) => !x.found).length,
+        replaced: (v.replaced ?? []).map((r: any) => r.model),
       })),
     };
   }

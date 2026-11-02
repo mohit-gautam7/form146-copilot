@@ -29,4 +29,13 @@ Add three cases to data/cases.json with authoredBy set to "you". Aim them at the
 - What came from you:
 - One thing you would defend live with no tools:
 
-A correction already found while building, which you can check and use: the plan assumed the India-Netherlands treaty had no "make available" test, which would make it a trap case. The CBDT text shows Article 12(5) already includes it, inserted by Notification SO 693(E) of 30 August 1999 under the MFN protocol. The Netherlands case was changed to equipment hire, because the Dutch royalty definition does not include equipment. Verify this yourself before you cite it.
+## Things that went wrong while building (raw material, not your appendix)
+These happened in the build chat and are in your logs. Check each one yourself before you cite it, and say in your own words what you would have done differently.
+
+1. **An AI assumption corrected by a primary source.** The plan assumed the India-Netherlands treaty had no "make available" test, which would make it a trap case. The CBDT text shows Article 12(5) already includes it, inserted by Notification SO 693(E) of 30 August 1999 under the MFN protocol. The Netherlands case became equipment hire instead, because the Dutch royalty definition does not include equipment.
+2. **A test that was wrong, not the code.** The first engine test expected 21.216% for a Rs 20 lakh payment with no TRC. The engine said 20.8%, which is right: surcharge starts above Rs 1 crore. The test was fixed, and a second case above Rs 1 crore was added.
+3. **The first live run abstained on all 14 cases**, and none of it was the models' judgement. NVIDIA NIM had retired Llama 3.3 (HTTP 410), OpenRouter's free Gemma was rate-limited upstream (429), and Groq's free tier allows about two of these calls a minute. Free-tier models change without notice; that is why the fallback chain exists (decision 003).
+4. **A safety rule that was too strict.** "One unfound quote voids the vote" threw away correct answers for slips: a non-breaking hyphen, an ellipsis joining two real passages, "that" instead of "which". The rule was revised to require at least one verified document quote and one verified treaty quote, with any unfound quote shown in red (decision 004). Is that the right trade? You decide.
+5. **Reasoning models returned nothing.** GLM, Nemotron and dots spent the whole 1,200-token budget thinking and wrote no JSON. Fixed with per-model token budgets.
+
+Question worth answering yourself: the vote reduces random error, but what would catch all three models sharing the same wrong idea?

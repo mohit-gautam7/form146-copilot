@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Public_Sans, Newsreader } from "next/font/google";
+import Nav from "@/components/Nav";
 import "./globals.css";
 
 const ui = Public_Sans({ subsets: ["latin"], variable: "--font-ui" });
@@ -11,35 +11,26 @@ export const metadata: Metadata = {
   description: "Drafts the treaty characterisation and withholding rate for payments to non-residents under India's Income-tax Act, 2025. A chartered accountant decides and signs.",
 };
 
-const NAV = [
-  ["/", "Workbench"],
-  ["/review", "Review log"],
-  ["/eval", "Evaluation"],
-  ["/rules", "Rules"],
-  ["/treaties", "Treaties"],
-  ["/design", "Design notes"],
-];
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={`${ui.variable} ${source.variable} antialiased`}>
-        <header className="no-print border-b border-line bg-sheet">
-          <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-x-8 gap-y-2 px-4 py-3">
-            <Link href="/" className="flex items-baseline gap-2">
-              <span className="text-lg font-bold tracking-tight">Form 146 Copilot</span>
-              <span className="text-sm text-muted">payments to non-residents, India</span>
-            </Link>
-            <nav aria-label="Main" className="flex flex-wrap gap-x-5 gap-y-1 text-sm">
-              {NAV.map(([href, label]) => (
-                <Link key={href} href={href} className="text-muted hover:text-ink">{label}</Link>
-              ))}
-            </nav>
-          </div>
-        </header>
+        <Nav />
         <main className="mx-auto max-w-7xl px-4 py-6">{children}</main>
-        <footer className="no-print mx-auto max-w-7xl px-4 pb-8 text-xs text-muted">
-          Prototype for a take-home assignment. All cases are synthetic. This drafts; it does not advise. The chartered accountant who signs Form 146 is accountable for it.
+        <footer className="no-print border-t border-line">
+          <div className="mx-auto flex max-w-7xl flex-wrap justify-between gap-4 px-4 py-8 text-xs text-muted">
+            <p className="max-w-xl">
+              Prototype for a take-home assignment. All cases are synthetic; treaty texts are from official sources. This drafts, it does not advise:
+              the chartered accountant who signs Form 146 is accountable for it.
+            </p>
+            <p>
+              Photos on Unsplash by{" "}
+              <a className="underline" href="https://unsplash.com/photos/OQMZwNd3ThU">Scott Graham</a>,{" "}
+              <a className="underline" href="https://unsplash.com/photos/vr6nMSlyTJs">Previn Samuel</a>,{" "}
+              <a className="underline" href="https://unsplash.com/photos/sWOvgOOFk1g">Timelab</a> and{" "}
+              <a className="underline" href="https://unsplash.com/photos/7PMGUqYQpYc">Markus Spiske</a>. Flags from flagcdn.com.
+            </p>
+          </div>
         </footer>
       </body>
     </html>

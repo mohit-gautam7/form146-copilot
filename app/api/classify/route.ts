@@ -5,7 +5,7 @@ import rules from "@/data/rules.json";
 import recordings from "@/data/recordings.json";
 import cases from "@/data/cases.json";
 
-export const maxDuration = 90;
+export const maxDuration = 300; // slow free-tier models plus fallbacks
 
 const MAX_CHARS = 12_000;
 
@@ -24,7 +24,7 @@ export async function POST(req: Request) {
   const isRecordedSample = !!rec && sample?.contract === contract && sample?.invoice === invoice;
 
   // Live calls spend the deployer's quota, so a public deployment must opt in with ALLOW_LIVE=1.
-  const canGoLive = process.env.ALLOW_LIVE === "1" && PROVIDERS.some((p) => process.env[p.keyEnv]);
+  const canGoLive = process.env.ALLOW_LIVE === "1" && Object.values(PROVIDERS).some((p) => process.env[p.keyEnv]);
   if (canGoLive) {
     const res = await classify({ country, contract, invoice, treatyText: treatyText(treaties.articles as Article[], country), treatyName: treaty.name });
     if (res.votes.some((v) => v.ok) || !isRecordedSample) return Response.json({ mode: "live", ...res });

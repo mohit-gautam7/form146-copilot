@@ -21,7 +21,7 @@ function Form146() {
   useEffect(() => setE(load().find((x) => x.seq === seq) ?? null), [seq]);
 
   if (e === undefined) return null;
-  if (!e) return <p className="text-muted">No signed entry {seq} in this browser. Sign a case in the <Link className="underline" href="/">Workbench</Link> first.</p>;
+  if (!e) return <p className="text-muted">No signed entry {seq} in this browser. Sign a case in the <Link className="underline" href="/workbench">Workbench</Link> first.</p>;
 
   const i = e.input as Input & { remitter: string; beneficiary: string };
   const r = e.result as Result;
@@ -48,7 +48,7 @@ function Form146() {
   ];
 
   return (
-    <article className="mx-auto max-w-3xl rounded-lg border border-line bg-sheet p-6 print:border-0 print:p-0">
+    <article className="mx-auto max-w-3xl rounded-2xl border border-line bg-sheet p-6 print:border-0 print:p-0">
       <div className="no-print mb-4 flex justify-between text-sm">
         <Link className="underline" href="/review">Back to review log</Link>
         <button onClick={() => window.print()} className="rounded-md border border-line px-3 py-1">Print or save as PDF</button>

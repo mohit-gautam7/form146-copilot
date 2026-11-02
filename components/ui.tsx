@@ -1,3 +1,4 @@
+import { Calculator, Sparkles, Stamp as StampIcon } from "lucide-react";
 import type { Result, Step } from "@/lib/engine.ts";
 
 export const CATEGORY: Record<string, string> = {
@@ -12,19 +13,27 @@ export const MAKE_AVAILABLE: Record<string, string> = { yes: "Yes", no: "No", co
 export const ANCILLARY: Record<string, string> = { none: "Not ancillary", ip: "Ancillary to licensed IP", equipment: "Ancillary to hired equipment" };
 
 type Lane = "ai" | "rules" | "ca";
-const LANE: Record<Lane, { name: string; who: string; bar: string; wash: string; text: string }> = {
-  ai: { name: "AI lane", who: "Three models characterise the payment. Probabilistic.", bar: "border-ai", wash: "bg-ai-wash", text: "text-ai" },
-  rules: { name: "Rules lane", who: "Code applies treaty and Act. Exact and repeatable.", bar: "border-rules", wash: "bg-rules-wash", text: "text-rules" },
-  ca: { name: "CA lane", who: "A chartered accountant decides and signs. Accountable.", bar: "border-ca", wash: "bg-ca-wash", text: "text-ca" },
+const LANE: Record<Lane, { name: string; who: string; icon: typeof Sparkles; color: string; wash: string; tag: string }> = {
+  ai: { name: "AI lane", who: "Three model families characterise the payment and quote their evidence.", icon: Sparkles, color: "var(--ai)", wash: "var(--ai-wash)", tag: "Probabilistic" },
+  rules: { name: "Rules lane", who: "Code applies the Act and the treaty. Same input, same answer.", icon: Calculator, color: "var(--rules)", wash: "var(--rules-wash)", tag: "Exact" },
+  ca: { name: "CA lane", who: "A chartered accountant decides and signs.", icon: StampIcon, color: "var(--ca)", wash: "var(--ca-wash)", tag: "Accountable" },
 };
 
 export function LaneColumn({ lane, children }: { lane: Lane; children: React.ReactNode }) {
   const l = LANE[lane];
   return (
-    <section aria-label={l.name} className={`rounded-lg border-t-4 ${l.bar} bg-sheet p-4 shadow-[0_1px_0_var(--line)]`}>
-      <h2 className={`text-base font-bold ${l.text}`}>{l.name}</h2>
-      <p className="mb-4 text-sm text-muted">{l.who}</p>
-      {children}
+    <section aria-label={l.name} className="relative overflow-hidden rounded-3xl border border-line bg-sheet p-5 shadow-sm">
+      <div className="absolute inset-x-0 top-0 h-1.5" style={{ background: l.color }} />
+      <div className="flex items-start gap-3">
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl" style={{ background: l.wash, color: l.color }}><l.icon size={18} aria-hidden /></span>
+        <div>
+          <h2 className="flex items-center gap-2 text-base font-bold" style={{ color: l.color }}>{l.name}
+            <span className="rounded-full px-2 py-0.5 text-[11px] font-semibold" style={{ background: l.wash }}>{l.tag}</span>
+          </h2>
+          <p className="text-sm text-muted">{l.who}</p>
+        </div>
+      </div>
+      <div className="mt-4">{children}</div>
     </section>
   );
 }

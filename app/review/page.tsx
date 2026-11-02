@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import signing from "@/public/photos/signing.webp";
 import { load, save, verify, type Entry } from "@/lib/audit.ts";
 import { Pill, CATEGORY, inr } from "@/components/ui";
 
@@ -52,7 +54,7 @@ export default function Review() {
   return (
     <div className="space-y-5">
       <div>
-        <h1 className="text-2xl font-bold tracking-tight">Review log</h1>
+        <h1 className="text-3xl font-extrabold tracking-tight">Review log</h1>
         <p className="max-w-prose text-muted">
           Every sign-off and send-back is appended here with the facts, the models&apos; answer and the engine output at that moment.
           Each entry carries the hash of the one before it, so a changed or deleted entry is detectable. Stored in this browser only.
@@ -73,11 +75,16 @@ export default function Review() {
       {note && <p className="text-sm text-muted">{note}</p>}
 
       {!log.length ? (
-        <p className="rounded-lg border border-dashed border-line p-8 text-center text-muted">
-          Nothing signed yet. Open the <Link href="/" className="underline">Workbench</Link>, run a case and sign it.
-        </p>
+        <div className="grid overflow-hidden rounded-3xl border border-line bg-sheet sm:grid-cols-[1fr_1.2fr]">
+          <Image src={signing} alt="A hand signing a document with a fountain pen" sizes="(min-width: 640px) 40vw, 100vw" placeholder="blur" className="h-56 w-full object-cover sm:h-full" />
+          <div className="p-8">
+            <p className="text-lg font-semibold">Nothing signed yet</p>
+            <p className="mt-1 text-muted">Open the workbench, run a case and sign it. Every sign-off and send-back lands here, chained to the one before.</p>
+            <Link href="/workbench" className="mt-4 inline-flex rounded-full bg-ink px-5 py-2.5 font-semibold text-paper">Open the workbench</Link>
+          </div>
+        </div>
       ) : (
-        <div className="overflow-x-auto rounded-lg border border-line bg-sheet">
+        <div className="overflow-x-auto rounded-2xl border border-line bg-sheet">
           <table className="w-full text-left text-sm">
             <thead className="border-b border-line text-muted">
               <tr>

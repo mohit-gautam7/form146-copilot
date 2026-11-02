@@ -51,9 +51,9 @@ function Diagram() {
         <rect className={box} x="185" y="60" width="220" height="80" rx="6" />
         <text x="197" y="84">Groq / NVIDIA NIM / OpenRouter</text>
         <text x="197" y="103" fill="var(--muted)">classify only, never a rate</text>
-        <text x="197" y="122" fill="var(--muted)">three model families, in parallel</text>
+        <text x="197" y="122" fill="var(--muted)">3 families; backups if one is down</text>
         <rect className={box} x="185" y="160" width="220" height="56" rx="6" />
-        <text x="197" y="184">Citation check (code)</text><text x="197" y="202" fill="var(--muted)">invented quote voids the vote</text>
+        <text x="197" y="184">Citation check (code)</text><text x="197" y="202" fill="var(--muted)">counts only with verified quotes</text>
         <rect className={box} x="185" y="236" width="220" height="64" rx="6" />
         <text x="197" y="260">Vote: agree / majority / abstain</text><text x="197" y="279" fill="var(--muted)">split on &ldquo;make available&rdquo; = contested</text>
 
@@ -95,19 +95,20 @@ export default function Design() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-2xl font-bold tracking-tight">Design notes</h1>
+        <h1 className="text-3xl font-extrabold tracking-tight">Design notes</h1>
         <p className="max-w-prose text-muted">Why the system is shaped this way, what was rejected, and where it is weakest. The same files live in <code>docs/</code> in the repository.</p>
       </div>
-      <section className="overflow-x-auto rounded-lg border border-line bg-sheet p-4">
+      <section className="overflow-x-auto rounded-2xl border border-line bg-sheet p-4">
         <h2 className="mb-2 font-semibold">Where the AI acts and where the human acts</h2>
         <Diagram />
       </section>
       <section className="space-y-4">
         <h2 className="text-xl font-bold">Decisions</h2>
-        {decisions.map((f) => <article key={f} className="rounded-lg border border-line bg-sheet p-4"><Md src={read(`decisions/${f}`)} /></article>)}
+        {decisions.map((f) => <article key={f} className="rounded-2xl border border-line bg-sheet p-4"><Md src={read(`decisions/${f}`)} /></article>)}
       </section>
-      <section className="rounded-lg border border-line bg-sheet p-4"><Md src={read("threat-model.md")} /></section>
-      <section className="rounded-lg border border-line bg-sheet p-4"><Md src={read("jurisdiction-delta.md")} /></section>
+      <section className="rounded-2xl border border-line bg-sheet p-4"><Md src={read("threat-model.md")} /></section>
+      <section className="rounded-2xl border border-line bg-sheet p-4"><Md src={read("jurisdiction-delta.md")} /></section>
+      <section className="rounded-2xl border border-line bg-sheet p-4"><Md src={read("design-direction.md")} /></section>
     </div>
   );
 }

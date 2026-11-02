@@ -25,7 +25,7 @@ export default function Rules() {
   return (
     <div className="space-y-5">
       <div>
-        <h1 className="text-2xl font-bold tracking-tight">Rules and their freshness</h1>
+        <h1 className="text-3xl font-extrabold tracking-tight">Rules and their freshness</h1>
         <p className="max-w-prose text-muted">
           Every number the engine uses is here, with the words it was checked against. A rule older than {R.max_age_days} days, or outside its
           dates, makes the engine refuse instead of guessing. Unverified rules still run, but every result that touches them says so.
@@ -35,7 +35,7 @@ export default function Rules() {
         {unverified.length} of {rows.length} rules are not yet verified against a primary source: {unverified.map((u) => u.id).join(", ")}.
         Closing these is the first job before anyone relies on the output.
       </p>
-      <div className="overflow-x-auto rounded-lg border border-line bg-sheet">
+      <div className="overflow-x-auto rounded-2xl border border-line bg-sheet">
         <table className="w-full text-left text-sm">
           <thead className="border-b border-line text-muted">
             <tr><th className="p-2">Rule</th><th className="p-2">Value</th><th className="p-2">Status</th><th className="p-2">Checked against</th></tr>
