@@ -61,7 +61,7 @@
   },
   "treaty_rate_is_final": {
     "last_verified": "2026-11-02", "verified": false,
-    "_note": "Practitioner position (ITAT line of cases): a treaty rate is not loaded with surcharge and cess. Treated as a rule but flagged."
+    "_note": "Practitioner position (ITAT line of cases), and the practice of the CA interviewed for this project: a treaty rate is not loaded with surcharge and cess. Not a statute, so still flagged."
   },
   "no_pan": {
     "rate": 20, "section_1961": "206AA", "section_2025": "397(2)",

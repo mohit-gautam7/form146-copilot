@@ -11,8 +11,12 @@ Find one chartered accountant who certifies foreign remittances. Ask, and write 
 - Would you sign a certificate a tool drafted? What would you need to see first?
 - Do you add surcharge and cess on a treaty rate? (Rule treaty_rate_is_final is unverified.)
 
-Answers:
-- ...
+Answers (interview done; full record in the submission's answers document):
+- 25-40 Form 15CB/146 certificates a month. Repeat vendor 30-45 minutes; new bespoke contract 2-4 hours active; 2-5 days elapsed when documents are missing.
+- Active time: reading the contract and SOW. Elapsed time: chasing TRC, Form 41, beneficial-owner and no-PE declarations.
+- Near miss: a UK "Annual Platform Subscription" whose SOW included custom API architecture and training on proprietary code; the SOW, not the invoice label, raised the make-available question.
+- Would not sign a drafted certificate blindly: needs clause-level evidence, the exact article and notification, TRC/Form 41, beneficial ownership and PE position, and a reproducible calculation.
+- Treaty rate applied as the ceiling, without surcharge and cess; surcharge and cess only on the Act rate.
 
 ## 2. Verify three rules yourself
 Open data/rules.json. Pick three treaty rates, open the source URL, find the quoted words, and confirm the rate. Then close one unverified rule (for example the surcharge slabs) from a primary source and set verified to true.
@@ -24,6 +28,7 @@ Add three cases to data/cases.json with authoredBy set to "you". Aim them at the
 - Done from your submission pack: adv-invoice-prompt-injection, adv-saas-copyright-grant, adv-transition-straddle-april-2026. Results are in the README and data/eval-history/. Be ready to explain each one: the logs show they arrived as a pack.
 
 ## 4. Appendix, in your words
+Written: the one-page appendix in docs/Form146_Copilot_Brief.pdf.
 - Where AI helped (with two or three of your actual prompts):
 - What you rejected or corrected, and how you knew:
 - What came from you:

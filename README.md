@@ -4,6 +4,8 @@ A prototype for a hard step in Indian cross-border payments. Before an Indian co
 
 The tool drafts the certificate. It does not decide it.
 
+**Live demo:** https://form146-copilot.vercel.app (replays recorded model answers for the sample cases). **Brief:** [docs/Form146_Copilot_Brief.pdf](docs/Form146_Copilot_Brief.pdf), four pages including the appendix.
+
 | Lane | Who | Does what | Can be wrong how |
 |---|---|---|---|
 | AI | Groq, NVIDIA NIM, OpenRouter (three model families) | Characterise the payment from the contract and invoice, with quotes | Probabilistic; checked by citation matching and a vote |
