@@ -1467,3 +1467,165 @@ is there any improvement possible then add that improvement and give me updated 
 
 - `Write C:\Users\mohit\AppData\Local\Temp\claude\C--Users-mohit-Desktop-Tresta\c33f1fe0-8f25-4948-b022-9130983325c3\scratchpad\export_log.py`
 - `Bash Export logs, render annex PDF, scan for secrets`
+
+**Assistant:** Two lines matched my secret scan. Checking them:
+
+- `Bash Show the scan matches`
+
+**Assistant:** Both are just placeholder text from my setup instructions (`nvapi-...`), not real keys. Checking how the annex looks:
+
+- `Read C:\Users\mohit\AppData\Local\Temp\claude\C--Users-mohit-Desktop-Tresta\c33f1fe0-8f25-4948-b022-9130983325c3\scratchpad\annex1.png`
+- `Write C:\Users\mohit\AppData\Local\Temp\claude\C--Users-mohit-Desktop-Tresta\c33f1fe0-8f25-4948-b022-9130983325c3\scratchpad\build_pdf.py`
+- `Bash Build Annex A and merge the single submission PDF`
+- `Read C:\Users\mohit\AppData\Local\Temp\claude\C--Users-mohit-Desktop-Tresta\c33f1fe0-8f25-4948-b022-9130983325c3\scratchpad\annexA.png`
+- `Bash Relabel annexes and rebuild the single PDF`
+- `Bash Update repo docs and rebuild the final folder`
+- `Bash Link notes and logs in README, commit and push`
+- `SendUserFile`
+
+**Assistant:** Yes, those two fields are all the form has, so I rebuilt everything around them. You now upload **one PDF** and paste **one link**.
+
+**What goes in the form:**
+
+| Field | What to put |
+|---|---|
+| **Solution PDF** | `C:\Users\mohit\Desktop\Tresta\FINAL_SUBMISSION\Form146_Copilot_Solution.pdf` (28 pages, 0.5 MB, under the 10 MB limit) |
+| **Github Repo Link** | `https://github.com/mohit-gautam7/form146-copilot`, once the repo is public |
+
+**Inside the PDF:**
+- **Pages 1–3:** the brief.
+- **Page 4:** the one-page appendix.
+- **Page 5:** Annex A, your CA interview.
+- **Pages 6–28:** Annex B, the full chat log with me.
+
+The brief plus appendix is 4 pages; the two annexes are extra, and the brief says so. I put the logs in the PDF because the form has no other place to upload them. The live site link is in the PDF header.
+
+**Improvements I made:**
+
+1. **I fixed a safety bug I had introduced earlier.** If the models disagreed between "technical services" and "business profits" under the Germany treaty, the tool could show 10% as final while one model's reading meant nil. Now that reading is calculated too, and if the results differ the case goes to the CA. A test covers it.
+2. **I tried to fix the over-cautious UK case, and rejected the fix.** Re-scored against the saved model answers, it would have made the Singapore "contested" case wrong and confident. All three models had misread that case the same way, so only the stricter rule catches it. I kept the stricter rule. This is now in the brief as evidence for its "weakest point": models that agree can be wrong together.
+3. **Replays now use the current code.** The site and the eval re-run today's logic on the saved model answers, so a change like the one above gets tested before it ships.
+4. **I fixed a display bug.** Some outage reasons were mislabelled ("model retired" and server errors showed as "no usable answer") because of a bad character in my earlier edit.
+
+The score stays at **12 of 17 correct, 0 wrong-and-confident**, and 26 tests pass. The fixes are live on the site and pushed to GitHub. The repo also now holds the brief, the research notes and the chat log.
+
+**Before you submit:**
+- **Make the repo public**, or leave the optional link blank. As it stands, reviewers would get a 404.
+- **Add any other chats.** Annex B only covers this chat with me. If you made the submission pack with ChatGPT or another tool, send me that export and I'll add it to the PDF.
+
+
+---
+### User
+make it public and also make pdf more formatted use latex and real life images and refrence so it looks professional and more attractive
+
+
+**Assistant:** Making the repo public first, after one more check that nothing secret is in its history:
+
+- `Bash Scan all commits for env files and API keys`
+- `Bash Make the GitHub repo public and verify`
+
+**Assistant:** The repo is public and opens without a login. Now checking for a LaTeX toolchain:
+
+- `Bash Check for LaTeX engines and installers`
+- `Bash List official Tectonic releases`
+- `Bash Download Tectonic 0.17.0 for Windows and check it runs`
+- `Bash List photos and their credits`
+- `Write C:\Users\mohit\AppData\Local\Temp\claude\C--Users-mohit-Desktop-Tresta\c33f1fe0-8f25-4948-b022-9130983325c3\scratchpad\shots.mjs`
+- `Bash Capture screenshots of the live prototype`
+
+**Assistant:** The first capture failed. Debugging what the page evaluation returned:
+
+- `Bash Add JS error reporting and rerun`
+- `Bash Show the shot function and hero call lines`
+
+**Assistant:** Two problems in my script: the case title didn't match, and the text search found an outer container instead of the three-lane grid. Fixing both:
+
+- `Bash Fix selectors and rerun screenshots`
+- `Read C:\Users\mohit\AppData\Local\Temp\claude\C--Users-mohit-Desktop-Tresta\c33f1fe0-8f25-4948-b022-9130983325c3\scratchpad\img\workbench.png`
+- `Read C:\Users\mohit\AppData\Local\Temp\claude\C--Users-mohit-Desktop-Tresta\c33f1fe0-8f25-4948-b022-9130983325c3\scratchpad\img\hero.png`
+- `Read C:\Users\mohit\AppData\Local\Temp\claude\C--Users-mohit-Desktop-Tresta\c33f1fe0-8f25-4948-b022-9130983325c3\scratchpad\img\eval.png`
+- `Bash Fix the case click, hide nav, re-capture`
+- `Read C:\Users\mohit\AppData\Local\Temp\claude\C--Users-mohit-Desktop-Tresta\c33f1fe0-8f25-4948-b022-9130983325c3\scratchpad\img\workbench.png`
+- `Read C:\Users\mohit\AppData\Local\Temp\claude\C--Users-mohit-Desktop-Tresta\c33f1fe0-8f25-4948-b022-9130983325c3\scratchpad\img\eval.png`
+- `Bash List treaty source URLs and photo usage`
+- `Bash Convert photos and screenshots for LaTeX`
+- `Read C:\Users\mohit\Desktop\Tresta\submission\latex\img\banner.jpg`
+
+**Assistant:** The banner photo works well. Now the LaTeX source: a photo banner, a TikZ architecture diagram, booktabs tables, the product screenshots, and numbered references.
+
+- `Write C:\Users\mohit\Desktop\Tresta\submission\latex\brief.tex`
+- `Bash Compile the LaTeX brief with Tectonic`
+
+**Assistant:** A macro argument can't contain a line break inside that table cell. I'll split the KPI label into two arguments:
+
+- `Bash Fix KPI macro and recompile`
+- `Bash Show the KPI macro lines as written`
+
+**Assistant:** The script's string match failed for a reason I can't see here, so I'll make the edits with the Edit tool.
+
+- `Read C:\Users\mohit\Desktop\Tresta\submission\latex\brief.tex`
+- `Edit C:\Users\mohit\Desktop\Tresta\submission\latex\brief.tex`
+- `Edit C:\Users\mohit\Desktop\Tresta\submission\latex\brief.tex`
+- `Bash Recompile the brief`
+- `Bash Find the undefined control sequence`
+- `Edit C:\Users\mohit\Desktop\Tresta\submission\latex\brief.tex`
+- `Bash Recompile and render page previews`
+
+**Assistant:** It compiled to 5 pages: a 4-page brief and the 1-page appendix. Rendering previews to check the layout:
+
+- `Bash Render page previews of the LaTeX PDF`
+- `Read C:\Users\mohit\AppData\Local\Temp\claude\C--Users-mohit-Desktop-Tresta\c33f1fe0-8f25-4948-b022-9130983325c3\scratchpad\L1.png`
+- `Read C:\Users\mohit\AppData\Local\Temp\claude\C--Users-mohit-Desktop-Tresta\c33f1fe0-8f25-4948-b022-9130983325c3\scratchpad\L2.png`
+- `Read C:\Users\mohit\AppData\Local\Temp\claude\C--Users-mohit-Desktop-Tresta\c33f1fe0-8f25-4948-b022-9130983325c3\scratchpad\L3.png`
+- `Read C:\Users\mohit\AppData\Local\Temp\claude\C--Users-mohit-Desktop-Tresta\c33f1fe0-8f25-4948-b022-9130983325c3\scratchpad\L4.png`
+- `Read C:\Users\mohit\AppData\Local\Temp\claude\C--Users-mohit-Desktop-Tresta\c33f1fe0-8f25-4948-b022-9130983325c3\scratchpad\L5.png`
+- `Bash Locate lines to edit in the LaTeX source`
+- `Edit C:\Users\mohit\Desktop\Tresta\submission\latex\brief.tex`
+- `Edit C:\Users\mohit\Desktop\Tresta\submission\latex\brief.tex`
+- `Edit C:\Users\mohit\Desktop\Tresta\submission\latex\brief.tex`
+- `Bash Find remaining edit targets`
+- `Read C:\Users\mohit\Desktop\Tresta\submission\latex\brief.tex`
+- `Edit C:\Users\mohit\Desktop\Tresta\submission\latex\brief.tex`
+- `Edit C:\Users\mohit\Desktop\Tresta\submission\latex\brief.tex`
+- `Edit C:\Users\mohit\Desktop\Tresta\submission\latex\brief.tex`
+- `Bash Widen label column, recompile, preview`
+
+**Assistant:** The output didn't change. Either the compile failed quietly or my edits didn't apply. Checking the compile output:
+
+- `Bash Recompile and show full output tail`
+
+**Assistant:** This compile went through. The earlier one had failed quietly. Now applying the column-width fix with the Edit tool:
+
+- `Read C:\Users\mohit\Desktop\Tresta\submission\latex\brief.tex`
+- `Edit C:\Users\mohit\Desktop\Tresta\submission\latex\brief.tex`
+- `Bash Recompile and preview pages`
+- `Read C:\Users\mohit\AppData\Local\Temp\claude\C--Users-mohit-Desktop-Tresta\c33f1fe0-8f25-4948-b022-9130983325c3\scratchpad\L3.png`
+- `Read C:\Users\mohit\AppData\Local\Temp\claude\C--Users-mohit-Desktop-Tresta\c33f1fe0-8f25-4948-b022-9130983325c3\scratchpad\L4.png`
+
+**Assistant:** Two small fixes: the section 5 heading is stranded at the bottom of page 3, and the landing screenshot catches the edge of the next dark section. Cropping and keeping the heading with its table:
+
+- `Edit C:\Users\mohit\Desktop\Tresta\submission\latex\brief.tex`
+- `Bash Crop hero shot, recompile, preview`
+- `Read C:\Users\mohit\AppData\Local\Temp\claude\C--Users-mohit-Desktop-Tresta\c33f1fe0-8f25-4948-b022-9130983325c3\scratchpad\L2.png`
+- `Bash Render the diagram at high resolution`
+- `Read C:\Users\mohit\AppData\Local\Temp\claude\C--Users-mohit-Desktop-Tresta\c33f1fe0-8f25-4948-b022-9130983325c3\scratchpad\diag.png`
+
+**Assistant:** The diagram renders cleanly. Checking page 3 with the cropped screenshot:
+
+- `Read C:\Users\mohit\AppData\Local\Temp\claude\C--Users-mohit-Desktop-Tresta\c33f1fe0-8f25-4948-b022-9130983325c3\scratchpad\L3.png`
+
+**Assistant:** Layout works. Two final touches: thin frames so the screenshots don't blend into the page, and Annex A (the interview) typeset in the same style.
+
+- `Bash Locate screenshot includes and document end`
+- `Grep includegraphics\[width=\\linewidth\]|end\{document\}`
+- `Edit C:\Users\mohit\Desktop\Tresta\submission\latex\brief.tex`
+- `Edit C:\Users\mohit\Desktop\Tresta\submission\latex\brief.tex`
+- `Edit C:\Users\mohit\Desktop\Tresta\submission\latex\brief.tex`
+- `Edit C:\Users\mohit\Desktop\Tresta\submission\latex\brief.tex`
+- `Edit C:\Users\mohit\Desktop\Tresta\submission\latex\brief.tex`
+- `Bash Recompile with frames and Annex A`
+- `Read C:\Users\mohit\AppData\Local\Temp\claude\C--Users-mohit-Desktop-Tresta\c33f1fe0-8f25-4948-b022-9130983325c3\scratchpad\L6.png`
+
+**Assistant:** Annex A looks right. Now re-exporting the chat log so it includes this turn, then merging everything into the single PDF:
+
+- `Bash Re-export logs, render annex B, merge final PDF`
