@@ -1,17 +1,17 @@
 {
- "generatedAt": "2026-11-01T23:08:27.064Z",
- "mode": "replay",
+ "generatedAt": "2026-11-02T02:15:17.702Z",
+ "mode": "live",
  "summary": {
   "cases": 14,
   "rulesPass": 14,
-  "aiCases": 0,
-  "fullPass": 0,
-  "categoryOk": 0,
+  "aiCases": 14,
+  "fullPass": 10,
+  "categoryOk": 11,
   "unsafe": 0,
   "agreement": {
-   "agree": 0,
-   "flag": 0,
-   "abstain": 0
+   "agree": 7,
+   "flag": 4,
+   "abstain": 3
   }
  },
  "cases": [
@@ -30,7 +30,62 @@
     "pass": true,
     "diffs": []
    },
-   "ai": null
+   "ai": {
+    "agreement": "agree",
+    "validVotes": 3,
+    "note": "All 3 counted models agree, and every quote was found in the sources.",
+    "consensus": {
+     "category": "business_profits",
+     "makeAvailable": "na",
+     "ancillaryTo": "none",
+     "peRisk": false
+    },
+    "categoryOk": true,
+    "makeAvailableOk": true,
+    "safe": true,
+    "pass": true,
+    "diffs": [],
+    "votes": [
+     {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "family": "OpenAI gpt-oss",
+      "ok": true,
+      "valid": true,
+      "latencyMs": 1443,
+      "category": "business_profits",
+      "makeAvailable": "na",
+      "badQuotes": 0,
+      "replaced": []
+     },
+     {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "family": "Alibaba Qwen",
+      "ok": true,
+      "valid": true,
+      "latencyMs": 1112,
+      "category": "business_profits",
+      "makeAvailable": "na",
+      "badQuotes": 0,
+      "replaced": [
+       "z-ai/glm-5.3-flash"
+      ]
+     },
+     {
+      "provider": "openrouter",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "family": "NVIDIA Nemotron",
+      "ok": true,
+      "valid": true,
+      "latencyMs": 25092,
+      "category": "business_profits",
+      "makeAvailable": "na",
+      "badQuotes": 0,
+      "replaced": []
+     }
+    ]
+   }
   },
   {
    "id": "uk-pipeline-ma",
@@ -47,7 +102,62 @@
     "pass": true,
     "diffs": []
    },
-   "ai": null
+   "ai": {
+    "agreement": "agree",
+    "validVotes": 3,
+    "note": "All 3 counted models agree, and every quote was found in the sources.",
+    "consensus": {
+     "category": "fts",
+     "makeAvailable": "yes",
+     "ancillaryTo": "none",
+     "peRisk": false
+    },
+    "categoryOk": true,
+    "makeAvailableOk": true,
+    "safe": true,
+    "pass": true,
+    "diffs": [],
+    "votes": [
+     {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "family": "OpenAI gpt-oss",
+      "ok": true,
+      "valid": true,
+      "latencyMs": 988,
+      "category": "fts",
+      "makeAvailable": "yes",
+      "badQuotes": 0,
+      "replaced": []
+     },
+     {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "family": "Alibaba Qwen",
+      "ok": true,
+      "valid": true,
+      "latencyMs": 932,
+      "category": "fts",
+      "makeAvailable": "yes",
+      "badQuotes": 0,
+      "replaced": [
+       "z-ai/glm-5.3-flash"
+      ]
+     },
+     {
+      "provider": "openrouter",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "family": "NVIDIA Nemotron",
+      "ok": true,
+      "valid": true,
+      "latencyMs": 45475,
+      "category": "fts",
+      "makeAvailable": "yes",
+      "badQuotes": 0,
+      "replaced": []
+     }
+    ]
+   }
   },
   {
    "id": "uk-research-no-ma",
@@ -64,7 +174,67 @@
     "pass": true,
     "diffs": []
    },
-   "ai": null
+   "ai": {
+    "agreement": "flag",
+    "validVotes": 2,
+    "note": "The models split between technical services and business profits, which is a dispute about whether know-how is made available. Both outcomes are computed; a CA must choose.",
+    "consensus": {
+     "category": "fts",
+     "makeAvailable": "contested",
+     "ancillaryTo": "none",
+     "peRisk": false
+    },
+    "categoryOk": true,
+    "makeAvailableOk": false,
+    "safe": true,
+    "pass": false,
+    "diffs": [
+     "status needs_ca (expected ok)",
+     "basis treaty (expected not_taxable)",
+     "rate 15 (expected 0)",
+     "Form 146 true (expected false)"
+    ],
+    "votes": [
+     {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "family": "OpenAI gpt-oss",
+      "ok": true,
+      "valid": false,
+      "latencyMs": 1280,
+      "category": "fts",
+      "makeAvailable": "no",
+      "badQuotes": 1,
+      "replaced": []
+     },
+     {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "family": "Alibaba Qwen",
+      "ok": true,
+      "valid": true,
+      "latencyMs": 788,
+      "category": "fts",
+      "makeAvailable": "no",
+      "badQuotes": 0,
+      "replaced": [
+       "z-ai/glm-5.3-flash"
+      ]
+     },
+     {
+      "provider": "openrouter",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "family": "NVIDIA Nemotron",
+      "ok": true,
+      "valid": true,
+      "latencyMs": 55764,
+      "category": "business_profits",
+      "makeAvailable": "na",
+      "badQuotes": 0,
+      "replaced": []
+     }
+    ]
+   }
   },
   {
    "id": "de-mgmt-fee",
@@ -81,7 +251,62 @@
     "pass": true,
     "diffs": []
    },
-   "ai": null
+   "ai": {
+    "agreement": "agree",
+    "validVotes": 3,
+    "note": "All 3 counted models agree, and every quote was found in the sources.",
+    "consensus": {
+     "category": "fts",
+     "makeAvailable": "no",
+     "ancillaryTo": "none",
+     "peRisk": false
+    },
+    "categoryOk": true,
+    "makeAvailableOk": true,
+    "safe": true,
+    "pass": true,
+    "diffs": [],
+    "votes": [
+     {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "family": "OpenAI gpt-oss",
+      "ok": true,
+      "valid": true,
+      "latencyMs": 1203,
+      "category": "fts",
+      "makeAvailable": "no",
+      "badQuotes": 0,
+      "replaced": []
+     },
+     {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "family": "Alibaba Qwen",
+      "ok": true,
+      "valid": true,
+      "latencyMs": 720,
+      "category": "fts",
+      "makeAvailable": "no",
+      "badQuotes": 0,
+      "replaced": [
+       "z-ai/glm-5.3-flash"
+      ]
+     },
+     {
+      "provider": "openrouter",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "family": "NVIDIA Nemotron",
+      "ok": true,
+      "valid": true,
+      "latencyMs": 16557,
+      "category": "fts",
+      "makeAvailable": "no",
+      "badQuotes": 0,
+      "replaced": []
+     }
+    ]
+   }
   },
   {
    "id": "sg-monitoring-contested",
@@ -98,7 +323,62 @@
     "pass": true,
     "diffs": []
    },
-   "ai": null
+   "ai": {
+    "agreement": "flag",
+    "validVotes": 3,
+    "note": "The models split between technical services and business profits, which is a dispute about whether know-how is made available. Both outcomes are computed; a CA must choose.",
+    "consensus": {
+     "category": "fts",
+     "makeAvailable": "contested",
+     "ancillaryTo": "none",
+     "peRisk": false
+    },
+    "categoryOk": true,
+    "makeAvailableOk": true,
+    "safe": true,
+    "pass": true,
+    "diffs": [],
+    "votes": [
+     {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "family": "OpenAI gpt-oss",
+      "ok": true,
+      "valid": true,
+      "latencyMs": 1110,
+      "category": "fts",
+      "makeAvailable": "no",
+      "badQuotes": 0,
+      "replaced": []
+     },
+     {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "family": "Alibaba Qwen",
+      "ok": true,
+      "valid": true,
+      "latencyMs": 797,
+      "category": "fts",
+      "makeAvailable": "no",
+      "badQuotes": 0,
+      "replaced": [
+       "z-ai/glm-5.3-flash"
+      ]
+     },
+     {
+      "provider": "openrouter",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "family": "NVIDIA Nemotron",
+      "ok": true,
+      "valid": true,
+      "latencyMs": 40708,
+      "category": "business_profits",
+      "makeAvailable": "na",
+      "badQuotes": 0,
+      "replaced": []
+     }
+    ]
+   }
   },
   {
    "id": "nl-tbm-hire",
@@ -115,7 +395,62 @@
     "pass": true,
     "diffs": []
    },
-   "ai": null
+   "ai": {
+    "agreement": "agree",
+    "validVotes": 2,
+    "note": "All 2 counted models agree, and every quote was found in the sources.",
+    "consensus": {
+     "category": "royalty_equipment",
+     "makeAvailable": "na",
+     "ancillaryTo": "none",
+     "peRisk": false
+    },
+    "categoryOk": true,
+    "makeAvailableOk": true,
+    "safe": true,
+    "pass": true,
+    "diffs": [],
+    "votes": [
+     {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "family": "OpenAI gpt-oss",
+      "ok": true,
+      "valid": false,
+      "latencyMs": 1124,
+      "category": "royalty_equipment",
+      "makeAvailable": "na",
+      "badQuotes": 1,
+      "replaced": []
+     },
+     {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "family": "Alibaba Qwen",
+      "ok": true,
+      "valid": true,
+      "latencyMs": 615,
+      "category": "royalty_equipment",
+      "makeAvailable": "na",
+      "badQuotes": 0,
+      "replaced": [
+       "z-ai/glm-5.3-flash"
+      ]
+     },
+     {
+      "provider": "openrouter",
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "family": "NVIDIA Nemotron",
+      "ok": true,
+      "valid": true,
+      "latencyMs": 65572,
+      "category": "royalty_equipment",
+      "makeAvailable": "na",
+      "badQuotes": 0,
+      "replaced": []
+     }
+    ]
+   }
   },
   {
    "id": "us-spectrometer-grossup",
@@ -132,7 +467,66 @@
     "pass": true,
     "diffs": []
    },
-   "ai": null
+   "ai": {
+    "agreement": "agree",
+    "validVotes": 2,
+    "note": "All 2 counted models agree, and every quote was found in the sources.",
+    "consensus": {
+     "category": "royalty_equipment",
+     "makeAvailable": "na",
+     "ancillaryTo": "equipment",
+     "peRisk": false
+    },
+    "categoryOk": true,
+    "makeAvailableOk": true,
+    "safe": true,
+    "pass": true,
+    "diffs": [],
+    "votes": [
+     {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "family": "OpenAI gpt-oss",
+      "ok": true,
+      "valid": true,
+      "latencyMs": 984,
+      "category": "royalty_equipment",
+      "makeAvailable": "na",
+      "badQuotes": 0,
+      "replaced": []
+     },
+     {
+      "provider": "-",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "family": "-",
+      "ok": false,
+      "valid": false,
+      "latencyMs": 0,
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"head",
+      "badQuotes": 0,
+      "replaced": [
+       "z-ai/glm-5.3-flash",
+       "google/gemma-4-31b-it",
+       "dots-studio/dots-3-note-preview:free",
+       "nvidia/nemotron-3.5-lightning:free"
+      ]
+     },
+     {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "family": "Alibaba Qwen",
+      "ok": true,
+      "valid": true,
+      "latencyMs": 636,
+      "category": "royalty_equipment",
+      "makeAvailable": "na",
+      "badQuotes": 0,
+      "replaced": [
+       "nvidia/nemotron-3-ultra-550b-a55b:free"
+      ]
+     }
+    ]
+   }
   },
   {
    "id": "nl-mfn-claim",
@@ -149,7 +543,66 @@
     "pass": true,
     "diffs": []
    },
-   "ai": null
+   "ai": {
+    "agreement": "agree",
+    "validVotes": 2,
+    "note": "All 2 counted models agree, and every quote was found in the sources.",
+    "consensus": {
+     "category": "fts",
+     "makeAvailable": "yes",
+     "ancillaryTo": "ip",
+     "peRisk": false
+    },
+    "categoryOk": true,
+    "makeAvailableOk": true,
+    "safe": true,
+    "pass": true,
+    "diffs": [],
+    "votes": [
+     {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "family": "OpenAI gpt-oss",
+      "ok": true,
+      "valid": true,
+      "latencyMs": 1618,
+      "category": "fts",
+      "makeAvailable": "yes",
+      "badQuotes": 0,
+      "replaced": []
+     },
+     {
+      "provider": "-",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "family": "-",
+      "ok": false,
+      "valid": false,
+      "latencyMs": 0,
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"head",
+      "badQuotes": 0,
+      "replaced": [
+       "z-ai/glm-5.3-flash",
+       "google/gemma-4-31b-it",
+       "dots-studio/dots-3-note-preview:free",
+       "nvidia/nemotron-3.5-lightning:free"
+      ]
+     },
+     {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "family": "Alibaba Qwen",
+      "ok": true,
+      "valid": true,
+      "latencyMs": 698,
+      "category": "fts",
+      "makeAvailable": "yes",
+      "badQuotes": 0,
+      "replaced": [
+       "nvidia/nemotron-3-ultra-550b-a55b:free"
+      ]
+     }
+    ]
+   }
   },
   {
    "id": "us-no-trc",
@@ -166,7 +619,66 @@
     "pass": true,
     "diffs": []
    },
-   "ai": null
+   "ai": {
+    "agreement": "agree",
+    "validVotes": 2,
+    "note": "All 2 counted models agree, and every quote was found in the sources.",
+    "consensus": {
+     "category": "fts",
+     "makeAvailable": "yes",
+     "ancillaryTo": "none",
+     "peRisk": false
+    },
+    "categoryOk": true,
+    "makeAvailableOk": true,
+    "safe": true,
+    "pass": true,
+    "diffs": [],
+    "votes": [
+     {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "family": "OpenAI gpt-oss",
+      "ok": true,
+      "valid": true,
+      "latencyMs": 1193,
+      "category": "fts",
+      "makeAvailable": "yes",
+      "badQuotes": 0,
+      "replaced": []
+     },
+     {
+      "provider": "-",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "family": "-",
+      "ok": false,
+      "valid": false,
+      "latencyMs": 0,
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"head",
+      "badQuotes": 0,
+      "replaced": [
+       "z-ai/glm-5.3-flash",
+       "google/gemma-4-31b-it",
+       "dots-studio/dots-3-note-preview:free",
+       "nvidia/nemotron-3.5-lightning:free"
+      ]
+     },
+     {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "family": "Alibaba Qwen",
+      "ok": true,
+      "valid": true,
+      "latencyMs": 698,
+      "category": "fts",
+      "makeAvailable": "yes",
+      "badQuotes": 0,
+      "replaced": [
+       "nvidia/nemotron-3-ultra-550b-a55b:free"
+      ]
+     }
+    ]
+   }
   },
   {
    "id": "de-patent-old-act",
@@ -183,7 +695,71 @@
     "pass": true,
     "diffs": []
    },
-   "ai": null
+   "ai": {
+    "agreement": "abstain",
+    "validVotes": 1,
+    "note": "Only 1 model gave an answer backed by a verified contract quote and a verified treaty quote. A CA must characterise this payment.",
+    "consensus": {
+     "category": "unclear",
+     "makeAvailable": "na",
+     "ancillaryTo": "none",
+     "peRisk": false
+    },
+    "categoryOk": false,
+    "makeAvailableOk": true,
+    "safe": true,
+    "pass": false,
+    "diffs": [
+     "status needs_ca (expected ok)",
+     "basis none (expected treaty)",
+     "rate null (expected 10)",
+     "Form 146 false (expected true)"
+    ],
+    "votes": [
+     {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "family": "OpenAI gpt-oss",
+      "ok": true,
+      "valid": false,
+      "latencyMs": 982,
+      "category": "royalty_ip",
+      "makeAvailable": "na",
+      "badQuotes": 1,
+      "replaced": []
+     },
+     {
+      "provider": "-",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "family": "-",
+      "ok": false,
+      "valid": false,
+      "latencyMs": 0,
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"head",
+      "badQuotes": 0,
+      "replaced": [
+       "z-ai/glm-5.3-flash",
+       "google/gemma-4-31b-it",
+       "dots-studio/dots-3-note-preview:free",
+       "nvidia/nemotron-3.5-lightning:free"
+      ]
+     },
+     {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "family": "Alibaba Qwen",
+      "ok": true,
+      "valid": true,
+      "latencyMs": 605,
+      "category": "royalty_ip",
+      "makeAvailable": "na",
+      "badQuotes": 0,
+      "replaced": [
+       "nvidia/nemotron-3-ultra-550b-a55b:free"
+      ]
+     }
+    ]
+   }
   },
   {
    "id": "sg-reimbursement",
@@ -200,7 +776,70 @@
     "pass": true,
     "diffs": []
    },
-   "ai": null
+   "ai": {
+    "agreement": "abstain",
+    "validVotes": 1,
+    "note": "Only 1 model gave an answer backed by a verified contract quote and a verified treaty quote. A CA must characterise this payment.",
+    "consensus": {
+     "category": "unclear",
+     "makeAvailable": "na",
+     "ancillaryTo": "none",
+     "peRisk": false
+    },
+    "categoryOk": false,
+    "makeAvailableOk": true,
+    "safe": true,
+    "pass": false,
+    "diffs": [
+     "status needs_ca (expected ok)",
+     "basis none (expected not_taxable)",
+     "rate null (expected 0)"
+    ],
+    "votes": [
+     {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "family": "OpenAI gpt-oss",
+      "ok": true,
+      "valid": false,
+      "latencyMs": 974,
+      "category": "reimbursement",
+      "makeAvailable": "na",
+      "badQuotes": 2,
+      "replaced": []
+     },
+     {
+      "provider": "-",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "family": "-",
+      "ok": false,
+      "valid": false,
+      "latencyMs": 0,
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"head",
+      "badQuotes": 0,
+      "replaced": [
+       "z-ai/glm-5.3-flash",
+       "google/gemma-4-31b-it",
+       "dots-studio/dots-3-note-preview:free",
+       "nvidia/nemotron-3.5-lightning:free"
+      ]
+     },
+     {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "family": "Alibaba Qwen",
+      "ok": true,
+      "valid": true,
+      "latencyMs": 619,
+      "category": "reimbursement",
+      "makeAvailable": "na",
+      "badQuotes": 0,
+      "replaced": [
+       "nvidia/nemotron-3-ultra-550b-a55b:free"
+      ]
+     }
+    ]
+   }
   },
   {
    "id": "uk-site-supervision",
@@ -217,7 +856,66 @@
     "pass": true,
     "diffs": []
    },
-   "ai": null
+   "ai": {
+    "agreement": "flag",
+    "validVotes": 2,
+    "note": "2 of 2 counted models agree on the category; check the dissent.",
+    "consensus": {
+     "category": "fts",
+     "makeAvailable": "contested",
+     "ancillaryTo": "equipment",
+     "peRisk": true
+    },
+    "categoryOk": true,
+    "makeAvailableOk": false,
+    "safe": true,
+    "pass": true,
+    "diffs": [],
+    "votes": [
+     {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "family": "OpenAI gpt-oss",
+      "ok": true,
+      "valid": true,
+      "latencyMs": 1526,
+      "category": "fts",
+      "makeAvailable": "yes",
+      "badQuotes": 0,
+      "replaced": []
+     },
+     {
+      "provider": "-",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "family": "-",
+      "ok": false,
+      "valid": false,
+      "latencyMs": 0,
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"head",
+      "badQuotes": 0,
+      "replaced": [
+       "z-ai/glm-5.3-flash",
+       "google/gemma-4-31b-it",
+       "dots-studio/dots-3-note-preview:free",
+       "nvidia/nemotron-3.5-lightning:free"
+      ]
+     },
+     {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "family": "Alibaba Qwen",
+      "ok": true,
+      "valid": true,
+      "latencyMs": 609,
+      "category": "fts",
+      "makeAvailable": "no",
+      "badQuotes": 0,
+      "replaced": [
+       "nvidia/nemotron-3-ultra-550b-a55b:free"
+      ]
+     }
+    ]
+   }
   },
   {
    "id": "us-stock-photo-small",
@@ -234,7 +932,66 @@
     "pass": true,
     "diffs": []
    },
-   "ai": null
+   "ai": {
+    "agreement": "flag",
+    "validVotes": 2,
+    "note": "2 of 2 counted models agree on the category; check the dissent.",
+    "consensus": {
+     "category": "royalty_ip",
+     "makeAvailable": "no",
+     "ancillaryTo": "none",
+     "peRisk": false
+    },
+    "categoryOk": true,
+    "makeAvailableOk": true,
+    "safe": true,
+    "pass": true,
+    "diffs": [],
+    "votes": [
+     {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "family": "OpenAI gpt-oss",
+      "ok": true,
+      "valid": true,
+      "latencyMs": 1146,
+      "category": "royalty_ip",
+      "makeAvailable": "no",
+      "badQuotes": 0,
+      "replaced": []
+     },
+     {
+      "provider": "-",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "family": "-",
+      "ok": false,
+      "valid": false,
+      "latencyMs": 0,
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"head",
+      "badQuotes": 0,
+      "replaced": [
+       "z-ai/glm-5.3-flash",
+       "google/gemma-4-31b-it",
+       "dots-studio/dots-3-note-preview:free",
+       "nvidia/nemotron-3.5-lightning:free"
+      ]
+     },
+     {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "family": "Alibaba Qwen",
+      "ok": true,
+      "valid": true,
+      "latencyMs": 672,
+      "category": "royalty_ip",
+      "makeAvailable": "na",
+      "badQuotes": 0,
+      "replaced": [
+       "nvidia/nemotron-3-ultra-550b-a55b:free"
+      ]
+     }
+    ]
+   }
   },
   {
    "id": "sg-design-no-pan",
@@ -251,7 +1008,71 @@
     "pass": true,
     "diffs": []
    },
-   "ai": null
+   "ai": {
+    "agreement": "abstain",
+    "validVotes": 1,
+    "note": "Only 1 model gave an answer backed by a verified contract quote and a verified treaty quote. A CA must characterise this payment.",
+    "consensus": {
+     "category": "unclear",
+     "makeAvailable": "na",
+     "ancillaryTo": "none",
+     "peRisk": false
+    },
+    "categoryOk": false,
+    "makeAvailableOk": false,
+    "safe": true,
+    "pass": false,
+    "diffs": [
+     "status needs_ca (expected ok)",
+     "basis none (expected treaty)",
+     "rate null (expected 20)",
+     "Form 146 false (expected true)"
+    ],
+    "votes": [
+     {
+      "provider": "groq",
+      "model": "openai/gpt-oss-120b",
+      "family": "OpenAI gpt-oss",
+      "ok": true,
+      "valid": false,
+      "latencyMs": 1206,
+      "category": "fts",
+      "makeAvailable": "yes",
+      "badQuotes": 1,
+      "replaced": []
+     },
+     {
+      "provider": "-",
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "family": "-",
+      "ok": false,
+      "valid": false,
+      "latencyMs": 0,
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"head",
+      "badQuotes": 0,
+      "replaced": [
+       "z-ai/glm-5.3-flash",
+       "google/gemma-4-31b-it",
+       "dots-studio/dots-3-note-preview:free",
+       "nvidia/nemotron-3.5-lightning:free"
+      ]
+     },
+     {
+      "provider": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "family": "Alibaba Qwen",
+      "ok": true,
+      "valid": true,
+      "latencyMs": 622,
+      "category": "fts",
+      "makeAvailable": "yes",
+      "badQuotes": 0,
+      "replaced": [
+       "nvidia/nemotron-3-ultra-550b-a55b:free"
+      ]
+     }
+    ]
+   }
   }
  ]
 }

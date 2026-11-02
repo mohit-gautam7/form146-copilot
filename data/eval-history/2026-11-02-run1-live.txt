@@ -1,0 +1,29 @@
+# Live run 1, 2 Nov 2026, before the FTS-vs-business-profits dispute rule (lib/llm.ts vote()).
+# Its per-model recordings were lost: a stopped earlier eval process kept running and overwrote them.
+> form146-copilot@0.1.0 eval
+> node --env-file-if-exists=.env.local scripts/eval.ts
+Live run: calling the models.
+pass rules | pass full | us-saas
+pass rules | pass full | uk-pipeline-ma
+pass rules | FAIL full | uk-research-no-ma  status needs_ca (expected ok); basis none (expected not_taxable); rate null (expected 0)
+pass rules | pass full | de-mgmt-fee
+pass rules | FAIL full | sg-monitoring-contested  status ok (expected needs_ca); basis not_taxable (expected treaty); rate 0 (expected 10); Form 146 false (expected true)
+pass rules | pass full | nl-tbm-hire
+pass rules | pass full | us-spectrometer-grossup
+pass rules | pass full | nl-mfn-claim
+pass rules | pass full | us-no-trc
+pass rules | FAIL full | de-patent-old-act  status needs_ca (expected ok); basis none (expected treaty); rate null (expected 10); Form 146 false (expected true)
+pass rules | pass full | sg-reimbursement
+pass rules | pass full | uk-site-supervision
+pass rules | pass full | us-stock-photo-small
+pass rules | pass full | sg-design-no-pan
+{
+  cases: 14,
+  rulesPass: 14,
+  aiCases: 14,
+  fullPass: 11,
+  categoryOk: 11,
+  unsafe: 1,
+  agreement: { agree: 8, flag: 4, abstain: 2 }
+}
+[exited with code 0]

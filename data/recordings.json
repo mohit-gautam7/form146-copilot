@@ -1,1 +1,1888 @@
-{}
+{
+ "us-saas": {
+  "caseId": "us-saas",
+  "recordedAt": "2026-11-02T01:03:59.906Z",
+  "votes": [
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "openai/gpt-oss-120b",
+    "family": "OpenAI gpt-oss",
+    "latencyMs": 1443,
+    "ok": true,
+    "parsed": {
+     "category": "business_profits",
+     "make_available": "na",
+     "ancillary_to": "none",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "Brightlane grants Customer a non-exclusive, non-transferable right to access the Brightlane CRM service over the internet"
+      },
+      {
+       "source": "treaty",
+       "quote": "payments of any kind received as a consideration for the use of, or the right to use, any copyright of a literary, artistic, or scientific work"
+      }
+     ],
+     "reasoning": "The subscription provides access to software without any right to copy, modify or exploit the underlying copyright, which falls outside the treaty's definition of royalties. Therefore the payment is treated as business profits rather than royalty or fees for included services."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "Brightlane grants Customer a non-exclusive, non-transferable right to access the Brightlane CRM service over the internet",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "payments of any kind received as a consideration for the use of, or the right to use, any copyright of a literary, artistic, or scientific work",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "raw": "{\n  \"category\": \"business_profits\",\n  \"make_available\": \"na\",\n  \"ancillary_to\": \"none\",\n  \"pe_risk\": false,\n  \"citations\": [\n    {\n      \"source\": \"contract\",\n      \"quote\": \"Brightlane grants Customer a non-exclusive, non-transferable right to access the Brightlane CRM service over the internet\"\n    },\n    {\n      \"source\": \"treaty\",\n      \"quote\": \"payments of any kind received as a consideration for the use of, or the right to use, any copyright of a literary, artistic, or scientific work\"\n    }\n  ],\n  \"reasoning\": \"The subscription provides access to software without any right to copy, modify or exploit the underlying copyright, which falls outside the treaty's definition of royalties. Therefore the payment is treated as business profits rather than royalty or fees for included services.\"\n}"
+   },
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "qwen/qwen3.8-27b",
+    "family": "Alibaba Qwen",
+    "latencyMs": 1112,
+    "ok": true,
+    "parsed": {
+     "category": "business_profits",
+     "make_available": "na",
+     "ancillary_to": "none",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "Customer receives no right to copy, modify, sublicense or distribute the software."
+      },
+      {
+       "source": "treaty",
+       "quote": "payments of any kind received as a consideration for the use of, or the right to use, any copyright"
+      }
+     ],
+     "reasoning": "The contract grants a non-exclusive right to access a hosted service without the right to copy, modify, or distribute the software, which constitutes a plain end-user subscription rather than a transfer of copyright or know-how. Under the Engineering Analysis precedent, such SaaS subscriptions are treated as business profits rather than royalties. Since the provider has no office or employees in India, there is no permanent establishment risk."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "Customer receives no right to copy, modify, sublicense or distribute the software.",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "payments of any kind received as a consideration for the use of, or the right to use, any copyright",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "replaced": [
+     {
+      "model": "z-ai/glm-5.3-flash",
+      "error": "The operation was aborted due to timeout"
+     }
+    ],
+    "raw": "{\n\"category\": \"business_profits\",\n\"make_available\": \"na\",\n\"ancillary_to\": \"none\",\n\"pe_risk\": false,\n\"citations\": [\n{\n\"source\": \"contract\",\n\"quote\": \"Customer receives no right to copy, modify, sublicense or distribute the software.\"\n},\n{\n\"source\": \"treaty\",\n\"quote\": \"payments of any kind received as a consideration for the use of, or the right to use, any copyright\"\n}\n],\n\"reasoning\": \"The contract grants a non-exclusive right to access a hosted service without the right to copy, modify, or distribute the software, which constitutes a plain end-user subscription rather than a transfer of copyright or know-how. Under the Engineering Analysis precedent, such SaaS subscriptions are treated as business profits rather than royalties. Since the provider has no office or employees in India, there is no permanent establishment risk.\"\n}"
+   },
+   {
+    "provider": "openrouter",
+    "label": "OpenRouter",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+    "family": "NVIDIA Nemotron",
+    "latencyMs": 25092,
+    "ok": true,
+    "parsed": {
+     "category": "business_profits",
+     "make_available": "na",
+     "ancillary_to": "none",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "Customer receives no right to copy, modify, sublicense or distribute the software."
+      },
+      {
+       "source": "treaty",
+       "quote": "payments of any kind received as a consideration for the use of, or the right to use, any copyright of a literary, artistic, or scientific work"
+      }
+     ],
+     "reasoning": "The subscription grants only internet access to a hosted CRM service with no right to exploit the underlying copyright, which the Supreme Court in Engineering Analysis (2021) treats as business profits rather than royalty. The treaty's royalty definition requires a right to use copyright, which the contract explicitly excludes."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "Customer receives no right to copy, modify, sublicense or distribute the software.",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "payments of any kind received as a consideration for the use of, or the right to use, any copyright of a literary, artistic, or scientific work",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "raw": "{\n  \"category\": \"business_profits\",\n  \"make_available\": \"na\",\n  \"ancillary_to\": \"none\",\n  \"pe_risk\": false,\n  \"citations\": [\n    {\n      \"source\": \"contract\",\n      \"quote\": \"Customer receives no right to copy, modify, sublicense or distribute the software.\"\n    },\n    {\n      \"source\": \"treaty\",\n      \"quote\": \"payments of any kind received as a consideration for the use of, or the right to use, any copyright of a literary, artistic, or scientific work\"\n    }\n  ],\n  \"reasoning\": \"The subscription grants only internet access to a hosted CRM service with no right to exploit the underlying copyright, which the Supreme Court in Engineering Analysis (2021) treats as business profits rather than royalty. The treaty's royalty definition requires a right to use copyright, which the contract explicitly excludes.\"\n}"
+   }
+  ],
+  "consensus": {
+   "category": "business_profits",
+   "makeAvailable": "na",
+   "ancillaryTo": "none",
+   "peRisk": false,
+   "agreement": "agree",
+   "validVotes": 3,
+   "note": "All 3 counted models agree, and every quote was found in the sources."
+  }
+ },
+ "uk-pipeline-ma": {
+  "caseId": "uk-pipeline-ma",
+  "recordedAt": "2026-11-02T01:06:50.859Z",
+  "votes": [
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "openai/gpt-oss-120b",
+    "family": "OpenAI gpt-oss",
+    "latencyMs": 988,
+    "ok": true,
+    "parsed": {
+     "category": "fts",
+     "make_available": "yes",
+     "ancillary_to": "none",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "Northgate will run six hands-on training workshops so that Sahyadri's engineers can operate, modify and extend the pipeline independently after handover."
+      },
+      {
+       "source": "treaty",
+       "quote": "fees for technical services ... make available technical knowledge, experience, skill, know-how or processes"
+      }
+     ],
+     "reasoning": "The work involves designing, building a data pipeline and delivering training, which matches the treaty definition of fees for technical services. The training enables the payer's staff to use the know‑how independently, so make_available is yes. No equipment hire or royalty of IP is involved."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "Northgate will run six hands-on training workshops so that Sahyadri's engineers can operate, modify and extend the pipeline independently after handover.",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "fees for technical services ... make available technical knowledge, experience, skill, know-how or processes",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "raw": "{\n  \"category\": \"fts\",\n  \"make_available\": \"yes\",\n  \"ancillary_to\": \"none\",\n  \"pe_risk\": false,\n  \"citations\": [\n    {\n      \"source\": \"contract\",\n      \"quote\": \"Northgate will run six hands-on training workshops so that Sahyadri's engineers can operate, modify and extend the pipeline independently after handover.\"\n    },\n    {\n      \"source\": \"treaty\",\n      \"quote\": \"fees for technical services ... make available technical knowledge, experience, skill, know-how or processes\"\n    }\n  ],\n  \"reasoning\": \"The work involves designing, building a data pipeline and delivering training, which matches the treaty definition of fees for technical services. The training enables the payer's staff to use the know‑how independently, so make_available is yes. No equipment hire or royalty of IP is involved.\"\n}"
+   },
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "qwen/qwen3.8-27b",
+    "family": "Alibaba Qwen",
+    "latencyMs": 932,
+    "ok": true,
+    "parsed": {
+     "category": "fts",
+     "make_available": "yes",
+     "ancillary_to": "none",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "Sahyadri's engineers can operate, modify and extend the pipeline independently after handover"
+      },
+      {
+       "source": "treaty",
+       "quote": "make available technical knowledge, experience, skill, know-how or processes"
+      }
+     ],
+     "reasoning": "The payment covers the design, build, and transfer of a data pipeline with training to enable independent operation, which constitutes the development and transfer of a technical design and know-how under Article 13(4)(c). Since the payer's staff can apply the knowledge independently after the service ends, 'make_available' is yes. The work is performed remotely from the UK, so there is no permanent establishment risk."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "Sahyadri's engineers can operate, modify and extend the pipeline independently after handover",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "make available technical knowledge, experience, skill, know-how or processes",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "replaced": [
+     {
+      "model": "z-ai/glm-5.3-flash",
+      "error": "The operation was aborted due to timeout"
+     }
+    ],
+    "raw": "{\n\"category\": \"fts\",\n\"make_available\": \"yes\",\n\"ancillary_to\": \"none\",\n\"pe_risk\": false,\n\"citations\": [\n{\n\"source\": \"contract\",\n\"quote\": \"Sahyadri's engineers can operate, modify and extend the pipeline independently after handover\"\n},\n{\n\"source\": \"treaty\",\n\"quote\": \"make available technical knowledge, experience, skill, know-how or processes\"\n}\n],\n\"reasoning\":\n\"The payment covers the design, build, and transfer of a data pipeline with training to enable independent operation, which constitutes the development and transfer of a technical design and know-how under Article 13(4)(c). Since the payer's staff can apply the knowledge independently after the service ends, 'make_available' is yes. The work is performed remotely from the UK, so there is no permanent establishment risk.\"\n}"
+   },
+   {
+    "provider": "openrouter",
+    "label": "OpenRouter",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+    "family": "NVIDIA Nemotron",
+    "latencyMs": 45475,
+    "ok": true,
+    "parsed": {
+     "category": "fts",
+     "make_available": "yes",
+     "ancillary_to": "none",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "run six hands-on training workshops so that Sahyadri's engineers can operate, modify and extend the pipeline independently after handover"
+      },
+      {
+       "source": "treaty",
+       "quote": "make available technical knowledge, experience, skill, know-how or processes, or consist of the development and transfer of a technical plan or technical design"
+      }
+     ],
+     "reasoning": "The contract involves designing, building, and transferring a data pipeline along with hands-on training to enable the payer's engineers to operate and extend it independently, which constitutes development and transfer of a technical plan and making available technical know-how under Article 13(4)(c) of the India-UK DTAA. All work is performed remotely from the UK, so there is no permanent establishment risk."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "run six hands-on training workshops so that Sahyadri's engineers can operate, modify and extend the pipeline independently after handover",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "make available technical knowledge, experience, skill, know-how or processes, or consist of the development and transfer of a technical plan or technical design",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "raw": "{\n  \"category\": \"fts\",\n  \"make_available\": \"yes\",\n  \"ancillary_to\": \"none\",\n  \"pe_risk\": false,\n  \"citations\": [\n    {\n      \"source\": \"contract\",\n      \"quote\": \"run six hands-on training workshops so that Sahyadri's engineers can operate, modify and extend the pipeline independently after handover\"\n    },\n    {\n      \"source\": \"treaty\",\n      \"quote\": \"make available technical knowledge, experience, skill, know-how or processes, or consist of the development and transfer of a technical plan or technical design\"\n    }\n  ],\n  \"reasoning\": \"The contract involves designing, building, and transferring a data pipeline along with hands-on training to enable the payer's engineers to operate and extend it independently, which constitutes development and transfer of a technical plan and making available technical know-how under Article 13(4)(c) of the India-UK DTAA. All work is performed remotely from the UK, so there is no permanent establishment risk.\"\n}"
+   }
+  ],
+  "consensus": {
+   "category": "fts",
+   "makeAvailable": "yes",
+   "ancillaryTo": "none",
+   "peRisk": false,
+   "agreement": "agree",
+   "validVotes": 3,
+   "note": "All 3 counted models agree, and every quote was found in the sources."
+  }
+ },
+ "uk-research-no-ma": {
+  "caseId": "uk-research-no-ma",
+  "recordedAt": "2026-11-02T01:09:41.668Z",
+  "votes": [
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "openai/gpt-oss-120b",
+    "family": "OpenAI gpt-oss",
+    "latencyMs": 1280,
+    "ok": true,
+    "parsed": {
+     "category": "fts",
+     "make_available": "no",
+     "ancillary_to": "none",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "Thames Insight will research consumer demand ... and deliver a written report"
+      },
+      {
+       "source": "treaty",
+       "quote": "fees for technical services means payments of any kind ... in consideration for the rendering of any technical or consultancy services"
+      }
+     ],
+     "reasoning": "The engagement involves a research and reporting service without transfer of any IP, fitting the definition of fees for technical services. The payer cannot independently use the know‑how after the contract, so make_available is no, and there is no link to equipment or IP. No Indian presence indicates no PE risk."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "Thames Insight will research consumer demand ... and deliver a written report",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "fees for technical services means payments of any kind ... in consideration for the rendering of any technical or consultancy services",
+      "found": false
+     }
+    ],
+    "valid": false,
+    "unverified": 1,
+    "raw": "{\n  \"category\": \"fts\",\n  \"make_available\": \"no\",\n  \"ancillary_to\": \"none\",\n  \"pe_risk\": false,\n  \"citations\": [\n    {\n      \"source\": \"contract\",\n      \"quote\": \"Thames Insight will research consumer demand ... and deliver a written report\"\n    },\n    {\n      \"source\": \"treaty\",\n      \"quote\": \"fees for technical services means payments of any kind ... in consideration for the rendering of any technical or consultancy services\"\n    }\n  ],\n  \"reasoning\": \"The engagement involves a research and reporting service without transfer of any IP, fitting the definition of fees for technical services. The payer cannot independently use the know‑how after the contract, so make_available is no, and there is no link to equipment or IP. No Indian presence indicates no PE risk.\"\n}"
+   },
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "qwen/qwen3.8-27b",
+    "family": "Alibaba Qwen",
+    "latencyMs": 788,
+    "ok": true,
+    "parsed": {
+     "category": "fts",
+     "make_available": "no",
+     "ancillary_to": "none",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "Thames Insight's methods, survey tools and models remain its property and are not shared with the client."
+      },
+      {
+       "source": "treaty",
+       "quote": "make available technical knowledge, experience, skill, know-how or processes"
+      }
+     ],
+     "reasoning": "The payment is for consultancy services (market research) rather than the use of IP or equipment, classifying it as fees for technical services. Since the contract explicitly states that the provider's methods and tools are not shared with the client, the knowledge is not made available to the payer's staff for independent application."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "Thames Insight's methods, survey tools and models remain its property and are not shared with the client.",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "make available technical knowledge, experience, skill, know-how or processes",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "replaced": [
+     {
+      "model": "z-ai/glm-5.3-flash",
+      "error": "The operation was aborted due to timeout"
+     }
+    ],
+    "raw": "{\n\"category\": \"fts\",\n\"make_available\": \"no\",\n\"ancillary_to\": \"none\",\n\"pe_risk\": false,\n\"citations\": [\n{\n\"source\": \"contract\",\n\"quote\": \"Thames Insight's methods, survey tools and models remain its property and are not shared with the client.\"\n},\n{\n\"source\": \"treaty\",\n\"quote\": \"make available technical knowledge, experience, skill, know-how or processes\"\n}\n],\n\"reasoning\":\n\"The payment is for consultancy services (market research) rather than the use of IP or equipment, classifying it as fees for technical services. Since the contract explicitly states that the provider's methods and tools are not shared with the client, the knowledge is not made available to the payer's staff for independent application.\"\n}"
+   },
+   {
+    "provider": "openrouter",
+    "label": "OpenRouter",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+    "family": "NVIDIA Nemotron",
+    "latencyMs": 55764,
+    "ok": true,
+    "parsed": {
+     "category": "business_profits",
+     "make_available": "na",
+     "ancillary_to": "none",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "Thames Insight's methods, survey tools and models remain its property and are not shared with the client."
+      },
+      {
+       "source": "treaty",
+       "quote": "make available technical knowledge, experience, skill, know-how or processes, or consist of the development and transfer of a technical plan or technical design"
+      }
+     ],
+     "reasoning": "The contract describes a market research service where Thames Insight delivers a final report but retains ownership of its methodologies and tools, so the client does not receive any right to use or exploit underlying know-how or copyright. Because the service does not make technical know-how independently available to the payer and is not ancillary to any IP or equipment licence, it falls outside the treaty definitions of royalty and FTS, and is properly characterised as business profits."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "Thames Insight's methods, survey tools and models remain its property and are not shared with the client.",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "make available technical knowledge, experience, skill, know-how or processes, or consist of the development and transfer of a technical plan or technical design",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "raw": "{\n  \"category\": \"business_profits\",\n  \"make_available\": \"na\",\n  \"ancillary_to\": \"none\",\n  \"pe_risk\": false,\n  \"citations\": [\n    {\n      \"source\": \"contract\",\n      \"quote\": \"Thames Insight's methods, survey tools and models remain its property and are not shared with the client.\"\n    },\n    {\n      \"source\": \"treaty\",\n      \"quote\": \"make available technical knowledge, experience, skill, know-how or processes, or consist of the development and transfer of a technical plan or technical design\"\n    }\n  ],\n  \"reasoning\": \"The contract describes a market research service where Thames Insight delivers a final report but retains ownership of its methodologies and tools, so the client does not receive any right to use or exploit underlying know-how or copyright. Because the service does not make technical know-how independently available to the payer and is not ancillary to any IP or equipment licence, it falls outside the treaty definitions of royalty and FTS, and is properly characterised as business profits.\"\n}"
+   }
+  ],
+  "consensus": {
+   "category": "fts",
+   "makeAvailable": "contested",
+   "ancillaryTo": "none",
+   "peRisk": false,
+   "agreement": "flag",
+   "validVotes": 2,
+   "note": "The models split between technical services and business profits, which is a dispute about whether know-how is made available. Both outcomes are computed; a CA must choose."
+  }
+ },
+ "de-mgmt-fee": {
+  "caseId": "de-mgmt-fee",
+  "recordedAt": "2026-11-02T01:12:32.411Z",
+  "votes": [
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "openai/gpt-oss-120b",
+    "family": "OpenAI gpt-oss",
+    "latencyMs": 1203,
+    "ok": true,
+    "parsed": {
+     "category": "fts",
+     "make_available": "no",
+     "ancillary_to": "none",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "The parent provides strategic planning, HR policy advice, treasury guidance and quarterly management reviews."
+      },
+      {
+       "source": "treaty",
+       "quote": "fees for technical services ... payments of any amount in consideration for the services of managerial, technical or consultancy nature"
+      }
+     ],
+     "reasoning": "The agreement describes managerial and advisory services, which fall under the treaty definition of fees for technical services. No transfer of know-how that the payer can use independently is evident, and the service provider's staff remain in Germany, so no PE risk."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "The parent provides strategic planning, HR policy advice, treasury guidance and quarterly management reviews.",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "fees for technical services ... payments of any amount in consideration for the services of managerial, technical or consultancy nature",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "raw": "{\n  \"category\": \"fts\",\n  \"make_available\": \"no\",\n  \"ancillary_to\": \"none\",\n  \"pe_risk\": false,\n  \"citations\": [\n    {\n      \"source\": \"contract\",\n      \"quote\": \"The parent provides strategic planning, HR policy advice, treasury guidance and quarterly management reviews.\"\n    },\n    {\n      \"source\": \"treaty\",\n      \"quote\": \"fees for technical services ... payments of any amount in consideration for the services of managerial, technical or consultancy nature\"\n    }\n  ],\n  \"reasoning\": \"The agreement describes managerial and advisory services, which fall under the treaty definition of fees for technical services. No transfer of know-how that the payer can use independently is evident, and the service provider's staff remain in Germany, so no PE risk.\"\n}"
+   },
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "qwen/qwen3.8-27b",
+    "family": "Alibaba Qwen",
+    "latencyMs": 720,
+    "ok": true,
+    "parsed": {
+     "category": "fts",
+     "make_available": "no",
+     "ancillary_to": "none",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "strategic planning, HR policy advice, treasury guidance and quarterly management reviews"
+      },
+      {
+       "source": "treaty",
+       "quote": "services of managerial, technical or consultancy nature"
+      }
+     ],
+     "reasoning": "The payment is for managerial and consultancy services (strategic planning, HR, treasury) provided by the parent company, which falls under the definition of fees for technical services in Article 12(4) of the India-Germany DTAA. The services are delivered from Germany by the parent's staff, and there is no indication that the Indian subsidiary's staff can independently apply the know-how after the service ends, so 'make_available' is no."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "strategic planning, HR policy advice, treasury guidance and quarterly management reviews",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "services of managerial, technical or consultancy nature",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "replaced": [
+     {
+      "model": "z-ai/glm-5.3-flash",
+      "error": "The operation was aborted due to timeout"
+     }
+    ],
+    "raw": "{\n  \"category\": \"fts\",\n  \"make_available\": \"no\",\n  \"ancillary_to\": \"none\",\n  \"pe_risk\": false,\n  \"citations\": [\n    {\n      \"source\": \"contract\",\n      \"quote\": \"strategic planning, HR policy advice, treasury guidance and quarterly management reviews\"\n    },\n    {\n      \"source\": \"treaty\",\n      \"quote\": \"services of managerial, technical or consultancy nature\"\n    }\n  ],\n  \"reasoning\":\n  \"The payment is for managerial and consultancy services (strategic planning, HR, treasury) provided by the parent company, which falls under the definition of fees for technical services in Article 12(4) of the India-Germany DTAA. The services are delivered from Germany by the parent's staff, and there is no indication that the Indian subsidiary's staff can independently apply the know-how after the service ends, so 'make_available' is no.\"\n}"
+   },
+   {
+    "provider": "openrouter",
+    "label": "OpenRouter",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+    "family": "NVIDIA Nemotron",
+    "latencyMs": 16557,
+    "ok": true,
+    "parsed": {
+     "category": "fts",
+     "make_available": "no",
+     "ancillary_to": "none",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "strategic planning, HR policy advice, treasury guidance and quarterly management reviews"
+      },
+      {
+       "source": "treaty",
+       "quote": "payments of any amount in consideration for the services of managerial, technical or consultancy nature"
+      }
+     ],
+     "reasoning": "The intra-group agreement covers strategic planning, HR policy advice, treasury guidance and management reviews, which are managerial and consultancy services falling squarely within the treaty's definition of fees for technical services. The services are rendered from Germany by the parent's management team with no indication of a permanent establishment or fixed base in India, so PE risk is low and the make-available test does not apply."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "strategic planning, HR policy advice, treasury guidance and quarterly management reviews",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "payments of any amount in consideration for the services of managerial, technical or consultancy nature",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "raw": "{\n  \"category\": \"fts\",\n  \"make_available\": \"no\",\n  \"ancillary_to\": \"none\",\n  \"pe_risk\": false,\n  \"citations\": [\n    {\n      \"source\": \"contract\",\n      \"quote\": \"strategic planning, HR policy advice, treasury guidance and quarterly management reviews\"\n    },\n    {\n      \"source\": \"treaty\",\n      \"quote\": \"payments of any amount in consideration for the services of managerial, technical or consultancy nature\"\n    }\n  ],\n  \"reasoning\": \"The intra-group agreement covers strategic planning, HR policy advice, treasury guidance and management reviews, which are managerial and consultancy services falling squarely within the treaty's definition of fees for technical services. The services are rendered from Germany by the parent's management team with no indication of a permanent establishment or fixed base in India, so PE risk is low and the make-available test does not apply.\"\n}"
+   }
+  ],
+  "consensus": {
+   "category": "fts",
+   "makeAvailable": "no",
+   "ancillaryTo": "none",
+   "peRisk": false,
+   "agreement": "agree",
+   "validVotes": 3,
+   "note": "All 3 counted models agree, and every quote was found in the sources."
+  }
+ },
+ "sg-monitoring-contested": {
+  "caseId": "sg-monitoring-contested",
+  "recordedAt": "2026-11-02T01:15:23.242Z",
+  "votes": [
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "openai/gpt-oss-120b",
+    "family": "OpenAI gpt-oss",
+    "latencyMs": 1110,
+    "ok": true,
+    "parsed": {
+     "category": "fts",
+     "make_available": "no",
+     "ancillary_to": "none",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "Lionbridge will monitor Narmada's servers 24x7 from Singapore and resolve incidents."
+      },
+      {
+       "source": "treaty",
+       "quote": "fees for technical services ... payments of any kind to any person in consideration for services of a managerial, technical or consultancy nature"
+      }
+     ],
+     "reasoning": "The agreement provides monitoring and advisory sessions, which are managerial/technical services, fitting the definition of fees for technical services. The payer cannot independently apply the proprietary tool, so the service does not make the knowledge permanently available."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "Lionbridge will monitor Narmada's servers 24x7 from Singapore and resolve incidents.",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "fees for technical services ... payments of any kind to any person in consideration for services of a managerial, technical or consultancy nature",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "raw": "{\n  \"category\": \"fts\",\n  \"make_available\": \"no\",\n  \"ancillary_to\": \"none\",\n  \"pe_risk\": false,\n  \"citations\": [\n    {\n      \"source\": \"contract\",\n      \"quote\": \"Lionbridge will monitor Narmada's servers 24x7 from Singapore and resolve incidents.\"\n    },\n    {\n      \"source\": \"treaty\",\n      \"quote\": \"fees for technical services ... payments of any kind to any person in consideration for services of a managerial, technical or consultancy nature\"\n    }\n  ],\n  \"reasoning\": \"The agreement provides monitoring and advisory sessions, which are managerial/technical services, fitting the definition of fees for technical services. The payer cannot independently apply the proprietary tool, so the service does not make the knowledge permanently available.\"\n}"
+   },
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "qwen/qwen3.8-27b",
+    "family": "Alibaba Qwen",
+    "latencyMs": 797,
+    "ok": true,
+    "parsed": {
+     "category": "fts",
+     "make_available": "no",
+     "ancillary_to": "none",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "Narmada's staff will not be trained to run the monitoring platform"
+      },
+      {
+       "source": "treaty",
+       "quote": "excludes any service that does not enable the person acquiring the service to apply the technology contained therein"
+      }
+     ],
+     "reasoning": "The payment is for managed monitoring services, which falls under fees for technical services as it involves technical personnel. However, the contract explicitly states that Narmada's staff will not be trained to run the platform, meaning the service does not enable the acquirer to apply the technology independently. Therefore, it does not meet the 'make available' criterion for FTS under the treaty definition, but remains a service payment."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "Narmada's staff will not be trained to run the monitoring platform",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "excludes any service that does not enable the person acquiring the service to apply the technology contained therein",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "replaced": [
+     {
+      "model": "z-ai/glm-5.3-flash",
+      "error": "The operation was aborted due to timeout"
+     }
+    ],
+    "raw": "{\n\"category\": \"fts\",\n\"make_available\": \"no\",\n\"ancillary_to\": \"none\",\n\"pe_risk\": false,\n\"citations\": [\n{\n\"source\": \"contract\",\n\"quote\": \"Narmada's staff will not be trained to run the monitoring platform\"\n},\n{\n\"source\": \"treaty\",\n\"quote\": \"excludes any service that does not enable the person acquiring the service to apply the technology contained therein\"\n}\n],\n\"reasoning\":\n\"The payment is for managed monitoring services, which falls under fees for technical services as it involves technical personnel. However, the contract explicitly states that Narmada's staff will not be trained to run the platform, meaning the service does not enable the acquirer to apply the technology independently. Therefore, it does not meet the 'make available' criterion for FTS under the treaty definition, but remains a service payment.\"\n}"
+   },
+   {
+    "provider": "openrouter",
+    "label": "OpenRouter",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+    "family": "NVIDIA Nemotron",
+    "latencyMs": 40708,
+    "ok": true,
+    "parsed": {
+     "category": "business_profits",
+     "make_available": "na",
+     "ancillary_to": "none",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "Narmada's staff will not be trained to run the monitoring platform, which remains Lionbridge's proprietary tool."
+      },
+      {
+       "source": "treaty",
+       "quote": "make available technical knowledge, experience, skill, know-how or processes, which enables the person acquiring the services to apply the technology contained therein"
+      }
+     ],
+     "reasoning": "The managed monitoring service is delivered from Singapore using Lionbridge's proprietary platform; the quarterly knowledge sessions cover lessons and configurations but do not enable Narmada's staff to operate the platform independently. Since no technical know-how is made available for the payer's own application, the payment is not FTS or royalty under Article 12 and constitutes business profits."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "Narmada's staff will not be trained to run the monitoring platform, which remains Lionbridge's proprietary tool.",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "make available technical knowledge, experience, skill, know-how or processes, which enables the person acquiring the services to apply the technology contained therein",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "raw": "{\n  \"category\": \"business_profits\",\n  \"make_available\": \"na\",\n  \"ancillary_to\": \"none\",\n  \"pe_risk\": false,\n  \"citations\": [\n    {\n      \"source\": \"contract\",\n      \"quote\": \"Narmada's staff will not be trained to run the monitoring platform, which remains Lionbridge's proprietary tool.\"\n    },\n    {\n      \"source\": \"treaty\",\n      \"quote\": \"make available technical knowledge, experience, skill, know-how or processes, which enables the person acquiring the services to apply the technology contained therein\"\n    }\n  ],\n  \"reasoning\": \"The managed monitoring service is delivered from Singapore using Lionbridge's proprietary platform; the quarterly knowledge sessions cover lessons and configurations but do not enable Narmada's staff to operate the platform independently. Since no technical know-how is made available for the payer's own application, the payment is not FTS or royalty under Article 12 and constitutes business profits.\"\n}"
+   }
+  ],
+  "consensus": {
+   "category": "fts",
+   "makeAvailable": "contested",
+   "ancillaryTo": "none",
+   "peRisk": false,
+   "agreement": "flag",
+   "validVotes": 3,
+   "note": "The models split between technical services and business profits, which is a dispute about whether know-how is made available. Both outcomes are computed; a CA must choose."
+  }
+ },
+ "nl-tbm-hire": {
+  "caseId": "nl-tbm-hire",
+  "recordedAt": "2026-11-02T01:18:13.883Z",
+  "votes": [
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "openai/gpt-oss-120b",
+    "family": "OpenAI gpt-oss",
+    "latencyMs": 1124,
+    "ok": true,
+    "parsed": {
+     "category": "royalty_equipment",
+     "make_available": "na",
+     "ancillary_to": "equipment",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "Polder hires one tunnel boring machine to the hirer for 14 months"
+      },
+      {
+       "source": "treaty",
+       "quote": "fees for technical services does not include ... rental of ... equipment"
+      }
+     ],
+     "reasoning": "The payment is for hiring a tunnel boring machine, which is equipment rental, fitting the royalty_equipment category. The treaty expressly excludes equipment rental from fees for technical services, confirming the classification. No Indian staff or premises are involved, so PE risk is false."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "Polder hires one tunnel boring machine to the hirer for 14 months",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "fees for technical services does not include ... rental of ... equipment",
+      "found": false
+     }
+    ],
+    "valid": false,
+    "unverified": 1,
+    "raw": "{\n  \"category\": \"royalty_equipment\",\n  \"make_available\": \"na\",\n  \"ancillary_to\": \"equipment\",\n  \"pe_risk\": false,\n  \"citations\": [\n    {\n      \"source\": \"contract\",\n      \"quote\": \"Polder hires one tunnel boring machine to the hirer for 14 months\"\n    },\n    {\n      \"source\": \"treaty\",\n      \"quote\": \"fees for technical services does not include ... rental of ... equipment\"\n    }\n  ],\n  \"reasoning\": \"The payment is for hiring a tunnel boring machine, which is equipment rental, fitting the royalty_equipment category. The treaty expressly excludes equipment rental from fees for technical services, confirming the classification. No Indian staff or premises are involved, so PE risk is false.\"\n}"
+   },
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "qwen/qwen3.8-27b",
+    "family": "Alibaba Qwen",
+    "latencyMs": 615,
+    "ok": true,
+    "parsed": {
+     "category": "royalty_equipment",
+     "make_available": "na",
+     "ancillary_to": "none",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "Polder hires one tunnel boring machine to the hirer"
+      },
+      {
+       "source": "treaty",
+       "quote": "rental of ships, aircraft, containers or other equipment"
+      }
+     ],
+     "reasoning": "The payment is for the hire of a tunnel boring machine, which constitutes the rental of industrial equipment under the India-Netherlands DTAA. Since the payer operates the machine with its own crew and the payee has no staff or premises in India, the payment is characterized as royalty for equipment hire rather than fees for technical services or business profits."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "Polder hires one tunnel boring machine to the hirer",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "rental of ships, aircraft, containers or other equipment",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "replaced": [
+     {
+      "model": "z-ai/glm-5.3-flash",
+      "error": "The operation was aborted due to timeout"
+     }
+    ],
+    "raw": "{\n\"category\": \"royalty_equipment\",\n\"make_available\": \"na\",\n\"ancillary_to\": \"none\",\n\"pe_risk\": false,\n\"citations\": [\n{\n\"source\": \"contract\",\n\"quote\": \"Polder hires one tunnel boring machine to the hirer\"\n},\n{\n\"source\": \"treaty\",\n\"quote\": \"rental of ships, aircraft, containers or other equipment\"\n}\n],\n\"reasoning\": \"The payment is for the hire of a tunnel boring machine, which constitutes the rental of industrial equipment under the India-Netherlands DTAA. Since the payer operates the machine with its own crew and the payee has no staff or premises in India, the payment is characterized as royalty for equipment hire rather than fees for technical services or business profits.\"\n}"
+   },
+   {
+    "provider": "openrouter",
+    "label": "OpenRouter",
+    "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+    "family": "NVIDIA Nemotron",
+    "latencyMs": 65572,
+    "ok": true,
+    "parsed": {
+     "category": "royalty_equipment",
+     "make_available": "na",
+     "ancillary_to": "none",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "Polder hires one tunnel boring machine to the hirer for 14 months for use at the hirer's metro site."
+      },
+      {
+       "source": "treaty",
+       "quote": "payments for the use of equipment"
+      }
+     ],
+     "reasoning": "The payment is for hire of a tunnel boring machine, which is industrial equipment, under an equipment hire agreement where the hirer operates the machine with its own crew. The India-Netherlands DTAA protocol explicitly references \"payments for the use of equipment\" as a distinct category of income, supporting classification as royalty_equipment."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "Polder hires one tunnel boring machine to the hirer for 14 months for use at the hirer's metro site.",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "payments for the use of equipment",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "raw": "{\n  \"category\": \"royalty_equipment\",\n  \"make_available\": \"na\",\n  \"ancillary_to\": \"none\",\n  \"pe_risk\": false,\n  \"citations\": [\n    {\n      \"source\": \"contract\",\n      \"quote\": \"Polder hires one tunnel boring machine to the hirer for 14 months for use at the hirer's metro site.\"\n    },\n    {\n      \"source\": \"treaty\",\n      \"quote\": \"payments for the use of equipment\"\n    }\n  ],\n  \"reasoning\": \"The payment is for hire of a tunnel boring machine, which is industrial equipment, under an equipment hire agreement where the hirer operates the machine with its own crew. The India-Netherlands DTAA protocol explicitly references \\\"payments for the use of equipment\\\" as a distinct category of income, supporting classification as royalty_equipment.\"\n}"
+   }
+  ],
+  "consensus": {
+   "category": "royalty_equipment",
+   "makeAvailable": "na",
+   "ancillaryTo": "none",
+   "peRisk": false,
+   "agreement": "agree",
+   "validVotes": 2,
+   "note": "All 2 counted models agree, and every quote was found in the sources."
+  }
+ },
+ "us-spectrometer-grossup": {
+  "caseId": "us-spectrometer-grossup",
+  "recordedAt": "2026-11-02T01:24:56.662Z",
+  "votes": [
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "openai/gpt-oss-120b",
+    "family": "OpenAI gpt-oss",
+    "latencyMs": 984,
+    "ok": true,
+    "parsed": {
+     "category": "royalty_equipment",
+     "make_available": "na",
+     "ancillary_to": "equipment",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "Halcyon leases one mass spectrometer to Deccan for 24 months."
+      },
+      {
+       "source": "treaty",
+       "quote": "payments of any kind received as consideration for the use of, or the right to use, any industrial, commercial, or scientific equipment"
+      }
+     ],
+     "reasoning": "The invoice and contract describe a lease of a mass spectrometer, which is industrial scientific equipment, fitting the definition of royalties for equipment under Article 12. No technical or consultancy services are indicated, so it is not an FTS and make_available is not applicable."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "Halcyon leases one mass spectrometer to Deccan for 24 months.",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "payments of any kind received as consideration for the use of, or the right to use, any industrial, commercial, or scientific equipment",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "raw": "{\n  \"category\": \"royalty_equipment\",\n  \"make_available\": \"na\",\n  \"ancillary_to\": \"equipment\",\n  \"pe_risk\": false,\n  \"citations\": [\n    {\n      \"source\": \"contract\",\n      \"quote\": \"Halcyon leases one mass spectrometer to Deccan for 24 months.\"\n    },\n    {\n      \"source\": \"treaty\",\n      \"quote\": \"payments of any kind received as consideration for the use of, or the right to use, any industrial, commercial, or scientific equipment\"\n    }\n  ],\n  \"reasoning\": \"The invoice and contract describe a lease of a mass spectrometer, which is industrial scientific equipment, fitting the definition of royalties for equipment under Article 12. No technical or consultancy services are indicated, so it is not an FTS and make_available is not applicable.\"\n}"
+   },
+   {
+    "provider": "-",
+    "label": "No model available",
+    "model": "nvidia/nemotron-3.5-lightning:free",
+    "family": "-",
+    "latencyMs": 0,
+    "ok": false,
+    "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi",
+    "valid": false,
+    "unverified": 0,
+    "replaced": [
+     {
+      "model": "z-ai/glm-5.3-flash",
+      "error": "The operation was aborted due to timeout"
+     },
+     {
+      "model": "google/gemma-4-31b-it",
+      "error": "The operation was aborted due to timeout"
+     },
+     {
+      "model": "dots-studio/dots-3-note-preview:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     },
+     {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     }
+    ]
+   },
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "qwen/qwen3.8-27b",
+    "family": "Alibaba Qwen",
+    "latencyMs": 636,
+    "ok": true,
+    "parsed": {
+     "category": "royalty_equipment",
+     "make_available": "na",
+     "ancillary_to": "none",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "Halcyon leases one mass spectrometer to Deccan for 24 months."
+      },
+      {
+       "source": "treaty",
+       "quote": "payments of any kind received as consideration for the use of, or the right to use, any industrial, commercial, or scientific equipment"
+      }
+     ],
+     "reasoning": "The payment is for the lease of a mass spectrometer, which constitutes industrial or scientific equipment under the treaty. Therefore, it is characterized as royalty for equipment rather than fees for technical services or business profits."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "Halcyon leases one mass spectrometer to Deccan for 24 months.",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "payments of any kind received as consideration for the use of, or the right to use, any industrial, commercial, or scientific equipment",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "replaced": [
+     {
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     }
+    ],
+    "raw": "{\n  \"category\": \"royalty_equipment\",\n  \"make_available\": \"na\",\n  \"ancillary_to\": \"none\",\n  \"pe_risk\": false,\n  \"citations\": [\n    {\n      \"source\": \"contract\",\n      \"quote\": \"Halcyon leases one mass spectrometer to Deccan for 24 months.\"\n    },\n    {\n      \"source\": \"treaty\",\n      \"quote\": \"payments of any kind received as consideration for the use of, or the right to use, any industrial, commercial, or scientific equipment\"\n    }\n  ],\n  \"reasoning\": \"The payment is for the lease of a mass spectrometer, which constitutes industrial or scientific equipment under the treaty. Therefore, it is characterized as royalty for equipment rather than fees for technical services or business profits.\"\n}"
+   }
+  ],
+  "consensus": {
+   "category": "royalty_equipment",
+   "makeAvailable": "na",
+   "ancillaryTo": "equipment",
+   "peRisk": false,
+   "agreement": "agree",
+   "validVotes": 2,
+   "note": "All 2 counted models agree, and every quote was found in the sources."
+  }
+ },
+ "nl-mfn-claim": {
+  "caseId": "nl-mfn-claim",
+  "recordedAt": "2026-11-02T01:31:37.764Z",
+  "votes": [
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "openai/gpt-oss-120b",
+    "family": "OpenAI gpt-oss",
+    "latencyMs": 1618,
+    "ok": true,
+    "parsed": {
+     "category": "fts",
+     "make_available": "yes",
+     "ancillary_to": "ip",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "Grachten will build a fraud‑scoring module and train Malabar's developers to maintain and retrain the model themselves."
+      },
+      {
+       "source": "treaty",
+       "quote": "fees for technical services ... make available technical knowledge, experience, skill, know‑how"
+      }
+     ],
+     "reasoning": "The agreement provides software development and training, which is a service that transfers know‑how and enables the payer to use the resulting IP independently. Under Article 12 the definition of fees for technical services covers such make‑available knowledge, so the payment is characterised as FTS. The payer’s staff can apply the know‑how after the service, so make_available is yes, and the service is ancillary to the IP being created."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "Grachten will build a fraud‑scoring module and train Malabar's developers to maintain and retrain the model themselves.",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "fees for technical services ... make available technical knowledge, experience, skill, know‑how",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "raw": "{\n  \"category\": \"fts\",\n  \"make_available\": \"yes\",\n  \"ancillary_to\": \"ip\",\n  \"pe_risk\": false,\n  \"citations\": [\n    {\n      \"source\": \"contract\",\n      \"quote\": \"Grachten will build a fraud‑scoring module and train Malabar's developers to maintain and retrain the model themselves.\"\n    },\n    {\n      \"source\": \"treaty\",\n      \"quote\": \"fees for technical services ... make available technical knowledge, experience, skill, know‑how\"\n    }\n  ],\n  \"reasoning\": \"The agreement provides software development and training, which is a service that transfers know‑how and enables the payer to use the resulting IP independently. Under Article 12 the definition of fees for technical services covers such make‑available knowledge, so the payment is characterised as FTS. The payer’s staff can apply the know‑how after the service, so make_available is yes, and the service is ancillary to the IP being created.\"\n}"
+   },
+   {
+    "provider": "-",
+    "label": "No model available",
+    "model": "nvidia/nemotron-3.5-lightning:free",
+    "family": "-",
+    "latencyMs": 0,
+    "ok": false,
+    "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi",
+    "valid": false,
+    "unverified": 0,
+    "replaced": [
+     {
+      "model": "z-ai/glm-5.3-flash",
+      "error": "The operation was aborted due to timeout"
+     },
+     {
+      "model": "google/gemma-4-31b-it",
+      "error": "The operation was aborted due to timeout"
+     },
+     {
+      "model": "dots-studio/dots-3-note-preview:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     },
+     {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     }
+    ]
+   },
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "qwen/qwen3.8-27b",
+    "family": "Alibaba Qwen",
+    "latencyMs": 698,
+    "ok": true,
+    "parsed": {
+     "category": "fts",
+     "make_available": "yes",
+     "ancillary_to": "none",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "train Malabar's developers to maintain and retrain the model themselves"
+      },
+      {
+       "source": "treaty",
+       "quote": "make available technical knowledge, experience, skill, know-how or processes"
+      }
+     ],
+     "reasoning": "The payment is for the development of a fraud-scoring module and training, which constitutes fees for technical services under Article 12(5)(b) of the India-Netherlands DTAA. The transfer of source code and training enables Malabar's staff to independently maintain the model, satisfying the 'make available' criterion for FTS. It is not royalty_ip because it is a custom development service rather than a license to use existing IP."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "train Malabar's developers to maintain and retrain the model themselves",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "make available technical knowledge, experience, skill, know-how or processes",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "replaced": [
+     {
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     }
+    ],
+    "raw": "{\n  \"category\": \"fts\",\n  \"make_available\": \"yes\",\n  \"ancillary_to\": \"none\",\n  \"pe_risk\": false,\n  \"citations\": [\n    {\n      \"source\": \"contract\",\n      \"quote\": \"train Malabar's developers to maintain and retrain the model themselves\"\n    },\n    {\n      \"source\": \"treaty\",\n      \"quote\": \"make available technical knowledge, experience, skill, know-how or processes\"\n    }\n  ],\n  \"reasoning\":\n  \"The payment is for the development of a fraud-scoring module and training, which constitutes fees for technical services under Article 12(5)(b) of the India-Netherlands DTAA. The transfer of source code and training enables Malabar's staff to independently maintain the model, satisfying the 'make available' criterion for FTS. It is not royalty_ip because it is a custom development service rather than a license to use existing IP.\"\n}"
+   }
+  ],
+  "consensus": {
+   "category": "fts",
+   "makeAvailable": "yes",
+   "ancillaryTo": "ip",
+   "peRisk": false,
+   "agreement": "agree",
+   "validVotes": 2,
+   "note": "All 2 counted models agree, and every quote was found in the sources."
+  }
+ },
+ "us-no-trc": {
+  "caseId": "us-no-trc",
+  "recordedAt": "2026-11-02T01:38:20.184Z",
+  "votes": [
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "openai/gpt-oss-120b",
+    "family": "OpenAI gpt-oss",
+    "latencyMs": 1193,
+    "ok": true,
+    "parsed": {
+     "category": "fts",
+     "make_available": "yes",
+     "ancillary_to": "none",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "redesign the plant's batch control process and train Tapti's process engineers"
+      },
+      {
+       "source": "treaty",
+       "quote": "\"fees for included services\" means payments of any kind to any person in consideration for the rendering of any technical or consultancy services"
+      }
+     ],
+     "reasoning": "The agreement provides technical consultancy and training, which falls under fees for included services under Article 12. The knowledge can be applied by the payer's staff after the service, so make_available is yes. No equipment or IP licensing is involved, and there is no PE in India."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "redesign the plant's batch control process and train Tapti's process engineers",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "\"fees for included services\" means payments of any kind to any person in consideration for the rendering of any technical or consultancy services",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "raw": "{\n  \"category\": \"fts\",\n  \"make_available\": \"yes\",\n  \"ancillary_to\": \"none\",\n  \"pe_risk\": false,\n  \"citations\": [\n    {\n      \"source\": \"contract\",\n      \"quote\": \"redesign the plant's batch control process and train Tapti's process engineers\"\n    },\n    {\n      \"source\": \"treaty\",\n      \"quote\": \"\\\"fees for included services\\\" means payments of any kind to any person in consideration for the rendering of any technical or consultancy services\"\n    }\n  ],\n  \"reasoning\": \"The agreement provides technical consultancy and training, which falls under fees for included services under Article 12. The knowledge can be applied by the payer's staff after the service, so make_available is yes. No equipment or IP licensing is involved, and there is no PE in India.\"\n}"
+   },
+   {
+    "provider": "-",
+    "label": "No model available",
+    "model": "nvidia/nemotron-3.5-lightning:free",
+    "family": "-",
+    "latencyMs": 0,
+    "ok": false,
+    "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi",
+    "valid": false,
+    "unverified": 0,
+    "replaced": [
+     {
+      "model": "z-ai/glm-5.3-flash",
+      "error": "The operation was aborted due to timeout"
+     },
+     {
+      "model": "google/gemma-4-31b-it",
+      "error": "The operation was aborted due to timeout"
+     },
+     {
+      "model": "dots-studio/dots-3-note-preview:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     },
+     {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     }
+    ]
+   },
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "qwen/qwen3.8-27b",
+    "family": "Alibaba Qwen",
+    "latencyMs": 698,
+    "ok": true,
+    "parsed": {
+     "category": "fts",
+     "make_available": "yes",
+     "ancillary_to": "none",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "train Tapti's process engineers to run and tune the new process without Mesa's help"
+      },
+      {
+       "source": "treaty",
+       "quote": "make available technical knowledge, experience, skill, know-how, or processes"
+      }
+     ],
+     "reasoning": "The payment is for consultancy services involving the redesign of a process and training, which falls under 'fees for included services' as it makes available technical knowledge and processes. The contract explicitly states that Tapti's engineers will be able to operate the process without Mesa's help, indicating that the know-how is made available to the payer's staff. Since the work is done remotely and there is no mention of a permanent establishment or extended stay in India, there is no PE risk."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "train Tapti's process engineers to run and tune the new process without Mesa's help",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "make available technical knowledge, experience, skill, know-how, or processes",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "replaced": [
+     {
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     }
+    ],
+    "raw": "{\n  \"category\": \"fts\",\n  \"make_available\": \"yes\",\n  \"ancillary_to\": \"none\",\n  \"pe_risk\": false,\n  \"citations\": [\n    {\n      \"source\": \"contract\",\n      \"quote\": \"train Tapti's process engineers to run and tune the new process without Mesa's help\"\n    },\n    {\n      \"source\": \"treaty\",\n      \"quote\": \"make available technical knowledge, experience, skill, know-how, or processes\"\n    }\n  ],\n  \"reasoning\":\n  \"The payment is for consultancy services involving the redesign of a process and training, which falls under 'fees for included services' as it makes available technical knowledge and processes. The contract explicitly states that Tapti's engineers will be able to operate the process without Mesa's help, indicating that the know-how is made available to the payer's staff. Since the work is done remotely and there is no mention of a permanent establishment or extended stay in India, there is no PE risk.\"\n}"
+   }
+  ],
+  "consensus": {
+   "category": "fts",
+   "makeAvailable": "yes",
+   "ancillaryTo": "none",
+   "peRisk": false,
+   "agreement": "agree",
+   "validVotes": 2,
+   "note": "All 2 counted models agree, and every quote was found in the sources."
+  }
+ },
+ "de-patent-old-act": {
+  "caseId": "de-patent-old-act",
+  "recordedAt": "2026-11-02T01:45:01.308Z",
+  "votes": [
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "openai/gpt-oss-120b",
+    "family": "OpenAI gpt-oss",
+    "latencyMs": 982,
+    "ok": true,
+    "parsed": {
+     "category": "royalty_ip",
+     "make_available": "na",
+     "ancillary_to": "ip",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "grants a non-exclusive licence to use Indian patent rights"
+      },
+      {
+       "source": "treaty",
+       "quote": "payments of any kind received as a consideration for the use of, or the right to use, any patent"
+      }
+     ],
+     "reasoning": "The agreement confers a licence to use a patented coating process, which matches the treaty definition of royalties for patent use. No technical services are involved, so make_available is not applicable, and there is no PE risk."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "grants a non-exclusive licence to use Indian patent rights",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "payments of any kind received as a consideration for the use of, or the right to use, any patent",
+      "found": false
+     }
+    ],
+    "valid": false,
+    "unverified": 1,
+    "raw": "{\n  \"category\": \"royalty_ip\",\n  \"make_available\": \"na\",\n  \"ancillary_to\": \"ip\",\n  \"pe_risk\": false,\n  \"citations\": [\n    {\n      \"source\": \"contract\",\n      \"quote\": \"grants a non-exclusive licence to use Indian patent rights\"\n    },\n    {\n      \"source\": \"treaty\",\n      \"quote\": \"payments of any kind received as a consideration for the use of, or the right to use, any patent\"\n    }\n  ],\n  \"reasoning\": \"The agreement confers a licence to use a patented coating process, which matches the treaty definition of royalties for patent use. No technical services are involved, so make_available is not applicable, and there is no PE risk.\"\n}"
+   },
+   {
+    "provider": "-",
+    "label": "No model available",
+    "model": "nvidia/nemotron-3.5-lightning:free",
+    "family": "-",
+    "latencyMs": 0,
+    "ok": false,
+    "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi",
+    "valid": false,
+    "unverified": 0,
+    "replaced": [
+     {
+      "model": "z-ai/glm-5.3-flash",
+      "error": "The operation was aborted due to timeout"
+     },
+     {
+      "model": "google/gemma-4-31b-it",
+      "error": "The operation was aborted due to timeout"
+     },
+     {
+      "model": "dots-studio/dots-3-note-preview:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     },
+     {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     }
+    ]
+   },
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "qwen/qwen3.8-27b",
+    "family": "Alibaba Qwen",
+    "latencyMs": 605,
+    "ok": true,
+    "parsed": {
+     "category": "royalty_ip",
+     "make_available": "na",
+     "ancillary_to": "none",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "grants a non-exclusive licence to use Indian patent rights"
+      },
+      {
+       "source": "treaty",
+       "quote": "any patent, trade mark, design or model, plan, secret formula or process"
+      }
+     ],
+     "reasoning": "The payment is a royalty for the right to use a patent, which falls under the definition of royalties in Article 12(3) of the India-Germany DTAA. It is not a fee for technical services as it is consideration for the use of intellectual property rather than managerial or consultancy services."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "grants a non-exclusive licence to use Indian patent rights",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "any patent, trade mark, design or model, plan, secret formula or process",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "replaced": [
+     {
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     }
+    ],
+    "raw": "{\n  \"category\": \"royalty_ip\",\n  \"make_available\": \"na\",\n  \"ancillary_to\": \"none\",\n  \"pe_risk\": false,\n  \"citations\": [\n    {\n      \"source\": \"contract\",\n      \"quote\": \"grants a non-exclusive licence to use Indian patent rights\"\n    },\n    {\n      \"source\": \"treaty\",\n      \"quote\": \"any patent, trade mark, design or model, plan, secret formula or process\"\n    }\n  ],\n  \"reasoning\": \"The payment is a royalty for the right to use a patent, which falls under the definition of royalties in Article 12(3) of the India-Germany DTAA. It is not a fee for technical services as it is consideration for the use of intellectual property rather than managerial or consultancy services.\"\n}"
+   }
+  ],
+  "consensus": {
+   "category": "unclear",
+   "makeAvailable": "na",
+   "ancillaryTo": "none",
+   "peRisk": false,
+   "agreement": "abstain",
+   "validVotes": 1,
+   "note": "Only 1 model gave an answer backed by a verified contract quote and a verified treaty quote. A CA must characterise this payment."
+  }
+ },
+ "sg-reimbursement": {
+  "caseId": "sg-reimbursement",
+  "recordedAt": "2026-11-02T01:51:42.494Z",
+  "votes": [
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "openai/gpt-oss-120b",
+    "family": "OpenAI gpt-oss",
+    "latencyMs": 974,
+    "ok": true,
+    "parsed": {
+     "category": "reimbursement",
+     "make_available": "na",
+     "ancillary_to": "none",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "Recovery of travel costs at actuals (no mark-up)"
+      },
+      {
+       "source": "treaty",
+       "quote": "for services to an employee of the person making the payments"
+      }
+     ],
+     "reasoning": "The payment is a pure cost recovery for airfare and hotel incurred by the non‑resident for the payer's employees, with no markup, matching the definition of reimbursement. It does not constitute royalties, fees for technical services, or business profits, and the treaty expressly excludes payments for services to an employee."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "Recovery of travel costs at actuals (no mark-up)",
+      "found": false
+     },
+     {
+      "source": "treaty",
+      "quote": "for services to an employee of the person making the payments",
+      "found": false
+     }
+    ],
+    "valid": false,
+    "unverified": 2,
+    "raw": "{\n  \"category\": \"reimbursement\",\n  \"make_available\": \"na\",\n  \"ancillary_to\": \"none\",\n  \"pe_risk\": false,\n  \"citations\": [\n    {\n      \"source\": \"contract\",\n      \"quote\": \"Recovery of travel costs at actuals (no mark-up)\"\n    },\n    {\n      \"source\": \"treaty\",\n      \"quote\": \"for services to an employee of the person making the payments\"\n    }\n  ],\n  \"reasoning\": \"The payment is a pure cost recovery for airfare and hotel incurred by the non‑resident for the payer's employees, with no markup, matching the definition of reimbursement. It does not constitute royalties, fees for technical services, or business profits, and the treaty expressly excludes payments for services to an employee.\"\n}"
+   },
+   {
+    "provider": "-",
+    "label": "No model available",
+    "model": "nvidia/nemotron-3.5-lightning:free",
+    "family": "-",
+    "latencyMs": 0,
+    "ok": false,
+    "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi",
+    "valid": false,
+    "unverified": 0,
+    "replaced": [
+     {
+      "model": "z-ai/glm-5.3-flash",
+      "error": "The operation was aborted due to timeout"
+     },
+     {
+      "model": "google/gemma-4-31b-it",
+      "error": "The operation was aborted due to timeout"
+     },
+     {
+      "model": "dots-studio/dots-3-note-preview:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     },
+     {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     }
+    ]
+   },
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "qwen/qwen3.8-27b",
+    "family": "Alibaba Qwen",
+    "latencyMs": 619,
+    "ok": true,
+    "parsed": {
+     "category": "reimbursement",
+     "make_available": "na",
+     "ancillary_to": "none",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "recharges the exact cost, with no mark-up"
+      },
+      {
+       "source": "treaty",
+       "quote": "payments of any kind received as a consideration for the use of"
+      }
+     ],
+     "reasoning": "The payment is a recovery of third-party travel costs at actuals with no mark-up, which does not constitute consideration for the use of IP, equipment, or technical services. Therefore, it is characterized as a reimbursement and falls outside the scope of royalties or fees for technical services under the treaty."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "recharges the exact cost, with no mark-up",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "payments of any kind received as a consideration for the use of",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "replaced": [
+     {
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     }
+    ],
+    "raw": "{\n  \"category\": \"reimbursement\",\n  \"make_available\": \"na\",\n  \"ancillary_to\": \"none\",\n  \"pe_risk\": false,\n  \"citations\": [\n    {\n      \"source\": \"contract\",\n      \"quote\": \"recharges the exact cost, with no mark-up\"\n    },\n    {\n      \"source\": \"treaty\",\n      \"quote\": \"payments of any kind received as a consideration for the use of\"\n    }\n  ],\n  \"reasoning\":\n  \"The payment is a recovery of third-party travel costs at actuals with no mark-up, which does not constitute consideration for the use of IP, equipment, or technical services. Therefore, it is characterized as a reimbursement and falls outside the scope of royalties or fees for technical services under the treaty.\"\n}"
+   }
+  ],
+  "consensus": {
+   "category": "unclear",
+   "makeAvailable": "na",
+   "ancillaryTo": "none",
+   "peRisk": false,
+   "agreement": "abstain",
+   "validVotes": 1,
+   "note": "Only 1 model gave an answer backed by a verified contract quote and a verified treaty quote. A CA must characterise this payment."
+  }
+ },
+ "uk-site-supervision": {
+  "caseId": "uk-site-supervision",
+  "recordedAt": "2026-11-02T02:01:35.419Z",
+  "votes": [
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "openai/gpt-oss-120b",
+    "family": "OpenAI gpt-oss",
+    "latencyMs": 1526,
+    "ok": true,
+    "parsed": {
+     "category": "fts",
+     "make_available": "yes",
+     "ancillary_to": "equipment",
+     "pe_risk": true,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "Pennine will station four engineers at the client's plant in Odisha for about eight months to supervise installation and commissioning of two gas turbines."
+      },
+      {
+       "source": "treaty",
+       "quote": "payments of any kind to any person in consideration for the rendering of any technical or consultancy services"
+      }
+     ],
+     "reasoning": "The contract describes engineers providing on‑site supervision of equipment installation, which matches the treaty definition of fees for technical services. The service enables the use of the gas turbines, making it ancillary to equipment. The engineers are present in India for an extended period, creating a PE risk."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "Pennine will station four engineers at the client's plant in Odisha for about eight months to supervise installation and commissioning of two gas turbines.",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "payments of any kind to any person in consideration for the rendering of any technical or consultancy services",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "raw": "{\n  \"category\": \"fts\",\n  \"make_available\": \"yes\",\n  \"ancillary_to\": \"equipment\",\n  \"pe_risk\": true,\n  \"citations\": [\n    {\n      \"source\": \"contract\",\n      \"quote\": \"Pennine will station four engineers at the client's plant in Odisha for about eight months to supervise installation and commissioning of two gas turbines.\"\n    },\n    {\n      \"source\": \"treaty\",\n      \"quote\": \"payments of any kind to any person in consideration for the rendering of any technical or consultancy services\"\n    }\n  ],\n  \"reasoning\": \"The contract describes engineers providing on‑site supervision of equipment installation, which matches the treaty definition of fees for technical services. The service enables the use of the gas turbines, making it ancillary to equipment. The engineers are present in India for an extended period, creating a PE risk.\"\n}"
+   },
+   {
+    "provider": "-",
+    "label": "No model available",
+    "model": "nvidia/nemotron-3.5-lightning:free",
+    "family": "-",
+    "latencyMs": 0,
+    "ok": false,
+    "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi",
+    "valid": false,
+    "unverified": 0,
+    "replaced": [
+     {
+      "model": "z-ai/glm-5.3-flash",
+      "error": "The operation was aborted due to timeout"
+     },
+     {
+      "model": "google/gemma-4-31b-it",
+      "error": "The operation was aborted due to timeout"
+     },
+     {
+      "model": "dots-studio/dots-3-note-preview:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     },
+     {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     }
+    ]
+   },
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "qwen/qwen3.8-27b",
+    "family": "Alibaba Qwen",
+    "latencyMs": 609,
+    "ok": true,
+    "parsed": {
+     "category": "fts",
+     "make_available": "no",
+     "ancillary_to": "none",
+     "pe_risk": true,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "Pennine will station four engineers at the client's plant in Odisha for about eight months"
+      },
+      {
+       "source": "treaty",
+       "quote": "make available technical knowledge, experience, skill, know-how or processes"
+      }
+     ],
+     "reasoning": "The payment is for the rendering of technical services by stationed engineers, which falls under fees for technical services as it involves the provision of technical personnel. The presence of a site office and engineers for eight months creates a significant permanent establishment risk, potentially shifting taxation to business profits under Article 7, but the primary characterization of the service itself is FTS."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "Pennine will station four engineers at the client's plant in Odisha for about eight months",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "make available technical knowledge, experience, skill, know-how or processes",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "replaced": [
+     {
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     }
+    ],
+    "raw": "{\n\"category\": \"fts\",\n\"make_available\": \"no\",\n\"ancillary_to\": \"none\",\n\"pe_risk\": true,\n\"citations\": [\n{\n\"source\": \"contract\",\n\"quote\": \"Pennine will station four engineers at the client's plant in Odisha for about eight months\"\n},\n{\n\"source\": \"treaty\",\n\"quote\": \"make available technical knowledge, experience, skill, know-how or processes\"\n}\n],\n\"reasoning\":\n\"The payment is for the rendering of technical services by stationed engineers, which falls under fees for technical services as it involves the provision of technical personnel. The presence of a site office and engineers for eight months creates a significant permanent establishment risk, potentially shifting taxation to business profits under Article 7, but the primary characterization of the service itself is FTS.\"\n}"
+   }
+  ],
+  "consensus": {
+   "category": "fts",
+   "makeAvailable": "contested",
+   "ancillaryTo": "equipment",
+   "peRisk": true,
+   "agreement": "flag",
+   "validVotes": 2,
+   "note": "2 of 2 counted models agree on the category; check the dissent."
+  }
+ },
+ "us-stock-photo-small": {
+  "caseId": "us-stock-photo-small",
+  "recordedAt": "2026-11-02T02:08:16.577Z",
+  "votes": [
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "openai/gpt-oss-120b",
+    "family": "OpenAI gpt-oss",
+    "latencyMs": 1146,
+    "ok": true,
+    "parsed": {
+     "category": "royalty_ip",
+     "make_available": "no",
+     "ancillary_to": "none",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "Licence from Prairie Images Inc. (Chicago) to Yamuna Media Pvt Ltd granting the right to reproduce and publish 40 photographs"
+      },
+      {
+       "source": "treaty",
+       "quote": "payments of any kind received as a consideration for the use of, or the right to use, any copyright of a literary, artistic, or scientific work"
+      }
+     ],
+     "reasoning": "The invoice and contract describe a licence to reproduce copyrighted photographs, which falls under the definition of royalties for copyright use. No transfer of know‑how occurs, so it is not a fee for included services and does not make the knowledge available to the payer's staff."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "Licence from Prairie Images Inc. (Chicago) to Yamuna Media Pvt Ltd granting the right to reproduce and publish 40 photographs",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "payments of any kind received as a consideration for the use of, or the right to use, any copyright of a literary, artistic, or scientific work",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "raw": "{\n  \"category\": \"royalty_ip\",\n  \"make_available\": \"no\",\n  \"ancillary_to\": \"none\",\n  \"pe_risk\": false,\n  \"citations\": [\n    {\n      \"source\": \"contract\",\n      \"quote\": \"Licence from Prairie Images Inc. (Chicago) to Yamuna Media Pvt Ltd granting the right to reproduce and publish 40 photographs\"\n    },\n    {\n      \"source\": \"treaty\",\n      \"quote\": \"payments of any kind received as a consideration for the use of, or the right to use, any copyright of a literary, artistic, or scientific work\"\n    }\n  ],\n  \"reasoning\": \"The invoice and contract describe a licence to reproduce copyrighted photographs, which falls under the definition of royalties for copyright use. No transfer of know‑how occurs, so it is not a fee for included services and does not make the knowledge available to the payer's staff.\"\n}"
+   },
+   {
+    "provider": "-",
+    "label": "No model available",
+    "model": "nvidia/nemotron-3.5-lightning:free",
+    "family": "-",
+    "latencyMs": 0,
+    "ok": false,
+    "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi",
+    "valid": false,
+    "unverified": 0,
+    "replaced": [
+     {
+      "model": "z-ai/glm-5.3-flash",
+      "error": "The operation was aborted due to timeout"
+     },
+     {
+      "model": "google/gemma-4-31b-it",
+      "error": "The operation was aborted due to timeout"
+     },
+     {
+      "model": "dots-studio/dots-3-note-preview:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     },
+     {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     }
+    ]
+   },
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "qwen/qwen3.8-27b",
+    "family": "Alibaba Qwen",
+    "latencyMs": 672,
+    "ok": true,
+    "parsed": {
+     "category": "royalty_ip",
+     "make_available": "na",
+     "ancillary_to": "none",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "granting the right to reproduce and publish 40 photographs"
+      },
+      {
+       "source": "treaty",
+       "quote": "use of, or the right to use, any copyright of a literary, artistic, or scientific work"
+      }
+     ],
+     "reasoning": "The payment is for the right to reproduce and publish photographs, which constitutes the use of copyright in artistic works. Under Article 12(3)(a) of the India-USA DTAA, such payments are defined as royalties."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "granting the right to reproduce and publish 40 photographs",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "use of, or the right to use, any copyright of a literary, artistic, or scientific work",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "replaced": [
+     {
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     }
+    ],
+    "raw": "{\n  \"category\": \"royalty_ip\",\n  \"make_available\": \"na\",\n  \"ancillary_to\": \"none\",\n  \"pe_risk\": false,\n  \"citations\": [\n    {\n      \"source\": \"contract\",\n      \"quote\": \"granting the right to reproduce and publish 40 photographs\"\n    },\n    {\n      \"source\": \"treaty\",\n      \"quote\": \"use of, or the right to use, any copyright of a literary, artistic, or scientific work\"\n    }\n  ],\n  \"reasoning\": \"The payment is for the right to reproduce and publish photographs, which constitutes the use of copyright in artistic works. Under Article 12(3)(a) of the India-USA DTAA, such payments are defined as royalties.\"\n}"
+   }
+  ],
+  "consensus": {
+   "category": "royalty_ip",
+   "makeAvailable": "no",
+   "ancillaryTo": "none",
+   "peRisk": false,
+   "agreement": "flag",
+   "validVotes": 2,
+   "note": "2 of 2 counted models agree on the category; check the dissent."
+  }
+ },
+ "sg-design-no-pan": {
+  "caseId": "sg-design-no-pan",
+  "recordedAt": "2026-11-02T02:14:57.689Z",
+  "votes": [
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "openai/gpt-oss-120b",
+    "family": "OpenAI gpt-oss",
+    "latencyMs": 1206,
+    "ok": true,
+    "parsed": {
+     "category": "fts",
+     "make_available": "yes",
+     "ancillary_to": "ip",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "Orchard will develop and transfer technical designs and manufacturing drawings"
+      },
+      {
+       "source": "treaty",
+       "quote": "fees of a managerial, technical or consultancy nature ... consist of the development and transfer of a technical plan or technical design"
+      }
+     ],
+     "reasoning": "The payment is for the development and transfer of technical designs, which the treaty defines as fees for technical services. The designs enable Banas to produce the furniture line independently, so the knowledge is made available. The service is ancillary to IP and there is no indication of Indian personnel presence."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "Orchard will develop and transfer technical designs and manufacturing drawings",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "fees of a managerial, technical or consultancy nature ... consist of the development and transfer of a technical plan or technical design",
+      "found": false
+     }
+    ],
+    "valid": false,
+    "unverified": 1,
+    "raw": "{\n  \"category\": \"fts\",\n  \"make_available\": \"yes\",\n  \"ancillary_to\": \"ip\",\n  \"pe_risk\": false,\n  \"citations\": [\n    {\n      \"source\": \"contract\",\n      \"quote\": \"Orchard will develop and transfer technical designs and manufacturing drawings\"\n    },\n    {\n      \"source\": \"treaty\",\n      \"quote\": \"fees of a managerial, technical or consultancy nature ... consist of the development and transfer of a technical plan or technical design\"\n    }\n  ],\n  \"reasoning\": \"The payment is for the development and transfer of technical designs, which the treaty defines as fees for technical services. The designs enable Banas to produce the furniture line independently, so the knowledge is made available. The service is ancillary to IP and there is no indication of Indian personnel presence.\"\n}"
+   },
+   {
+    "provider": "-",
+    "label": "No model available",
+    "model": "nvidia/nemotron-3.5-lightning:free",
+    "family": "-",
+    "latencyMs": 0,
+    "ok": false,
+    "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi",
+    "valid": false,
+    "unverified": 0,
+    "replaced": [
+     {
+      "model": "z-ai/glm-5.3-flash",
+      "error": "The operation was aborted due to timeout"
+     },
+     {
+      "model": "google/gemma-4-31b-it",
+      "error": "The operation was aborted due to timeout"
+     },
+     {
+      "model": "dots-studio/dots-3-note-preview:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     },
+     {
+      "model": "nvidia/nemotron-3.5-lightning:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     }
+    ]
+   },
+   {
+    "provider": "groq",
+    "label": "Groq",
+    "model": "qwen/qwen3.8-27b",
+    "family": "Alibaba Qwen",
+    "latencyMs": 622,
+    "ok": true,
+    "parsed": {
+     "category": "fts",
+     "make_available": "yes",
+     "ancillary_to": "none",
+     "pe_risk": false,
+     "citations": [
+      {
+       "source": "contract",
+       "quote": "Banas's factory will use to produce the line itself"
+      },
+      {
+       "source": "treaty",
+       "quote": "consist of the development and transfer of a technical plan or technical design"
+      }
+     ],
+     "reasoning": "The payment is for the development and transfer of technical designs and manufacturing drawings, which falls under Article 12(4)(c) of the India-Singapore DTAA as fees for technical services. Since the contract states that Banas's factory will use the designs to produce the line itself, the service makes available the technical knowledge required to apply the technology, satisfying the 'make available' criterion."
+    },
+    "checks": [
+     {
+      "source": "contract",
+      "quote": "Banas's factory will use to produce the line itself",
+      "found": true
+     },
+     {
+      "source": "treaty",
+      "quote": "consist of the development and transfer of a technical plan or technical design",
+      "found": true
+     }
+    ],
+    "valid": true,
+    "unverified": 0,
+    "replaced": [
+     {
+      "model": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "error": "HTTP 429: {\"error\":{\"message\":\"Rate limit exceeded: free-models-per-day. Add 10 credits to unlock 1000 free model requests per day\",\"code\":429,\"metadata\":{\"headers\":{\"X-RateLimit-Limit\":\"50\",\"X-RateLi"
+     }
+    ],
+    "raw": "{\n\"category\": \"fts\",\n\"make_available\": \"yes\",\n\"ancillary_to\": \"none\",\n\"pe_risk\": false,\n\"citations\": [\n{\n\"source\": \"contract\",\n\"quote\": \"Banas's factory will use to produce the line itself\"\n},\n{\n\"source\": \"treaty\",\n\"quote\": \"consist of the development and transfer of a technical plan or technical design\"\n}\n],\n\"reasoning\":\n\"The payment is for the development and transfer of technical designs and manufacturing drawings, which falls under Article 12(4)(c) of the India-Singapore DTAA as fees for technical services. Since the contract states that Banas's factory will use the designs to produce the line itself, the service makes available the technical knowledge required to apply the technology, satisfying the 'make available' criterion.\"\n}"
+   }
+  ],
+  "consensus": {
+   "category": "unclear",
+   "makeAvailable": "na",
+   "ancillaryTo": "none",
+   "peRisk": false,
+   "agreement": "abstain",
+   "validVotes": 1,
+   "note": "Only 1 model gave an answer backed by a verified contract quote and a verified treaty quote. A CA must characterise this payment."
+  }
+ }
+}

@@ -65,7 +65,17 @@ All cases are synthetic: the companies, contracts and invoices are made up. The 
 ## Results so far, and where it fails
 
 - **Rules lane: 14 of 14.** Treat this as a regression check, not evidence. The same author wrote the rules and the expected answers. The real test is cases written by a practitioner (see `docs/YOUR-INPUT.md`).
-- **Full pipeline (models + rules):** see the Evaluation page after `npm run eval` with keys. The headline number is **wrong and confident**: a wrong rate shown as Computed instead of being sent to the CA.
+- **Full pipeline (models + rules).** The headline number is **wrong and confident**: a wrong rate shown as Computed instead of being sent to the CA. Two live runs on 2 November 2026, raw output in `data/eval-history/`:
+
+  | Run | Full pass | Wrong and confident | Agree / flag / abstain |
+  |---|---|---|---|
+  | 1, before the dispute rule | 11 / 14 | **1** (sg-monitoring-contested: nil rate shown as final) | 8 / 4 / 2 |
+  | 2, after the dispute rule (the one the site replays) | 10 / 14 | **0** | 7 / 4 / 3 |
+
+  Every failure in run 2 went to the CA rather than producing a wrong rate:
+  - **uk-research-no-ma.** The models split between "technical services, no make-available" and "business profits". Both give a nil rate, but the dispute rule escalates the split anyway. This is the cost named in decision 007. A narrower rule (escalate only if some vote says know-how *is* or *may be* made available) would fix it, but it was found on these same 14 cases, so it needs fresh cases before it counts.
+  - **de-patent-old-act, sg-reimbursement, sg-design-no-pan.** These are quota failures, not judgement. The last cases ran after OpenRouter's free daily cap was hit and NVIDIA's models timed out, so only one vote per case had verified quotes. The fallback abstained instead of guessing.
+  - The dispute rule was added after seeing run 1, on the same cases. Run 2 shows it fixes that case without making anything unsafe; it does not show the rule generalises.
 - **Known limits, honestly:**
   - Four rules are marked *not verified* against a primary source: the 2025 Act rate schedule, the surcharge slabs, no surcharge on treaty rates, and the no-PAN carve-out. Every result that uses them says so.
   - The Rs 5 lakh test is applied per payment; the law applies it to the year's aggregate.

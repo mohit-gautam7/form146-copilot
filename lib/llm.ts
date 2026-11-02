@@ -194,6 +194,18 @@ export function vote(votes: Vote[]): Consensus {
   const none: Consensus = { category: "unclear", makeAvailable: "na", ancillaryTo: "none", peRisk: false, agreement: "abstain", validVotes: v.length, note: "" };
   if (v.length < 2) return { ...none, note: `Only ${v.length} model gave an answer backed by a verified contract quote and a verified treaty quote. A CA must characterise this payment.` };
 
+  // A split between "technical services" and "business profits" is not a labelling quibble: under a
+  // make-available treaty it IS the make-available question. Found by the first live eval, where a
+  // 2-1 majority for business profits produced a confident nil rate on a genuinely contested case.
+  const cats = new Set(v.map((x) => x.category));
+  if (cats.has("fts") && cats.has("business_profits")) {
+    return {
+      category: "fts", makeAvailable: "contested", ancillaryTo: "none", peRisk: v.some((x) => x.pe_risk),
+      agreement: "flag", validVotes: v.length,
+      note: "The models split between technical services and business profits, which is a dispute about whether know-how is made available. Both outcomes are computed; a CA must choose.",
+    };
+  }
+
   const [category, n] = majority(v.map((x) => x.category));
   if (n < 2) return { ...none, note: "The models disagree on what this payment is. A CA must decide." };
   const same = v.filter((x) => x.category === category);

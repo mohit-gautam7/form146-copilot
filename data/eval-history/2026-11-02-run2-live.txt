@@ -1,0 +1,26 @@
+# Run 2, live, 2026-11-02, after the make-available dispute rule. Recordings: data/recordings.json (replay reproduces this summary).
+# Last 3 abstains: OpenRouter free-models-per-day cap hit and NVIDIA NIM timeouts left one verified vote per case.
+Live run: calling the models.
+pass rules | pass full | us-saas
+pass rules | pass full | uk-pipeline-ma
+pass rules | FAIL full | uk-research-no-ma  status needs_ca (expected ok); basis treaty (expected not_taxable); rate 15 (expected 0); Form 146 true (expected false)
+pass rules | pass full | de-mgmt-fee
+pass rules | pass full | sg-monitoring-contested
+pass rules | pass full | nl-tbm-hire
+pass rules | pass full | us-spectrometer-grossup
+pass rules | pass full | nl-mfn-claim
+pass rules | pass full | us-no-trc
+pass rules | FAIL full | de-patent-old-act  status needs_ca (expected ok); basis none (expected treaty); rate null (expected 10); Form 146 false (expected true)
+pass rules | FAIL full | sg-reimbursement  status needs_ca (expected ok); basis none (expected not_taxable); rate null (expected 0)
+pass rules | pass full | uk-site-supervision
+pass rules | pass full | us-stock-photo-small
+pass rules | FAIL full | sg-design-no-pan  status needs_ca (expected ok); basis none (expected treaty); rate null (expected 20); Form 146 false (expected true)
+{
+  cases: 14,
+  rulesPass: 14,
+  aiCases: 14,
+  fullPass: 10,
+  categoryOk: 11,
+  unsafe: 0,
+  agreement: { agree: 7, flag: 4, abstain: 3 }
+}

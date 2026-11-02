@@ -1,7 +1,7 @@
 // Run: node --test lib/llm.test.ts   (no network: fetch is replaced)
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { classify, parseJson, MODELS } from "./llm.ts";
+import { classify, parseJson, vote, MODELS, type Vote } from "./llm.ts";
 
 const docs = { country: "UK", contract: "Northgate will train Sahyadri's engineers to run the pipeline.", invoice: "Invoice NG-1. Training.", treatyText: "make available technical knowledge, experience, skill", treatyName: "India-UK DTAA" };
 const answer = JSON.stringify({
@@ -51,4 +51,15 @@ test("when everything is down the vote abstains instead of guessing", async () =
 test("JSON repair handles fences and trailing commas only", () => {
   assert.equal(parseJson('```json\n{"category": "fts", "citations": [],}\n```').category, "fts");
   assert.throws(() => parseJson("I think it is FTS."));
+});
+
+test("a split between FTS and business profits is surfaced as a make-available dispute", () => {
+  const v = (category: string, make_available: string) => ({
+    provider: "x", label: "x", model: "x", family: category + make_available, latencyMs: 0, ok: true, valid: true, unverified: 0,
+    parsed: { category, make_available, ancillary_to: "none", pe_risk: false, citations: [], reasoning: "" },
+  }) as unknown as Vote;
+  const k = vote([v("fts", "contested"), v("business_profits", "no"), v("business_profits", "na")]);
+  assert.equal(k.category, "fts");
+  assert.equal(k.makeAvailable, "contested");
+  assert.equal(k.agreement, "flag");
 });
